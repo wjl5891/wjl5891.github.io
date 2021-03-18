@@ -172,11 +172,62 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制"><a href="#【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制" class="headerlink" title="【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制"></a>【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制</h3><h5 id="lt-编辑前事件-gt-xxx-栏位-gt-gt-gt-不可编辑"><a href="#lt-编辑前事件-gt-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="&lt;编辑前事件&gt; [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑."></a>&lt;编辑前事件&gt; [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑.</h5><h5 id="lt-提交-gt-后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑"><a href="#lt-提交-gt-后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="&lt;提交&gt;后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑"></a>&lt;提交&gt;后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑</h5><h4 id="1-客户投诉单"><a href="#1-客户投诉单" class="headerlink" title="1. 客户投诉单"></a>1. 客户投诉单</h4><p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
+        <h3 id="【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制"><a href="#【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制" class="headerlink" title="【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制"></a>【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制</h3><h5 id="编辑前事件-xxx-栏位-gt-gt-gt-不可编辑"><a href="#编辑前事件-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="编辑前事件 [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑."></a>编辑前事件 [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑.</h5><h5 id="提交后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑"><a href="#提交后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="提交后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑"></a>提交后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑</h5><h4 id="1-客户投诉单"><a href="#1-客户投诉单" class="headerlink" title="1. 客户投诉单"></a>1. 客户投诉单</h4><p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
 <h4 id="2-改进措施指令单"><a href="#2-改进措施指令单" class="headerlink" title="2. 改进措施指令单"></a>2. 改进措施指令单</h4><p><img src="https://i.loli.net/2021/03/18/zlVab1t95KZfImQ.jpg" alt="img"></p>
 <p>【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、【措施计划完成日期】、【整改验证情况】</p>
 <p>新增时不可以编辑，审批后方可编辑。</p>
 <h4 id="3-8D报告"><a href="#3-8D报告" class="headerlink" title="3. 8D报告"></a>3. 8D报告</h4><p><img src="https://i.loli.net/2021/03/18/xCjW9YrmcVG6HMO.jpg" alt="img"></p>
+<hr>
+<p>一、需求 《客户投诉单》</p>
+<p>​    1. 说明</p>
+<p>​        菜单 质量管理 –&gt; 客户投诉 –&gt; 客户投诉单</p>
+<ol start="2">
+<li>截图</li>
+</ol>
+<p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
+<ol start="3">
+<li><p>功能</p>
+<p>  制单人 新建/修改 时<br>【改进意见及要求】、【投诉处理方案】、【跟踪及验证情况】三个栏位不可编辑</p>
+</li>
+<li><p>实现</p>
+<ol>
+<li>查找对应单据所在的模块,java file. 通过“功能注册”<br><img src="https://i.loli.net/2021/03/18/MxGskVgbd46W7wQ.jpg" alt="img"></li>
+</ol>
+</li>
+</ol>
+<p>在 参数注册 tab页，复制 参数值</p>
+<p><code>nc/ui/qc/qc_custcomplaints/ace/view/Qc_custcomplaints_config.xml</code></p>
+<p>然后在Eclipse里面 按下 ctrl + shift + t 打开类型. 把”/“全部更改为”.”</p>
+<p><img src="https://i.loli.net/2021/03/18/xEXs7T2BR9HpyCk.jpg" alt="img"></p>
+<p>点击确定  找到” Qc_custcomplaints_config.xml” 所在的包 nc.ui.qc.qc_custcomplaints.ace.view .</p>
+<p><img src="https://i.loli.net/2021/03/18/DhnKCQy28PH3Zm7.jpg" alt="img"></p>
+<p>其中表头编辑前事件的java file<br> nc.ui.qc.qc_custcomplaints.ace.handler.AceHeadTailBeforeEditHandler.class</p>
+<p>复制这个class 名字，在对应的qc/src 模块下面</p>
+<p><img src="https://i.loli.net/2021/03/18/NosKq7HdOjZ1QPG.jpg" alt="img"></p>
+<p>在单据模块 qc/src/client中新建包”nc.ui.qc.qc_custcomplaints.ace.handler”<br>然后再新建AceHeadTailBeforeEditHandler.java</p>
+<p>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。</p>
+<p> qc/src/private 是接口实现类 放本地实现公共接口的具体操作。</p>
+<p>Q.如何查找单据上面对应的表字段?</p>
+<p>答：通过“单据模板初始化”</p>
+<p><img src="https://i.loli.net/2021/03/18/lO281tBeU5NP94h.jpg" alt="img"></p>
+<p>输入 pim</p>
+<p><img src="https://i.loli.net/2021/03/18/urpqZ4ICycFh965.jpg" alt="img"></p>
+<p>选择 模板类型 “Pim_trackform”</p>
+<p><img src="https://i.loli.net/2021/03/18/DdKmsARwGl6tU5M.jpg" alt="img"></p>
+<p>点击 “修改”</p>
+<p><img src="https://i.loli.net/2021/03/18/mDYOcrRZzVtPleW.jpg" alt="img"></p>
+<p>点击 “承担部门”</p>
+<p><img src="https://i.loli.net/2021/03/18/tYW4fKB8LJjmgNu.jpg" alt="img"></p>
+<p>点击 tab “高级属性”</p>
+<p><img src="https://i.loli.net/2021/03/18/yPOmKf429GJkZ8Q.jpg" alt="img"></p>
+<p>点击 部门的 放大镜</p>
+<p><img src="https://i.loli.net/2021/03/18/jtGP7A6nH23iLCJ.jpg" alt="img"></p>
+<p>取消勾选  是否可以选择非叶子节点。 ==&gt; 表示 不可以选择 (非叶子节点) 根、子 节点，只能选择叶节点.</p>
+<p><img src="https://i.loli.net/2021/03/18/dOhIr923JNuK7Sm.jpg" alt="img"></p>
+<p>点击 保存模板</p>
+<p> <img src="https://i.loli.net/2021/03/18/njwbqaXPRdUYlD7.jpg" alt="img"></p>
+<p>改变“模板标题”为 [开发改进跟踪表]</p>
+<p><img src="https://i.loli.net/2021/03/18/7U6sCeE8Kur2VvH.jpg" alt="img"> </p>
 
       
 
