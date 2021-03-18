@@ -178,55 +178,85 @@
 <p>新增时不可以编辑，审批后方可编辑。</p>
 <h4 id="3-8D报告"><a href="#3-8D报告" class="headerlink" title="3. 8D报告"></a>3. 8D报告</h4><p><img src="https://i.loli.net/2021/03/18/xCjW9YrmcVG6HMO.jpg" alt="img"></p>
 <hr>
-<p>一、需求 《客户投诉单》</p>
-<p>​    1. 说明</p>
+<h6 id="需求-《客户投诉单》"><a href="#需求-《客户投诉单》" class="headerlink" title="需求 《客户投诉单》"></a>需求 《客户投诉单》</h6><ul>
+<li>说明</li>
+</ul>
 <p>​        菜单 质量管理 –&gt; 客户投诉 –&gt; 客户投诉单</p>
-<ol start="2">
+<ul>
 <li>截图</li>
-</ol>
+</ul>
 <p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
-<ol start="3">
+<ul>
 <li><p>功能</p>
-<p>  制单人 新建/修改 时<br>【改进意见及要求】、【投诉处理方案】、【跟踪及验证情况】三个栏位不可编辑</p>
+<p>制单人 新建/修改 时<br>【改进意见及要求】、【投诉处理方案】、【跟踪及验证情况】三个栏位不可编辑</p>
 </li>
-<li><p>实现</p>
-<ol>
-<li>查找对应单据所在的模块,java file. 通过“功能注册”<br><img src="https://i.loli.net/2021/03/18/MxGskVgbd46W7wQ.jpg" alt="img"></li>
-</ol>
-</li>
-</ol>
-<p>在 参数注册 tab页，复制 参数值</p>
+</ul>
+<ul>
+<li>实现</li>
+</ul>
+<table><tr><td bgcolor=#D1EEEE>1.查找对应单据所在的模块,java file. 通过“功能注册”<td></tr></table>
+
+<p><img src="https://i.loli.net/2021/03/18/MxGskVgbd46W7wQ.jpg" alt="img"></p>
+<table><tr><td bgcolor=#D1EEEE>2.在 参数注册 tab页，复制 参数值<td></tr></table>
+
 <p><code>nc/ui/qc/qc_custcomplaints/ace/view/Qc_custcomplaints_config.xml</code></p>
-<p>然后在Eclipse里面 按下 ctrl + shift + t 打开类型. 把”/“全部更改为”.”</p>
+<table><tr><td bgcolor=#D1EEEE> 然后在Eclipse里面 按下 ctrl + shift + t 打开类型. 把"/"全部更改为"." <td></tr></table>
+
 <p><img src="https://i.loli.net/2021/03/18/xEXs7T2BR9HpyCk.jpg" alt="img"></p>
-<p>点击确定  找到” Qc_custcomplaints_config.xml” 所在的包 nc.ui.qc.qc_custcomplaints.ace.view .</p>
+<table><tr><td bgcolor=#D1EEEE>3.点击确定  找到" Qc_custcomplaints_config.xml" 所在的包 nc.ui.qc.qc_custcomplaints.ace.view .<td></tr></table>
+
 <p><img src="https://i.loli.net/2021/03/18/DhnKCQy28PH3Zm7.jpg" alt="img"></p>
-<p>其中表头编辑前事件的java file<br> nc.ui.qc.qc_custcomplaints.ace.handler.AceHeadTailBeforeEditHandler.class</p>
-<p>复制这个class 名字，在对应的qc/src 模块下面</p>
+<table><tr><td bgcolor=#D1EEEE>4.其中表头编辑前事件的java file
+ nc.ui.qc.qc_custcomplaints.ace.handler.AceHeadTailBeforeEditHandler.class<td></tr></table>
+
+   <table><tr><td bgcolor=#D1EEEE>复制这个class 名字，在对应的qc/src 模块下面<td></tr></table>
+
 <p><img src="https://i.loli.net/2021/03/18/NosKq7HdOjZ1QPG.jpg" alt="img"></p>
-<p>在单据模块 qc/src/client中新建包”nc.ui.qc.qc_custcomplaints.ace.handler”<br>然后再新建AceHeadTailBeforeEditHandler.java</p>
-<p>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。</p>
-<p> qc/src/private 是接口实现类 放本地实现公共接口的具体操作。</p>
+<table><tr><td bgcolor=#D1EEEE>5.在单据模块 qc/src/client中新建包"nc.ui.qc.qc_custcomplaints.ace.handler" 
+然后再新建AceHeadTailBeforeEditHandler.java<td></tr></table>
+
+<table><tr><td bgcolor=#D1EEEE>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。<td></tr></table>
+
+ <table><tr><td bgcolor=#D1EEEE>qc/src/private 是接口实现类 放本地实现公共接口的具体操作。<td></tr></table>
+
 <p>Q.如何查找单据上面对应的表字段?</p>
 <p>答：通过“单据模板初始化”</p>
 <p><img src="https://i.loli.net/2021/03/18/lO281tBeU5NP94h.jpg" alt="img"></p>
+<blockquote>
 <p>输入 pim</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/urpqZ4ICycFh965.jpg" alt="img"></p>
+<blockquote>
 <p>选择 模板类型 “Pim_trackform”</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/DdKmsARwGl6tU5M.jpg" alt="img"></p>
+<blockquote>
 <p>点击 “修改”</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/mDYOcrRZzVtPleW.jpg" alt="img"></p>
+<blockquote>
 <p>点击 “承担部门”</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/tYW4fKB8LJjmgNu.jpg" alt="img"></p>
+<blockquote>
 <p>点击 tab “高级属性”</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/yPOmKf429GJkZ8Q.jpg" alt="img"></p>
+<blockquote>
 <p>点击 部门的 放大镜</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/jtGP7A6nH23iLCJ.jpg" alt="img"></p>
+<blockquote>
 <p>取消勾选  是否可以选择非叶子节点。 ==&gt; 表示 不可以选择 (非叶子节点) 根、子 节点，只能选择叶节点.</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/dOhIr923JNuK7Sm.jpg" alt="img"></p>
+<blockquote>
 <p>点击 保存模板</p>
+</blockquote>
 <p> <img src="https://i.loli.net/2021/03/18/njwbqaXPRdUYlD7.jpg" alt="img"></p>
+<blockquote>
 <p>改变“模板标题”为 [开发改进跟踪表]</p>
+</blockquote>
 <p><img src="https://i.loli.net/2021/03/18/7U6sCeE8Kur2VvH.jpg" alt="img"> </p>
 
       
