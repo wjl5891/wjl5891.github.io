@@ -18,8 +18,10 @@
 <meta property="og:image" content="https://i.loli.net/2021/03/16/rGz9IJgmfU8qjl2.jpg">
 <meta property="og:image" content="https://i.loli.net/2021/03/16/Vqy5nMAUZ13WF8I.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/16/NvkPwhGrOSznV82.png">
+<meta property="og:image" content="https://i.loli.net/2021/03/18/h7c9YveHKrnJjMd.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/03/18/dQD6bESvxlfZ5UV.jpg">
 <meta property="article:published_time" content="2021-03-16T06:35:20.000Z">
-<meta property="article:modified_time" content="2021-03-16T06:36:32.727Z">
+<meta property="article:modified_time" content="2021-03-18T06:48:53.272Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="标准内容">
 <meta name="twitter:card" content="summary">
@@ -215,6 +217,16 @@
 </tr>
 </tbody></table>
  <img src="https://i.loli.net/2021/03/16/NvkPwhGrOSznV82.png" alt="image-20210316143142388" style="zoom:80%;" />
+
+<h4 id="单据类型管理：-lt-用于在单据模板初始化-gt-时可以提供面板选择"><a href="#单据类型管理：-lt-用于在单据模板初始化-gt-时可以提供面板选择" class="headerlink" title="单据类型管理：&lt;用于在单据模板初始化&gt;时可以提供面板选择."></a>单据类型管理：&lt;用于在单据模板初始化&gt;时可以提供面板选择.</h4><p><img src="https://i.loli.net/2021/03/18/h7c9YveHKrnJjMd.jpg" alt="img"></p>
+<h4 id="交易类型管理-lt-理解为业务类型-gt-每种单据都应该有自己的业务类型，可自义定，在如下界面设置"><a href="#交易类型管理-lt-理解为业务类型-gt-每种单据都应该有自己的业务类型，可自义定，在如下界面设置" class="headerlink" title="交易类型管理: &lt;理解为业务类型&gt; 每种单据都应该有自己的业务类型，可自义定，在如下界面设置:"></a>交易类型管理: &lt;理解为业务类型&gt; 每种单据都应该有自己的业务类型，可自义定，在如下界面设置:</h4><p><img src="https://i.loli.net/2021/03/18/dQD6bESvxlfZ5UV.jpg" alt="img"></p>
+<p>单据类型是“采购合同”，它可以有很多种交易类型如：“内部交易”、“进口交易”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">IWorkflowService iW = NCLocator.getInstance().lookup(</span><br><span class="line">			    IWorkflowService.class);</span><br><span class="line">List list = iW.getEditablePreoperties(AppContext.getInstance()</span><br><span class="line">			    .getPkUser(), <span class="string">&quot;CPGZ-Cxx-001&quot;</span>, bill.getPrimaryKey(), <span class="number">2</span>);</span><br><span class="line"><span class="comment">//CPGZ-Cxx-001是交易类型</span></span><br><span class="line">	<span class="keyword">if</span> (MMValueCheck.isNotEmpty(list)) &#123;</span><br><span class="line">			List&lt;String&gt; lHeadItems = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上代码的作用为通过“单据交易类型”查找到所含的审批流 可编辑字段.</p>
+</blockquote>
+
       
 
       
@@ -328,7 +340,7 @@
     </a>
   
   
-    <a href="/2021/03/16/practice01/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/03/16/images/practice01/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">Practice</div>
       <i class="icon-circle-right"></i>
     </a>
