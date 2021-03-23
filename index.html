@@ -152,6 +152,326 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-用友分析云操作手册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/23/%E7%94%A8%E5%8F%8B%E5%88%86%E6%9E%90%E4%BA%91%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">用友分析云初体验</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/23/%E7%94%A8%E5%8F%8B%E5%88%86%E6%9E%90%E4%BA%91%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/" class="archive-article-date">
+  	<time datetime="2021-03-23T08:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="用友分析云简述"><a href="#用友分析云简述" class="headerlink" title="用友分析云简述"></a>用友分析云简述</h2><p>通过云服务向用户提供可视化的报表服务、方便使用者灵活，便节的进行数据分析服务。</p>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><table>
+<thead>
+<tr>
+<th>select * from bi_zjjh_fy_view</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>select * from BI_ZJJH_SL_VIEW —-norigmny收入金额，cbje 成本金额</td>
+</tr>
+</tbody></table>
+<ul>
+<li>以上SQL来源于NC6.5平台的数据库视图</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/G4BxnwjMD8HEdfa.png" alt="image-20210323164843616"></p>
+<ul>
+<li>【费用】栏位显示数据，来源于SQL <code>select * from bi_zjjh_fy_view</code> <font color="#FF7F50" size="4">资金计划_费用视图</font></li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/B9ds2T5gLrFXlwM.png" alt="image-20210323165216820"></p>
+<ul>
+<li><p>【收入】【成本】栏位数据，来源于SQL  <code>select * from BI_ZJJH_SL_VIEW</code></p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p><img src="https://i.loli.net/2021/03/23/JtZmoex2KBRaAfH.png" alt="image-20210323165320230"></p>
+</li>
+<li><p>点击添加应用</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/rTwcOy7b5YXhR91.png" alt="image-20210323165444142"></p>
+<ol>
+<li>在URL栏输入192.168.68:8180 打开“用友分析云”</li>
+<li>输入账号：wjl</li>
+<li>输入密码：wjl@29908</li>
+<li>跳到Chrom浏览器加载用友分析云主界面如下：</li>
+</ol>
+<p><img src="https://i.loli.net/2021/03/23/hFIgUXPM753zskN.png" alt="image-20210323165511155"></p>
+<blockquote>
+<p>以上操作先保留暂停，下面介绍后台数据操作</p>
+</blockquote>
+<h3 id="服务器操作-分析云仓库数据"><a href="#服务器操作-分析云仓库数据" class="headerlink" title="服务器操作-分析云仓库数据"></a>服务器操作-分析云仓库数据</h3><ul>
+<li><input disabled="" type="checkbox"> 远程登录mstsc 192.168.192.68</li>
+<li><input disabled="" type="checkbox"> 输入管理员账号：administrator</li>
+<li><input disabled="" type="checkbox"> 密码：qd1234!</li>
+<li><input disabled="" type="checkbox"> 打开exe应用程序 Data Integration Designer(数据集成设计器)</li>
+<li><input disabled="" type="checkbox"> D:\di_designer_20201118\yonyou-DI-3.7.0\Data Integration Designer.exe</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/dCS49WJDQlmLBU8.png" alt="image-20210323165555652"></p>
+<ul>
+<li>双击后打开</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/jwW3yNekAoJ95aK.png" alt="image-20210323165610255"></p>
+<ul>
+<li>打开资金管理平台</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/zx5RjoOQa6ipc8J.png" alt="image-20210323165624538"></p>
+<ul>
+<li><p>复制一个</p>
+<p><img src="https://i.loli.net/2021/03/23/xhMtL3AwzEHbBUm.png" alt="image-20210323165637771"></p>
+<ul>
+<li>粘贴出来建立两个“数据转换作业”<ul>
+<li>(1)资金管理费用NC     —-&gt; 资金管理费用BI</li>
+<li>(2)收入成本NC       —-&gt; 收入成本BI</li>
+</ul>
+</li>
+<li>双击左边第一个图标打开页签</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/4fKsEYw6lCiHMoq.png" alt="image-20210323165728903"></p>
+<p><img src="https://i.loli.net/2021/03/23/wbe37APmiG8RuML.png" alt="image-20210323165735823"></p>
+<p>1.修改 “步骤名称”=资金管理费用NC</p>
+<p>2.数据库连接 <code>NC65_TEST</code></p>
+<p>3.SQL 填入上面的<code>select * from bi_zjjh_fy_view</code></p>
+<p>4.点击<img src="https://i.loli.net/2021/03/23/mHuDKbF9t7gZoaJ.jpg" alt="img"></p>
+<p>5.<img src="https://i.loli.net/2021/03/23/za8lkC62ZWQyBNV.png" alt="image-20210323165758841"></p>
+<p>6.勾选清空表，表示每次执行前先清空 分析云数据库对应的表数据。</p>
+<p>7.最后点击执行SQL。</p>
+<blockquote>
+<h6 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h6></blockquote>
+<h3 id="用友分析云报表设计"><a href="#用友分析云报表设计" class="headerlink" title="用友分析云报表设计"></a>用友分析云报表设计</h3><p>1.数据连接&gt;导入表</p>
+<p><img src="https://i.loli.net/2021/03/23/ik3VmUYBMsrGhuI.png" alt="image-20210323165847362"></p>
+<p>2.打开导入工作表对话框</p>
+<p><img src="https://i.loli.net/2021/03/23/ARt67a5HlmDrjcq.png" alt="image-20210323165858845"></p>
+<ul>
+<li>在左边“选择表”中勾选<img src="https://i.loli.net/2021/03/23/whBjTJZ8EUdcgkq.jpg" alt="img">点击-&gt;移动到右边。</li>
+</ul>
+<p>3.点击关闭</p>
+<p>4.点击数据准备</p>
+<p><img src="https://i.loli.net/2021/03/23/VZl1KIhUJomPine.png" alt="image-20210323165933444"></p>
+<p>5.点击【新建】按钮</p>
+<p><img src="https://i.loli.net/2021/03/23/IWwMft2XD3u7riY.png" alt="image-20210323165945803"></p>
+<ul>
+<li><p>选择关联数据集</p>
+</li>
+<li><p>名称填入 ‘资金管理收入成本’</p>
+</li>
+<li><p>文件夹选择 数据集 &gt; 虔东稀土BI项目正式数据集 &gt; 试点开发阶段 &gt; 财务</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/mkHZB3vgPzlbQSK.png" alt="image-20210323170100821"></p>
+<ul>
+<li>完成后如下图显示：</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/BXuUDKg5IEqms1b.png" alt="image-20210323170114609"></p>
+<p>6.展开左侧 “数据源” Tab页 找到刚刚导入的视图 “ODS_BI_ZJJH_SL_VIEW” 拖拽到右边上方空白处.</p>
+<p><img src="https://i.loli.net/2021/03/23/sOmbZJwgELM7HTR.png" alt="image-20210323170126322"></p>
+<ul>
+<li>将标题列修改为中文</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">标题</th>
+<th>中文</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">YXDY</td>
+<td>营销单元</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">ZZ</td>
+<td>组织</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">VBILLCODE</td>
+<td>单据编码</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">CROWNO</td>
+<td>行号</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">CODE</td>
+<td>代码</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">NAME</td>
+<td>产品名称</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">MATERIALSPEC</td>
+<td>规格</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">NNUM</td>
+<td>数量</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">NORIGPRICE</td>
+<td>单价</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">NORIGMNY</td>
+<td>金额</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">CBDJ</td>
+<td>成本单价</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">CBJE</td>
+<td>成本金额</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>PS:这步操作可以在PLSQL中添加 注释获取（可省略这一步骤）</p>
+<p><img src="https://i.loli.net/2021/03/23/kvHliN1hsIqJufm.png" alt="image-20210323170204957"></p>
+<p>“C:\Program Files\PLSQL Developer 13\plsqldev.exe”</p>
+<p><img src="https://i.loli.net/2021/03/23/UE9DR1pwdk5KisH.png" alt="image-20210323170214461"></p>
+<ul>
+<li>这里打开的是分析云后台oracle数据库<br>服务器：192.168.192.52<br>服务名：orcl<br>用户名：qd_wd</li>
+<li>右键编辑表“ODS_BI_ZJHJ_SL_VIEW”打开 视图结构，最后一列注释可以写入中文描述提供分析云自动抓取！</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/WiBvMNTgtLb12Qx.png" alt="image-20210323170239305"></p>
+<p>7.修改完成之后 点击【分析设计】<img src="https://i.loli.net/2021/03/23/3U8KjuVGfwesbph.jpg" alt="img"></p>
+<ul>
+<li>找到“资金管理平台” 点击打开《资金管理平台》故事板</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/fqezwSFVpP8kMjs.png" alt="image-20210323170314534"></p>
+<p>8.点击上方菜单栏 可视化-&gt;新建 控件</p>
+<p><img src="https://i.loli.net/2021/03/23/XrMExZsAoHgbwTO.png" alt="image-20210323170328336"></p>
+<p>9.选择数据源<br> 选择数据集 &gt; 虔东稀土BI项目正式数据集 &gt; 试点开发阶段 &gt; 财务 &gt; 资金管理收入成本(数据集)</p>
+<p><img src="https://i.loli.net/2021/03/23/E4zpxDGMFWVUiJk.png" alt="image-20210323170339161"></p>
+<p><img src="https://i.loli.net/2021/03/23/mxYtivAX3fdGjpQ.png" alt="image-20210323170344286"></p>
+<p>9.点击确定进入 &lt;可视化&gt; 界面</p>
+<p><img src="https://i.loli.net/2021/03/23/mXeU8OlDYLrJ64s.png" alt="image-20210323170357662"></p>
+<ul>
+<li>展开 + 指标 将“金额”拖拽到右边 “指标” 行, 这里选金额字段（这是收入）</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/23/agSKNbeBP6QXHnt.png" alt="image-20210323170439923"></p>
+<p><img src="https://i.loli.net/2021/03/23/MS7ZUEp1ex5vG3Y.png" alt="image-20210323170446616"></p>
+<p>10.点击 指标 “求和(金额)” 的小箭头 ，选择: 数据格式</p>
+<p><img src="https://i.loli.net/2021/03/23/uNW2EACDfTi1zZF.png" alt="image-20210323170458919"></p>
+<blockquote>
+<p>修改数据显示格式<br>缩放率: 10000 (代表除以1万)<br>前导符：空<br>后导符：万<br>千分位：启动<br>小数位：2<br>修改后显示为：<img src="https://i.loli.net/2021/03/23/bkPDZcqAR8MlFdo.png" alt="image-20210323170525368"></p>
+</blockquote>
+<p>11.点击右上角的保存<img src="https://i.loli.net/2021/03/23/hysT7Jzwa9p2LqQ.jpg" alt="img">, 然后 点退出。</p>
+<p>12.回到资金管理平台主界面</p>
+<p><img src="https://i.loli.net/2021/03/23/GpEeqJCorBVTxy6.png" alt="image-20210323170548885"></p>
+<ul>
+<li><p>标题： 显示 ✔ 去掉</p>
+</li>
+<li><p>背景：透明度 设为0%<img src="https://i.loli.net/2021/03/23/zlJRmLneXjTp2oE.jpg" alt="img"></p>
+</li>
+<li><p>边框： 显示 ✔ 去掉</p>
+</li>
+<li><p>展开 主指标卡</p>
+<ul>
+<li>指标标题  显示 ✔ 去掉</li>
+<li>指标数值 文字 大小 改为 21<img src="https://i.loli.net/2021/03/23/GKos9RwAxuZFN7Q.png" alt="image-20210323170627949"><img src="https://i.loli.net/2021/03/23/93hcYAKDkZzBmsb.png" alt="image-20210323170634297"></li>
+<li>文字与边框的间距通过 位置 上、下、左、右 控制，全部调整为0，让它居中。</li>
+</ul>
+</li>
+</ul>
+<p>13.调整整个文字框大小合适，移动到“收入”文字旁边对齐</p>
+<p><img src="https://i.loli.net/2021/03/23/Myi7n4TYfKUQPpL.png" alt="image-20210323170700659"></p>
+<p>14.点击保存<img src="https://i.loli.net/2021/03/23/cSALCidDlg7anbt.jpg" alt="img"> 下一步同样处理 “成本”。</p>
+<p>15.设置 “营销单元” 查询过滤条件</p>
+<p><img src="https://i.loli.net/2021/03/23/WJ2dik8oeVAbBzh.png" alt="image-20210323170719680"></p>
+<ul>
+<li>点击“营销单元” -&gt;  点击控制范围 设置</li>
+</ul>
+<p>16.<img src="https://i.loli.net/2021/03/23/UQdZMAay7OEBGsL.png" alt="image-20210323170732539"></p>
+<ul>
+<li>下拉到【资金管理_资金管理费用】模块<ul>
+<li>【新建可视化】选择 部门，精确匹配</li>
+</ul>
+</li>
+<li>拉到【资金管理收入成本】模块<ul>
+<li>【成本可视化】第一栏 选择 营销单元，精确匹配</li>
+<li>【收入可视化】第二栏 选择 营销单元，精确匹配</li>
+</ul>
+</li>
+</ul>
+<p>17.最后点击<img src="https://i.loli.net/2021/03/23/cig6o4KROSImJQf.jpg" alt="img"></p>
+<p><img src="https://i.loli.net/2021/03/23/g82QkDy1T4XENap.png" alt="image-20210323170836887"></p>
+<h5 id="完成"><a href="#完成" class="headerlink" title="完成!"></a>完成!</h5>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/23/%E7%94%A8%E5%8F%8B%E5%88%86%E6%9E%90%E4%BA%91%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-客户投诉单修改可编辑字段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -190,10 +510,16 @@
 <p>在单据模块 qc/src/client中新建包<br>“nc.ui.qc.qc_custcomplaints.ace.handler”<br>然后再新建AceHeadTailBeforeEditHandler.java</p>
 <p>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。</p>
 <p>qc/src/private 是接口实现类 放本地实现公共接口的具体操作。</p>
-<h2 id="二、《改进措施指令单》"><a href="#二、《改进措施指令单》" class="headerlink" title="二、《改进措施指令单》"></a>二、《改进措施指令单》</h2><h3 id="1-说明-1"><a href="#1-说明-1" class="headerlink" title="1.说明"></a>1.说明</h3><p>菜单 质量管理 –&gt; 客户投诉 –&gt; 改进措施指令单</p>
+<h2 id="二、《改进措施指令单》"><a href="#二、《改进措施指令单》" class="headerlink" title="二、《改进措施指令单》"></a>二、《改进措施指令单》</h2><h3 id="1-说明-1"><a href="#1-说明-1" class="headerlink" title="1.说明"></a>1.说明</h3><ul>
+<li>菜单 质量管理 –&gt; 客户投诉 –&gt; 改进措施指令单</li>
+</ul>
 <h3 id="2-截图-1"><a href="#2-截图-1" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/03/22/djOLIHvT5fEhlgu.png" alt="image-20210322165942093"></p>
-<h3 id="3-功能-1"><a href="#3-功能-1" class="headerlink" title="3.功能"></a>3.功能</h3><p>制单人 新建/修改时<br>【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、</p>
-<p>【措施计划完成日期】、【整改验证情况】6个栏位不可编辑</p>
+<h3 id="3-功能-1"><a href="#3-功能-1" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li><p>制单人 新建/修改时<br>【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、</p>
+</li>
+<li><p>【措施计划完成日期】、【整改验证情况】6个栏位不可编辑</p>
+</li>
+</ul>
 <h3 id="4-实现-1"><a href="#4-实现-1" class="headerlink" title="4.实现"></a>4.实现</h3><p>1.查找对应单据所在的模块,java file. 通过“功能注册”</p>
 <p><img src="https://i.loli.net/2021/03/22/hRErav8N4ex5kdy.png" alt="image-20210322170015080"></p>
 <p>2.在 参数注册 tab页，复制 参数值 </p>
@@ -236,7 +562,9 @@
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 事件监听newadd --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;bmModelEventMediator&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.model.AppEventHandlerMediator&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>将以下代码COPY到该<bean>节点下面</p>
+<ul>
+<li>将以下代码COPY到该<bean>节点下面</li>
+</ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 表头表尾字段编辑前事件 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.EventHandlerGroup&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;event&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.card.CardHeadTailBeforeEditEvent&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handler&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.qc_approveaction.ace.handler.AceHeadTailBeforeEditHandler&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>4.创建Java文件<em><strong>AceHeadTailBeforeEditHandler.java</strong></em></p>
@@ -1256,129 +1584,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/16/images/practice01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2021-03-11T02:34:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>———-2021-3-5——–<br>1.建设subversion  192.168.192.68 在BIServer<br>2.数据导入 &gt;&gt; 收款计划管理</p>
-<p><a target="_blank" rel="noopener" href="https://fast-fish.me/user/tutorial?os=windows&amp;client=netch##">https://fast-fish.me/user/tutorial?os=windows&amp;client=netch##</a>  –fast fish 10y/m</p>
-<p>———-2021-3-8——–<br>1.来访信息管理，复制按钮取消复制 单据编号，单据日期，出厂信息，入厂信息.</p>
-<p>———-2021-3-9——–<br>1.基建机电项目立项审批 增加两个栏位[安全风险及预防措施] 、[环境影响及预防措施] 并撰写操作手册 “F:\WJLWork\Doc\NC卡片模板调整步骤.doc”<br>stisla-master [bootstrap html template] =&gt; <a target="_blank" rel="noopener" href="https://github.com/stisla/stisla">https://github.com/stisla/stisla</a><br>yarn [javaScript包管理工具] 博客学习资料 =&gt; <a target="_blank" rel="noopener" href="https://blog.csdn.net/x550392236/article/details/79205812">https://blog.csdn.net/x550392236/article/details/79205812</a></p>
-<p>/<em>设置git 不启用ssl安全链接, 缓冲区大小调大</em>/<br>git config http.sslVerify “false”<br>git config –global https.postBuffer 5242880000</p>
-<p>———-2021-3-10——–</p>
-<p>X 元数据样式为NC传统样式<br>IBDObject 主键问题<br>pk_org 主键未设置</p>
-<p>npx simple-server</p>
-<p>The return types are incompatible for the inherited methods IBill.getMetaData(), SuperVO.getMetaData()</p>
-<p>———-2021-3-11——–<br>创建一张单据卡片”产品开发改进情况进度跟踪表”</p>
-<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="用友UC卡片单据修改说明"><a href="#用友UC卡片单据修改说明" class="headerlink" title="用友UC卡片单据修改说明"></a>用友UC卡片单据修改说明</h2><h3 id="1-需求说明："><a href="#1-需求说明：" class="headerlink" title="1.需求说明："></a>1.需求说明：</h3><p>安环部领导提出需要在项目实施申报单中添加两个审批字段:</p>
-<p>1.项目可能存在的安全风险、职业危害及降低安全风险、职业危害的初步措施</p>
-<p>2.项目可能造成的环境影响及降低环境影响的初步措施</p>
-<p><img src="https://i.loli.net/2021/03/11/nDxHV7ai8CS3O2Q.jpg" alt="项目实施申请表"></p>
-<h3 id="2-操作说明"><a href="#2-操作说明" class="headerlink" title="2.操作说明"></a>2.操作说明</h3><h4 id="一、菜单-Path"><a href="#一、菜单-Path" class="headerlink" title="一、菜单 Path"></a>一、菜单 Path</h4><p>a) 功能导航–&gt;项目管理–&gt;立项管理–&gt;基建机电项目立项审批</p>
-<h4 id="二、模板-Path-修改界面模板"><a href="#二、模板-Path-修改界面模板" class="headerlink" title="二、模板 Path (修改界面模板)"></a>二、模板 Path (修改界面模板)</h4><p>a) 功能导航–&gt;动态建模平台–&gt;客户化配置–&gt;模板设置-集团</p>
-<h6 id="b-模板设置-集团"><a href="#b-模板设置-集团" class="headerlink" title="b) 模板设置-集团 "></a>b) 模板设置-集团 <img src="https://i.loli.net/2021/03/11/VbOUvIEsyDT9Phi.jpg" alt="模板设置-集团"></h6><h6 id="c-单据模板"><a href="#c-单据模板" class="headerlink" title="c) 单据模板"></a>c) 单据模板<img src="https://i.loli.net/2021/03/11/9sT8uYR2kOrDyEc.jpg" alt="img"></h6><h6 id="d-点击【修改】按钮"><a href="#d-点击【修改】按钮" class="headerlink" title="d) 点击【修改】按钮"></a>d) 点击【修改】按钮</h6><p><img src="https://i.loli.net/2021/03/11/9sT8uYR2kOrDyEc.jpg" alt="img"></p>
-<p>e) 找到模板卡片上的【自定义项18】、【自定义项19】两栏，修改为【安全风险及预防措施】、【环境影响及预防措施】</p>
-<p><img src="https://i.loli.net/2021/03/11/8nHE3uQ9OcWp5U4.jpg" alt="img"></p>
-<p>f) 在面板右边空白处点击右键选择【增加自定义项】</p>
-<p><img src="https://i.loli.net/2021/03/11/xelKCNFhqGPg6IW.jpg" alt="img"></p>
-<p>i. 输入项目主键1：”aqfx”</p>
-<p><img src="https://i.loli.net/2021/03/11/7cfH8JZAg4QWrEv.jpg" alt="img"></p>
-<p>在左下角“显示属性”页签中修改【显示名称】为“安全风险及预防措施”</p>
-<p><img src="https://i.loli.net/2021/03/11/jez37AT5xLCOK1U.jpg" alt="img"></p>
-<p>“高级属性”页签中修改【数据类型】为“大文本”</p>
-<p><img src="https://i.loli.net/2021/03/11/u6Rkvz7OHwGXt9C.jpg" alt="img"></p>
-<h6 id="【编辑公式】"><a href="#【编辑公式】" class="headerlink" title="【编辑公式】"></a>【编辑公式】</h6><p>“hdef18-&gt;aqfx” 意思为把aqfx栏位的数据保存到hdef18字段中</p>
-<h6 id="点击【确定】"><a href="#点击【确定】" class="headerlink" title="点击【确定】"></a>点击【确定】</h6><p><img src="https://i.loli.net/2021/03/11/tz9qRoAykHKNnP7.jpg" alt="img"></p>
-<h6 id="【显示公式】"><a href="#【显示公式】" class="headerlink" title="【显示公式】"></a>【显示公式】</h6><p>“getcolvalue(pm_projectbuild, hdef18, pk_projectbuild, pk_projectbuild)”<br>意思为 该栏位在显示数据时，从数据库表<code>pm_projectbuild</code>中取出<code>hdef18</code>字段, where 字段<code>pk_projectbuild</code> = 表单上的<code>pk_projectbuild</code></p>
-<h6 id="点击【确定】-1"><a href="#点击【确定】-1" class="headerlink" title="点击【确定】"></a>点击【确定】</h6><p><img src="https://i.loli.net/2021/03/11/6khSG89JfgQUmcx.jpg" alt="img"></p>
-<h6 id="ii-输入项目主键2：”hjyx”"><a href="#ii-输入项目主键2：”hjyx”" class="headerlink" title="ii. 输入项目主键2：”hjyx”"></a>ii. 输入项目主键2：”hjyx”</h6><p><img src="https://i.loli.net/2021/03/11/2FQ9VMUOPETlwqi.jpg" alt="img"></p>
-<p>在左下角“显示属性”页签中修改【显示名称】为“安全风险及预防措施”</p>
-<p><img src="https://i.loli.net/2021/03/11/mukApCDT6MrxQVg.jpg" alt="img"></p>
-<p>“高级属性”页签中修改【数据类型】为“大文本”</p>
-<p><img src="https://i.loli.net/2021/03/11/E2LRq9rakV6hX5W.jpg" alt="img"></p>
-<h6 id="【编辑公式】-1"><a href="#【编辑公式】-1" class="headerlink" title="【编辑公式】"></a>【编辑公式】</h6><p>“hdef19-&gt;hjyx” 意思为把hjyx栏位的数据保存到hdef19字段中</p>
-<h6 id="点击【确定】-2"><a href="#点击【确定】-2" class="headerlink" title="点击【确定】"></a>点击【确定】</h6><p><img src="https://i.loli.net/2021/03/11/oLaZpli9FCBts67.jpg" alt="img"></p>
-<h6 id="【显示公式】-1"><a href="#【显示公式】-1" class="headerlink" title="【显示公式】"></a>【显示公式】</h6><p>“getcolvalue(pm_projectbuild, hdef19, pk_projectbuild, pk_projectbuild)”<br>意思为 该栏位在显示数据时，从数据库表<code>pm_projectbuild</code>中取出<code>hdef19</code>字段, where 字段<code>pk_projectbuild</code> = 表单上的<code>pk_projectbuild</code></p>
-<h6 id="点击【确定】-3"><a href="#点击【确定】-3" class="headerlink" title="点击【确定】"></a>点击【确定】</h6><p><img src="https://i.loli.net/2021/03/11/Uk2Q4x8HgsLt1DW.jpg" alt="img"></p>
-<h6 id="iii-最后点击【保存模板】"><a href="#iii-最后点击【保存模板】" class="headerlink" title="iii. 最后点击【保存模板】"></a>iii. 最后点击【保存模板】</h6><p><img src="https://i.loli.net/2021/03/11/24KolYMk9jp3tSn.jpg" alt="img"></p>
-<p>三、用户自定义属性设置 （由于我们用了自定义项来作为业务字段，需要在用户自定义属性中做设置）</p>
-<p>a) 功能导航–&gt;动态建模平台–&gt;基础数据–&gt;用户自定义属性设置-集团</p>
-<p><img src="https://raw.githubusercontent.com/wjl5891/img/master/wps2178.tmp.jpg" alt="img"></p>
-<p>将序号【18】【19】自定义属性，显示名称修改为【安全风险及预防措施】、【环境影响及预防措施】. 数据类型修改为【字符串】,长度为【100】.</p>
-<p><img src="https://raw.githubusercontent.com/wjl5891/img/master/wpsE7D9.tmp.jpg" alt="img"></p>
-<p>四、最后在Oracle PL/SQL中找到表[pm_projectbuild] 修改列字段长度.</p>
-<p>Hdef18 = varchar2(2000)</p>
-<p>Hdef19 = varchar2(2000)</p>
-<p><img src="https://raw.githubusercontent.com/wjl5891/img/master/wps74EA.tmp.jpg" alt="img"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
         </p>
       
 
