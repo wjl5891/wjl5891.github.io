@@ -152,6 +152,388 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-单据类型管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/16/%E5%8D%95%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%A1%E7%90%86/">定义单据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/16/%E5%8D%95%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2021-03-16T06:35:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="新创建的单据，需要在NC中定义单据类型"><a href="#新创建的单据，需要在NC中定义单据类型" class="headerlink" title="新创建的单据，需要在NC中定义单据类型"></a>新创建的单据，需要在NC中定义单据类型</h3><hr>
+<p>如下图：</p>
+<p><img src="https://i.loli.net/2021/03/16/rGz9IJgmfU8qjl2.jpg" alt="img"></p>
+<p>质量管理 ([^可在左边面板直接输入“质量管理”自动定位])</p>
+<ul>
+<li>列表显示</li>
+<li>按【增加】按钮</li>
+<li>类型代码=“CPGZ”</li>
+<li>类型名称=“产品情况跟踪”</li>
+<li>节点编码=“48006005006”</li>
+<li><input checked="" disabled="" type="checkbox"> 是否可扩展交易类型 </li>
+<li>元数据组件 pim_track</li>
+</ul>
+<img src="https://i.loli.net/2021/03/16/Vqy5nMAUZ13WF8I.png" alt="image-20210316142625714" style="zoom: 80%;" />
+
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 是否支持审批流定义</li>
+<li><input checked="" disabled="" type="checkbox"> 可编辑单据属性</li>
+<li><input checked="" disabled="" type="checkbox"> 是否支持交易类型编码规则</li>
+<li>下游单据类型</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">下游单据类型</th>
+<th align="center">是否流程中</th>
+<th align="center">是否跨集团</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">4D11</td>
+<td align="center">[  ]</td>
+<td align="center">[√]</td>
+</tr>
+</tbody></table>
+ <img src="https://i.loli.net/2021/03/16/NvkPwhGrOSznV82.png" alt="image-20210316143142388" style="zoom:80%;" />
+
+<h4 id="单据类型管理：-lt-用于在单据模板初始化-gt-时可以提供面板选择"><a href="#单据类型管理：-lt-用于在单据模板初始化-gt-时可以提供面板选择" class="headerlink" title="单据类型管理：&lt;用于在单据模板初始化&gt;时可以提供面板选择."></a>单据类型管理：&lt;用于在单据模板初始化&gt;时可以提供面板选择.</h4><p><img src="https://i.loli.net/2021/03/18/h7c9YveHKrnJjMd.jpg" alt="img"></p>
+<h4 id="交易类型管理-lt-理解为业务类型-gt-每种单据都应该有自己的业务类型，可自义定，在如下界面设置"><a href="#交易类型管理-lt-理解为业务类型-gt-每种单据都应该有自己的业务类型，可自义定，在如下界面设置" class="headerlink" title="交易类型管理: &lt;理解为业务类型&gt; 每种单据都应该有自己的业务类型，可自义定，在如下界面设置:"></a>交易类型管理: &lt;理解为业务类型&gt; 每种单据都应该有自己的业务类型，可自义定，在如下界面设置:</h4><p><img src="https://i.loli.net/2021/03/18/dQD6bESvxlfZ5UV.jpg" alt="img"></p>
+<p>单据类型是“采购合同”，它可以有很多种交易类型如：“内部交易”、“进口交易”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">IWorkflowService iW = NCLocator.getInstance().lookup(</span><br><span class="line">			    IWorkflowService.class);</span><br><span class="line">List list = iW.getEditablePreoperties(AppContext.getInstance()</span><br><span class="line">			    .getPkUser(), <span class="string">&quot;CPGZ-Cxx-001&quot;</span>, bill.getPrimaryKey(), <span class="number">2</span>);</span><br><span class="line"><span class="comment">//CPGZ-Cxx-001是交易类型</span></span><br><span class="line">	<span class="keyword">if</span> (MMValueCheck.isNotEmpty(list)) &#123;</span><br><span class="line">			List&lt;String&gt; lHeadItems = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上代码的作用为通过“单据交易类型”查找到所含的审批流 可编辑字段.</p>
+</blockquote>
+<ul>
+<li>交易类型管理  新增 交易类型编码</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/18/KuEtLRfHzVW6UQ9.jpg" alt="img"></p>
+<ul>
+<li><p>输入 CPGZ 查询到 “产品改进情况” 单据编码</p>
+</li>
+<li><p>点击【新增】增加一行编码</p>
+</li>
+<li><p><img src="https://i.loli.net/2021/03/18/F8s9lvyuOKPxG3H.jpg" alt="img"></p>
+</li>
+<li><p>编码:输入 ‘CPGZ-Cxx-001’  名称: 输入 ‘普通’</p>
+</li>
+<li><p>点击 【保存】</p>
+</li>
+<li><p>回到单据模板初始化</p>
+</li>
+<li><p><img src="https://i.loli.net/2021/03/18/ohn9kVNB6sZ8Ifq.jpg" alt="img"></p>
+</li>
+<li><p>在 单据类型 栏位 填入编码’CPGZ’ </p>
+</li>
+<li><p>在 交易类型PK 栏位 通过自定义项 ‘CPGZ-Cxx-001’ 带出 ‘普通’</p>
+</li>
+<li><p> 在 交易类型 栏位 填入编码’CPGZ-Cxx-001’</p>
+</li>
+<li><p>并且把以上三个栏位 改为不显示。</p>
+</li>
+<li><p>[审批批语]、[来源单据]、 [来源单据id] 不显示。(因为没有上游单据)</p>
+</li>
+<li><p>[集团]、[组织]、[组织版本] 不显示。</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/18/FWefpmPdaBcI2hU.jpg" alt="img"></p>
+<ul>
+<li><p>单据模板初始化： 表尾的[制单人]、[制单时间]、[创建人]、[创建时间]、[修改人]、[修改时间]、[审批人]、[审批时间]、[审批批语] 全部不可编辑。</p>
+</li>
+<li><p>操作方式： 右键点击表尾Panel</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/18/bMPa5WzHsKJpV94.jpg" alt="img"></p>
+<ul>
+<li>选择 [页签项目编辑] </li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/18/yFTmUDflxqocH6v.jpg" alt="img"></p>
+<ul>
+<li>将【能否编辑】一栏 全部取消勾选。</li>
+</ul>
+<h6 id="在Java中给【制单时间】赋值-当前日期的方法："><a href="#在Java中给【制单时间】赋值-当前日期的方法：" class="headerlink" title="在Java中给【制单时间】赋值 当前日期的方法："></a>在Java中给【制单时间】赋值 当前日期的方法：</h6><p>打开文件nc.ui.qc.pim_track.ace.handler.AceAddHandler</p>
+<p><img src="https://i.loli.net/2021/03/18/wXM6kfZ9DayshWp.jpg" alt="img"></p>
+<p>添加代码<br>    <code>panel.setTailItem(&quot;maketime&quot;, new UFDateTime()); </code><br>即可。</p>
+<blockquote>
+<p>该类在xml中的配置:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 事件监听newadd --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;bmModelEventMediator&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.model.AppEventHandlerMediator&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;model&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;bmModel&quot;</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handlerGroup&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- nc.ui.pubapp.uif2app.event.OrgChangedEvent --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.EventHandlerGroup&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;event&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.OrgChangedEvent&quot;</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handler&quot;</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.handler.AceOrgChangeHandler&quot;</span> &gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;billForm&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;billForm&quot;</span> /&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- nc.ui.pubapp.uif2app.event.billform.AddEvent --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.EventHandlerGroup&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;event&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.billform.AddEvent&quot;</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handler&quot;</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.handler.AceAddHandler&quot;</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- 表头表尾字段编辑前事件 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.EventHandlerGroup&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;event&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.card.CardHeadTailBeforeEditEvent&quot;</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handler&quot;</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.handler.AceHeadTailBeforeEditHandler&quot;</span> /&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/16/%E5%8D%95%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%A1%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-images/practice01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/16/images/practice01/">Practice</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/16/images/practice01/" class="archive-article-date">
+  	<time datetime="2021-03-16T02:04:54.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><h1 id="我展示的是一级标题"><a href="#我展示的是一级标题" class="headerlink" title="我展示的是一级标题"></a>我展示的是一级标题</h1><p>我展示的是二级标题</p>
+<hr>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h6 id="Runoob-com"><a href="#Runoob-com" class="headerlink" title="Runoob.com"></a>Runoob.com</h6><h6 id="Google-com"><a href="#Google-com" class="headerlink" title="Google.com"></a>Google.com</h6><p><em>斜体文本</em></p>
+<p><em><font color="#FF7F50" size="4">习题文本</font></em></p>
+<p><strong>粗体文本</strong></p>
+<p>第一行</p>
+<hr>
+<p>第二行 </p>
+<hr>
+<hr>
+<hr>
+<p>第三行内容</p>
+<p><u>trtr 飒飒</u></p>
+<table><tr><td bgcolor=#D1EEEE>第四行结果</td></tr></table>
+
+<p><del>第五行要求啊</del></p>
+<p>[^Run object]:菜鸟教程 – 学的不仅是技术，更是梦想</p>
+<div style="background-color:C0FF3E">
+    1.茄子
+    2.菠萝
+</div>
+
+<ol>
+<li>春天</li>
+<li>夏季</li>
+<li>秋天</li>
+</ol>
+<ul>
+<li><p>香蕉</p>
+</li>
+<li><p>苹果</p>
+</li>
+<li><p>梨</p>
+<ol>
+<li><p>冬天</p>
+<ul>
+<li><p>下雪</p>
+</li>
+<li><p>干燥</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>编号<ul>
+<li>飒飒</li>
+<li>ss</li>
+</ul>
+</li>
+<li>部门</li>
+<li>职务</li>
+<li>姓名</li>
+</ul>
+<p>This is the first line.<br>
+    And this is the second line.
+</p>
+
+<p>love <strong>is</strong> bold</p>
+<blockquote>
+<p>块引用 Blockquotes</p>
+<blockquote>
+<p>源自于《老人与海》</p>
+</blockquote>
+</blockquote>
+<ol>
+<li><p>打开文件。</p>
+</li>
+<li><p>找到代码行21：</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>更新你的网站标题</li>
+</ol>
+<h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">aaa</span> <span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;aaa is fine!&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;firstname&quot;</span> : <span class="string">&quot;John&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;lastname&quot;</span> : <span class="string">&quot;Smith&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;age&quot;</span> : <span class="number">25</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我最喜爱的搜索引擎是 <a target="_blank" rel="noopener" href="https://www.google.cn/">Google Search</a></p>
+<p>程序员最爱的网站 <a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a></p>
+<p>I love supporting the <strong><a target="_blank" rel="noopener" href="https://eff.org/">EFF</a></strong></p>
+<p>This is the <em><a target="_blank" rel="noopener" href="https://www.markdownguide.org/">Markdown Guide</a></em></p>
+<p>See the section  on <a href="#code"><code>code</code></a></p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a></strong></p>
+<p><code>www.example.com</code></p>
+<img src="https://raw.githubusercontent.com/wjl5891/img/master/50da81cb39dbb6fd74bf54830a638510962b3779.jpeg" alt="图片一" style="zoom: 67%;" />
+
+<p>​                                                   打卡记录</p>
+<img src="https://raw.githubusercontent.com/wjl5891/img/master/qk_20210315144410.jpg" alt="An old rock in the deset" style="zoom:50%;" />
+
+<p>​                                                        </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">radio</span> <span class="attr">option</span> =<span class="string">&quot;1&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>立项<span class="tag">&lt;/<span class="name">raido</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">name</span>=<span class="string">&quot;1&quot;</span> <span class="attr">value</span>=<span class="string">1</span>&gt;</span>a</span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">name</span>=<span class="string">&quot;2&quot;</span> <span class="attr">value</span>=<span class="string">2</span>&gt;</span>b</span><br><span class="line"><span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<form>
+
+<p>Gone camping！ :circus_tent: Be back soon.</p>
+<p>That is so funny! :joy: :fax:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">产品</th>
+<th align="center">价格</th>
+<th align="center">型号</th>
+<th align="center">购买</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">笔记本</td>
+<td align="center">7999</td>
+<td align="center">DELL-3579</td>
+<td align="center"><input type="checkbox" name="chkbuy" value="1"></input></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 写信</li>
+<li><input checked="" disabled="" type="checkbox"> 更新网站</li>
+<li><input checked="" disabled="" type="checkbox"> 连接音频</li>
+</ul>
+<p><button name="btnSave" value="Save">保存</button></p>
+<form>
+    <input type="subbmit" value="subbmit"></input> 
+</form>
+
+
+
+<div>aaa is a div</div>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> abba <span class="keyword">where</span> cols<span class="operator">=</span><span class="string">&#x27;aaa&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<!--这里是注释-->
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/16/images/practice01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
