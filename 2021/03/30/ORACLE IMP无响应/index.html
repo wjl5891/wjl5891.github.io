@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Practice | Hexo</title>
+  <title>Oracle impdb 挂起 or 似乎挂机 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello World!我展示的是一级标题我展示的是二级标题  一级标题二级标题三级标题四级标题五级标题六级标题Runoob.comGoogle.com斜体文本 习题文本 粗体文本 第一行  第二行     第三行内容 trtr 飒飒 第四行结果  第五行要求啊 [^Run object]:菜鸟教程 – 学的不仅是技术，更是梦想      1.茄子     2.菠萝    春天 夏季 秋天   香">
+  <meta name="description" content="Oracle数据库执行Imp有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：  Processing object type TABLE_EXPORT&#x2F;TABLE&#x2F;INDEX&#x2F;INDEX  import是否真的在执行？检查 DBA_DATAPUMP_JOBS  123select owner_name, job_name, operation, job_modefrom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Practice">
-<meta property="og:url" content="http://example.com/2021/03/16/images/practice01/index.html">
+<meta property="og:title" content="Oracle impdb 挂起 or 似乎挂机">
+<meta property="og:url" content="http://example.com/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hello World!我展示的是一级标题我展示的是二级标题  一级标题二级标题三级标题四级标题五级标题六级标题Runoob.comGoogle.com斜体文本 习题文本 粗体文本 第一行  第二行     第三行内容 trtr 飒飒 第四行结果  第五行要求啊 [^Run object]:菜鸟教程 – 学的不仅是技术，更是梦想      1.茄子     2.菠萝    春天 夏季 秋天   香">
+<meta property="og:description" content="Oracle数据库执行Imp有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：  Processing object type TABLE_EXPORT&#x2F;TABLE&#x2F;INDEX&#x2F;INDEX  import是否真的在执行？检查 DBA_DATAPUMP_JOBS  123select owner_name, job_name, operation, job_modefrom">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/wjl5891/img/master/50da81cb39dbb6fd74bf54830a638510962b3779.jpeg">
-<meta property="og:image" content="https://raw.githubusercontent.com/wjl5891/img/master/qk_20210315144410.jpg">
-<meta property="article:published_time" content="2021-03-16T02:04:54.133Z">
-<meta property="article:modified_time" content="2021-03-29T06:02:58.942Z">
+<meta property="article:published_time" content="2021-03-30T01:17:00.000Z">
+<meta property="article:modified_time" content="2021-03-30T07:42:30.014Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Oracle">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/wjl5891/img/master/50da81cb39dbb6fd74bf54830a638510962b3779.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,173 +155,117 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-images/practice01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ORACLE IMP无响应" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Practice
+      Oracle impdb 挂起 or 似乎挂机
     </h1>
   
 
         
-        <a href="/2021/03/16/images/practice01/" class="archive-article-date">
-  	<time datetime="2021-03-16T02:04:54.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
+        <a href="/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/" class="archive-article-date">
+  	<time datetime="2021-03-30T01:17:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><h1 id="我展示的是一级标题"><a href="#我展示的是一级标题" class="headerlink" title="我展示的是一级标题"></a>我展示的是一级标题</h1><p>我展示的是二级标题</p>
-<hr>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h6 id="Runoob-com"><a href="#Runoob-com" class="headerlink" title="Runoob.com"></a>Runoob.com</h6><h6 id="Google-com"><a href="#Google-com" class="headerlink" title="Google.com"></a>Google.com</h6><p><em>斜体文本</em></p>
-<p><em><font color="#FF7F50" size="4">习题文本</font></em></p>
-<p><strong>粗体文本</strong></p>
-<p>第一行</p>
-<hr>
-<p>第二行 </p>
-<hr>
-<hr>
-<hr>
-<p>第三行内容</p>
-<p><u>trtr 飒飒</u></p>
-<table><tr><td bgcolor=#D1EEEE>第四行结果</td></tr></table>
-
-<p><del>第五行要求啊</del></p>
-<p>[^Run object]:菜鸟教程 – 学的不仅是技术，更是梦想</p>
-<div style="background-color:C0FF3E">
-    1.茄子
-    2.菠萝
-</div>
-
-<ol>
-<li>春天</li>
-<li>夏季</li>
-<li>秋天</li>
-</ol>
-<ul>
-<li><p>香蕉</p>
-</li>
-<li><p>苹果</p>
-</li>
-<li><p>梨</p>
-<ol>
-<li><p>冬天</p>
-<ul>
-<li><p>下雪</p>
-</li>
-<li><p>干燥</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>编号<ul>
-<li>飒飒</li>
-<li>ss</li>
-</ul>
-</li>
-<li>部门</li>
-<li>职务</li>
-<li>姓名</li>
-</ul>
-<p>This is the first line.<br>
-    And this is the second line.
-</p>
-
-<p>love <strong>is</strong> bold</p>
+        <h2 id="Oracle数据库执行Imp"><a href="#Oracle数据库执行Imp" class="headerlink" title="Oracle数据库执行Imp"></a>Oracle数据库执行Imp</h2><p>有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：</p>
 <blockquote>
-<p>块引用 Blockquotes</p>
+<p>Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX</p>
+</blockquote>
+<p>import是否真的在执行？检查 DBA_DATAPUMP_JOBS </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> owner_name, job_name, operation, job_mode</span><br><span class="line"><span class="keyword">from</span> dba_datapump_jobs </span><br><span class="line"><span class="keyword">where</span> state<span class="operator">=</span><span class="string">&#x27;EXECUTING&#x27;</span> ;</span><br></pre></td></tr></table></figure>
+
+<p>返回如下信息：</p>
 <blockquote>
-<p>源自于《老人与海》</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OWNER_NAME JOB_NAME           OPERATION JOB_MODE</span><br><span class="line">---------- ------------------ --------- --------</span><br><span class="line">DUNBARNOR  SYS_IMPORT_FULL_01 IMPORT    FULL</span><br></pre></td></tr></table></figure>
+
+
 </blockquote>
+<p>如上我们看到有一个import工作在执行，这是个不错的信息，我们有哪些会话在执行这个任务呢？</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> owner_name, job_name, session_type </span><br><span class="line"><span class="keyword">from</span> dba_datapump_sessions;</span><br></pre></td></tr></table></figure>
+
+<p>返回如下信息：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">OWNER_NAME JOB_NAME           SESSION_TYPE</span><br><span class="line">---------- ------------------ -------------</span><br><span class="line">SYS  		SYS_IMPORT_FULL_06 DBMS_DATAPUMP</span><br><span class="line">SYS  		SYS_IMPORT_FULL_06 MASTER</span><br><span class="line">SYS  		SYS_IMPORT_FULL_06 WORKER</span><br></pre></td></tr></table></figure>
 </blockquote>
-<ol>
-<li><p>打开文件。</p>
-</li>
-<li><p>找到代码行21：</p>
-</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>更新你的网站标题</li>
-</ol>
-<h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">aaa</span> <span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&quot;aaa is fine!&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面的结果可以看到，我们有一个主会话， 和一些工作单元。 我们执行sh imp.sh脚本中指定任务工作单元数是8个 `parallel=8。</p>
+<p>但是他们真的在执行工作吗？</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> v.status, v.sid,v.serial#,io.block_changes,event </span><br><span class="line"><span class="keyword">from</span> v$sess_io io, v$session v </span><br><span class="line"><span class="keyword">where</span> io.sid <span class="operator">=</span> v.sid </span><br><span class="line"><span class="keyword">and</span> v.saddr <span class="keyword">in</span> (</span><br><span class="line">    <span class="keyword">select</span> saddr </span><br><span class="line">    <span class="keyword">from</span> dba_datapump_sessions</span><br><span class="line">) <span class="keyword">order</span> <span class="keyword">by</span> sid;</span><br></pre></td></tr></table></figure>
 
+<p>返回如下信息：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATUS SID  SERIAL# BLOCK_CHANGES EVENT</span><br><span class="line">------ ---- ------- ------------- --------------------------------------------</span><br><span class="line">ACTIVE 45   27      197679        enq: TM - contention </span><br><span class="line">ACTIVE 324  431     5484          wait for unread message on broadcast channel</span><br><span class="line">ACTIVE 614  89      15406         statement suspended, wait error to be cleared</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>任务确实被挂起了！</p>
+<p>让我们检查一下数据导入任务会话模块的详细情况：</p>
+<p><em>因篇幅有限，截取前30个sql_text文本内容</em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> s.sid, s.module, s.state, </span><br><span class="line">       substr(s.event, <span class="number">1</span>, <span class="number">21</span>) <span class="keyword">as</span> event,</span><br><span class="line">       s.seconds_in_wait <span class="keyword">as</span> secs, </span><br><span class="line">       substr(sql.sql_text, <span class="number">1</span>, <span class="number">30</span>) <span class="keyword">as</span> sql_text</span><br><span class="line"><span class="keyword">from</span> v$session s</span><br><span class="line"><span class="keyword">join</span> v$<span class="keyword">sql</span> <span class="keyword">sql</span> <span class="keyword">on</span> sql.sql_id <span class="operator">=</span> s.sql_id</span><br><span class="line"><span class="keyword">where</span> s.module <span class="keyword">like</span> <span class="string">&#x27;Data Pump%&#x27;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> s.module, s.sid;</span><br></pre></td></tr></table></figure>
 
+<p>返回如下信息：</p>
+<blockquote>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SID   MODULE            STATE    EVENT                  SECS SQL_TEXT</span><br><span class="line">----  ----------------  -------  ---------------------  ---- --------------------------------------</span><br><span class="line">614   Data Pump Master  WAITING  enq: TM - contention   5343  UPDATE &quot;SYS&quot;.&quot;SYS_IMPORT_FULL_06&quot; SET</span><br><span class="line">45    Data Pump Worker  WAITING  statement suspended    2     BEGIN    SYS.KUPW$WORKER.MAIN(&#x27;SYS_IM</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><em><strong>enq:TM - contention 表示事务上的等待事件</strong></em> ,锁争夺的解决!</p>
+<!--查看被锁定的表-->
 
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;firstname&quot;</span> : <span class="string">&quot;John&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;lastname&quot;</span> : <span class="string">&quot;Smith&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;age&quot;</span> : <span class="number">25</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我最喜爱的搜索引擎是 <a target="_blank" rel="noopener" href="https://www.google.cn/">Google Search</a></p>
-<p>程序员最爱的网站 <a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a></p>
-<p>I love supporting the <strong><a target="_blank" rel="noopener" href="https://eff.org/">EFF</a></strong></p>
-<p>This is the <em><a target="_blank" rel="noopener" href="https://www.markdownguide.org/">Markdown Guide</a></em></p>
-<p>See the section  on <a href="#code"><code>code</code></a></p>
-<p><strong><a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a></strong></p>
-<p><code>www.example.com</code></p>
-<img src="https://raw.githubusercontent.com/wjl5891/img/master/50da81cb39dbb6fd74bf54830a638510962b3779.jpeg" alt="图片一" style="zoom: 67%;" />
-
-<p>​                                                   打卡记录</p>
-<img src="https://raw.githubusercontent.com/wjl5891/img/master/qk_20210315144410.jpg" alt="An old rock in the deset" style="zoom:50%;" />
-
-<p>​                                                        </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">radio</span> <span class="attr">option</span> =<span class="string">&quot;1&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>立项<span class="tag">&lt;/<span class="name">raido</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">radio</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">name</span>=<span class="string">&quot;1&quot;</span> <span class="attr">value</span>=<span class="string">1</span>&gt;</span>a</span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">name</span>=<span class="string">&quot;2&quot;</span> <span class="attr">value</span>=<span class="string">2</span>&gt;</span>b</span><br><span class="line"><span class="tag">&lt;/<span class="name">radio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<form>
-
-<p>Gone camping！ :circus_tent: Be back soon.</p>
-<p>That is so funny! :joy: :fax:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.owner TABLEOWNER, b.object_name TABLENAME, c.OSUSER LOCKBY,</span><br><span class="line">c.USERNAME LOGINID, c.sid SID, c.SERIAL# SERIAL</span><br><span class="line"><span class="keyword">from</span> v$locked_object a,dba_objects b, v$session c </span><br><span class="line"><span class="keyword">where</span> b.object_id <span class="operator">=</span> a.object_id <span class="keyword">AND</span> a.SESSION_ID <span class="operator">=</span>c.sid; </span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
 <tr>
-<th align="center">产品</th>
-<th align="center">价格</th>
-<th align="center">型号</th>
-<th align="center">购买</th>
+<th>TABLEOWNER</th>
+<th>TABLENAME</th>
+<th>LOCKBY</th>
+<th>LOGINID</th>
+<th>SID</th>
+<th>SERIAL</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">笔记本</td>
-<td align="center">7999</td>
-<td align="center">DELL-3579</td>
-<td align="center"><input type="checkbox" name="chkbuy" value="1"></input></td>
+<td>SYS</td>
+<td>PLAN_TABLE$</td>
+<td>remake</td>
+<td>C##LC007</td>
+<td>3969</td>
+<td>4270</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td>SYS</td>
+<td>PLAN_TABLE$</td>
+<td>remake</td>
+<td>C##LC007</td>
+<td>3983</td>
+<td>20621</td>
+</tr>
+<tr>
+<td>SYS</td>
+<td>SYS_IMPORT_FULL_06</td>
+<td>oracle</td>
+<td>SYS</td>
+<td>1702</td>
+<td>55774</td>
+</tr>
+<tr>
+<td>SYS</td>
+<td>SYS_IMPORT_FULL_06</td>
+<td>oracle</td>
+<td>SYS</td>
+<td>3418</td>
+<td>44680</td>
 </tr>
 </tbody></table>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 写信</li>
-<li><input checked="" disabled="" type="checkbox"> 更新网站</li>
-<li><input checked="" disabled="" type="checkbox"> 连接音频</li>
-</ul>
-<p><button name="btnSave" value="Save">保存</button></p>
-<form>
-    <input type="subbmit" value="subbmit"></input> 
-</form>
+<!--通过SID, SERIAL解锁 -->
 
-
-
-<div>aaa is a div</div>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> abba <span class="keyword">where</span> cols<span class="operator">=</span><span class="string">&#x27;aaa&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<!--这里是注释-->
-
-
-
-
-
+<blockquote>
+<p>alter system kill session ‘SID, SERIAL’; </p>
+</blockquote>
 
       
 
@@ -353,6 +295,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -403,7 +356,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/16/images/practice01/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -417,18 +370,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/16/%E5%8D%95%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/30/%E5%90%88%E9%87%91%E4%BA%A7%E5%93%81%E6%A0%B8%E7%AE%97%E7%B3%BB%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          定义单据类型
+          合金产品核算系数-自定义档案
         
       </div>
     </a>
   
   
-    <a href="/2021/03/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的第一篇博客文章</div>
+    <a href="/2021/03/29/%E8%B4%B9%E7%94%A8%E9%A2%84%E7%AE%97%E6%98%8E%E7%BB%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">费用预算汇总表-承担部门</div>
       <i class="icon-circle-right"></i>
     </a>
   
