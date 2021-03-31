@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-修改时控制栏位不可编辑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/18/%E4%BF%AE%E6%94%B9%E6%97%B6%E6%8E%A7%E5%88%B6%E6%A0%8F%E4%BD%8D%E4%B8%8D%E5%8F%AF%E7%BC%96%E8%BE%91/">控制栏位不可编辑</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/18/%E4%BF%AE%E6%94%B9%E6%97%B6%E6%8E%A7%E5%88%B6%E6%A0%8F%E4%BD%8D%E4%B8%8D%E5%8F%AF%E7%BC%96%E8%BE%91/" class="archive-article-date">
+  	<time datetime="2021-03-18T03:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="点击【修改】按钮时-保存前时通过Java控制栏位不可编辑"><a href="#点击【修改】按钮时-保存前时通过Java控制栏位不可编辑" class="headerlink" title="点击【修改】按钮时 保存前时通过Java控制栏位不可编辑."></a>点击【修改】按钮时 保存前时通过Java控制栏位不可编辑.</h2><h2 id="如-“其他部门”的审批意见"><a href="#如-“其他部门”的审批意见" class="headerlink" title="如 “其他部门”的审批意见:"></a>如 “其他部门”的审批意见:</h2><p><img src="https://i.loli.net/2021/03/18/qxk8nG9XCZtcads.jpg" alt="img"></p>
+<p>可以在java类中进行控制：</p>
+<ul>
+<li><p>先 找到对应的修改前处理类 “AceHeadTailBeforeEditHandler.java”</p>
+</li>
+<li><p><img src="https://i.loli.net/2021/03/18/LDayqKgT6woRmYj.jpg" alt="img"></p>
+</li>
+<li><p><img src="https://i.loli.net/2021/03/18/cid45skOIzGQbJP.jpg" alt="img"></p>
+</li>
+<li><p><code>getTailItem(&quot;billmaker&quot;)</code> ==&gt; 获取表尾的“制单人”</p>
+</li>
+<li><p>接下来把该处理类添加到配置文件XML中 , 添加的位置是</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;bmModelEventMediator&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.model.AppEventHandlerMediator&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;model&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;bmModel&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handlerGroup&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 表头表尾字段编辑前事件 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.EventHandlerGroup&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;event&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.card.CardHeadTailBeforeEditEvent&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handler&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.handler.AceHeadTailBeforeEditHandler&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>		</span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/18/%E4%BF%AE%E6%94%B9%E6%97%B6%E6%8E%A7%E5%88%B6%E6%A0%8F%E4%BD%8D%E4%B8%8D%E5%8F%AF%E7%BC%96%E8%BE%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-未实现业务接口的错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
