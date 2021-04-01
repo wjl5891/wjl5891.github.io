@@ -152,6 +152,104 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-流程生成订单维护" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/01/%E6%B5%81%E7%A8%8B%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E7%BB%B4%E6%8A%A4/">生产订单维护保存前规则</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/01/%E6%B5%81%E7%A8%8B%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E7%BB%B4%E6%8A%A4/" class="archive-article-date">
+  	<time datetime="2021-04-01T07:57:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><blockquote>
+<p>科盈-销售部期望 没有添加附件的销售订单，不要生成生产订单。</p>
+<p>原因生成的生产订单看不了附件。销售订单的附件会随系统自动带入到生产订单（代码中有关联)</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/04/01/z4wWOPoKtsYiAlc.png" alt="image-20210401155704481"></p>
+<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p><code>销售订单维护</code></p>
+<blockquote>
+<p>查询</p>
+</blockquote>
+<ol>
+<li>销售组织：赣州科盈结构陶瓷有限公司</li>
+<li>物料分类：陶瓷结构件<img src="https://i.loli.net/2021/04/01/8vbVmJ4fyuCI6Fz.png" alt="image-20210401162255993" style="zoom:80%;" /></li>
+<li>全选、查询。</li>
+</ol>
+<p><code>实际独立需求处理</code></p>
+<blockquote>
+<p>查询</p>
+<p>点击生成生产订单</p>
+</blockquote>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/04/01/UTa45GRXJzK6Ori.png" alt="image-20210401162416206"></p>
+<p><img src="https://i.loli.net/2021/04/01/xXc7dStqnMCfbl8.png" alt="image-20210401162656352"></p>
+<p><img src="https://i.loli.net/2021/04/01/9R12ruK3apbX6mH.png" alt="image-20210401162736280"></p>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>流程生产订单维护的xml配置文件 <code>nc/ui/mmpac/pmo/pac0002/view/PMO_config.xml</code></li>
+</ul>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1><h6 id=""><a href="#" class="headerlink" title=""></a></h6>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/01/%E6%B5%81%E7%A8%8B%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E7%BB%B4%E6%8A%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-高纯产品成本表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +270,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><center><font size="15"><blod>《高纯产品成本表》</blod></font></center>
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><center><font size="15"><blod>《高纯产品成本表》</blod></font></center><br/>
+
+
+
 
 <center><font size="15"><blod>详细版本</blod></font></center>
 
@@ -554,7 +655,16 @@
 <h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><p>生成报表查询的SQL</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> replace <span class="keyword">view</span> zrzx_gccbftb <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> m.<span class="operator">*</span>, n.sjcl</span><br><span class="line">  <span class="keyword">from</span> (<span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line">          <span class="keyword">from</span> (<span class="keyword">select</span> decode(d.name, <span class="string">&#x27;高纯部&#x27;</span>, m.name, d.name) <span class="keyword">as</span> dept_name,</span><br><span class="line">                       p.yearmth,</span><br><span class="line">                       ft_b.pk_material,</span><br><span class="line">                       <span class="built_in">sum</span>(ft_b.sum) <span class="keyword">as</span> cbje</span><br><span class="line">                  <span class="keyword">from</span> pcto_costbillfromfentan ft</span><br><span class="line">                 <span class="keyword">inner</span> <span class="keyword">join</span> pcto_costbillfromfentan_b ft_b</span><br><span class="line">                    <span class="keyword">on</span> ft.pk_costbillfromfentan <span class="operator">=</span> ft_b.pk_costbillfromfentan</span><br><span class="line">                 <span class="keyword">inner</span> <span class="keyword">join</span> bd_accperiodmonth p</span><br><span class="line">                    <span class="keyword">on</span> ft.def2 <span class="operator">=</span> p.pk_accperiodmonth</span><br><span class="line">                 <span class="keyword">inner</span> <span class="keyword">join</span> org_dept d</span><br><span class="line">                    <span class="keyword">on</span> ft.pk_dept <span class="operator">=</span> d.pk_dept</span><br><span class="line">                   <span class="keyword">and</span> d.code <span class="keyword">like</span> <span class="string">&#x27;10010002%&#x27;</span></span><br><span class="line">                  <span class="keyword">left</span> <span class="keyword">join</span> bd_material m</span><br><span class="line">                    <span class="keyword">on</span> ft.def4 <span class="operator">=</span> m.pk_material</span><br><span class="line">                 <span class="keyword">where</span> ft.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> ft_b.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> p.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">                 <span class="keyword">group</span> <span class="keyword">by</span> decode(d.name, <span class="string">&#x27;高纯部&#x27;</span>, m.name, d.name) ，p.yearmth，ft_b.pk_material</span><br><span class="line">                ) pivot(<span class="built_in">sum</span>(cbje) <span class="keyword">for</span> dept_name <span class="keyword">in</span>(<span class="string">&#x27;高纯综合办&#x27;</span> gc1,</span><br><span class="line">                                                   <span class="string">&#x27;高纯一车间&#x27;</span> gc2,</span><br><span class="line">                                                   <span class="string">&#x27;沉淀工段&#x27;</span> cd,</span><br><span class="line">                                                   <span class="string">&#x27;灼烧工段&#x27;</span> zs,</span><br><span class="line">                                                   <span class="string">&#x27;液碱&#x27;</span> yj,</span><br><span class="line">                                                   <span class="string">&#x27;工业盐酸&#x27;</span> gyys,</span><br><span class="line">                                                   <span class="string">&#x27;工业草酸&#x27;</span> gycs,</span><br><span class="line">                                                   <span class="string">&#x27;精制盐酸&#x27;</span> jzys,</span><br><span class="line">                                                   <span class="string">&#x27;精制草酸&#x27;</span> jzcs))) m</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> a.def2, b.cmaterialoid, <span class="built_in">sum</span>(b.actual_output) <span class="keyword">as</span> sjcl</span><br><span class="line">               <span class="keyword">from</span> pcto_srbill a</span><br><span class="line">              <span class="keyword">inner</span> <span class="keyword">join</span> pcto_srbill_b b</span><br><span class="line">                 <span class="keyword">on</span> a.pk_srbill <span class="operator">=</span> b.pk_srbill</span><br><span class="line">              <span class="keyword">where</span> pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EJU&#x27;</span> <span class="comment">--只需要统计高纯部门的产量</span></span><br><span class="line">                <span class="keyword">and</span> a.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> b.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> a.def2, b.cmaterialoid) n</span><br><span class="line">    <span class="keyword">on</span> m.yearmth <span class="operator">=</span> n.def2</span><br><span class="line">   <span class="keyword">and</span> m.pk_material <span class="operator">=</span> n.cmaterialoid</span><br></pre></td></tr></table></figure>
 
-<h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1>
+<h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1><p><strong>发布报表到主页</strong></p>
+<p><img src="https://i.loli.net/2021/04/01/1zDEmFpfuChiGwq.jpg" alt="img"></p>
+<p><code>管理会计——利润中心交易——成本分摊档案——高纯产品成本表</code></p>
+<p><img src="https://i.loli.net/2021/04/01/29tOkaYAM5W67rH.jpg" alt="img"></p>
+<p>取消勾选 ： 打开即查询</p>
+<p>组织类型：选择 group 集团</p>
+<p>点击：下一步</p>
+<p><img src="https://i.loli.net/2021/04/01/AYeOzftpyTg3chl.jpg" alt="img"></p>
+<p>点击 完成。</p>
+
       
 
       
@@ -831,6 +941,33 @@
 <blockquote>
 <p>alter system kill session ‘SID, SERIAL’; </p>
 </blockquote>
+<p><strong>Import 异常情况</strong></p>
+<blockquote>
+<p>Connected to: Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production<br>ORA-39171: Job is experiencing a resumable wait.<br>Resumable error: ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM<br>Resumable stmt: UPDATE “SYS”.”SYS_IMPORT_FULL_09” SET processing_state = :1, processing_status = :2 WHERE process_order = :3 AND duplicate = 0 AND processing_state = :4 AND processing_status = :5<br>Resumable stmt status: TIMEOUT<br>Resumable stmt start: 03/31/21 17:48:35 stmt suspend: 03/31/21 17:48:35<br>ORA-31694: master table “SYS”.”SYS_IMPORT_FULL_09” failed to load/unload<br>ORA-02354: error in exporting/importing data<br>ORA-30032: the suspended (resumable) statement has timed out<br>ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM</p>
+</blockquote>
+<ul>
+<li><h5 id="提示ORA-01653-无法在SYSTEM表空间扩展空间"><a href="#提示ORA-01653-无法在SYSTEM表空间扩展空间" class="headerlink" title="提示ORA-01653:无法在SYSTEM表空间扩展空间."></a>提示<code>ORA-01653</code>:无法在SYSTEM表空间扩展空间.</h5></li>
+</ul>
+<p><strong>查看表空间使用情况</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.tablespace_name &quot;表空间名&quot;,</span><br><span class="line">total &quot;表空间大小&quot;,</span><br><span class="line"><span class="keyword">free</span> &quot;表空间剩余大小&quot;,</span><br><span class="line">(total <span class="operator">-</span> <span class="keyword">free</span>) &quot;表空间使用大小&quot;,</span><br><span class="line">total <span class="operator">/</span> (<span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span>) &quot;表空间大小(G)&quot;,</span><br><span class="line"><span class="keyword">free</span> <span class="operator">/</span> (<span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span>) &quot;表空间剩余大小(G)&quot;,</span><br><span class="line">(total <span class="operator">-</span> <span class="keyword">free</span>) <span class="operator">/</span> (<span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span>) &quot;表空间使用大小(G)&quot;,</span><br><span class="line">round((total <span class="operator">-</span> <span class="keyword">free</span>) <span class="operator">/</span> total, <span class="number">4</span>) <span class="operator">*</span> <span class="number">100</span> &quot;使用率 %&quot;</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> tablespace_name, <span class="built_in">SUM</span>(bytes) <span class="keyword">free</span></span><br><span class="line"><span class="keyword">FROM</span> dba_free_space</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> tablespace_name) a,</span><br><span class="line">(<span class="keyword">SELECT</span> tablespace_name, <span class="built_in">SUM</span>(bytes) total</span><br><span class="line"><span class="keyword">FROM</span> dba_data_files</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> tablespace_name) b</span><br><span class="line"><span class="keyword">WHERE</span> a.tablespace_name <span class="operator">=</span> b.tablespace_name </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/04/01/eutP7siQrBgfxMI.png" alt="image-20210401082627467"></p>
+<p><strong>查看空间文件大小和位置</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 　　b.file_name 物理文件名,</span><br><span class="line">       　　b.tablespace_name 表空间,</span><br><span class="line">       　　b.bytes <span class="operator">/</span> <span class="number">1024</span> <span class="operator">/</span> <span class="number">1024</span> 大小M,</span><br><span class="line">       　　(b.bytes <span class="operator">-</span> <span class="built_in">sum</span>(nvl(a.bytes, <span class="number">0</span>))) <span class="operator">/</span> <span class="number">1024</span> <span class="operator">/</span> <span class="number">1024</span> 已使用M,</span><br><span class="line">       　　substr((b.bytes <span class="operator">-</span> <span class="built_in">sum</span>(nvl(a.bytes, <span class="number">0</span>))) <span class="operator">/</span> (b.bytes) <span class="operator">*</span> <span class="number">100</span>, <span class="number">1</span>, <span class="number">5</span>) 利用率 　　<span class="keyword">from</span> dba_free_space a,</span><br><span class="line">       dba_data_files b 　　<span class="keyword">where</span> a.file_id <span class="operator">=</span> b.file_id 　　<span class="keyword">group</span> <span class="keyword">by</span> b.tablespace_name,</span><br><span class="line">       b.file_name,</span><br><span class="line">       b.bytes 　　<span class="keyword">order</span> <span class="keyword">by</span> b.tablespace_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/04/01/26cmdL5pN8ylirq.png" alt="image-20210401095647026"></p>
+<blockquote>
+<p>给System表空间增加一个数据文件:</p>
+</blockquote>
+<p><code>alter tablespace system add datafile &#39;/oracle/oradata/orcl/system02.dbf&#39; size 10G ;</code></p>
+<p><code>alter database datafile &#39;/oracle/oradata/orcl/system02.dbf&#39; autoextend on next 128M maxsize unlimited;</code></p>
+<p><strong>设置数据文件自动扩展！</strong></p>
+<hr>
+<p><strong>Import 异常情况2</strong></p>
+<blockquote>
+<p>Processing object type SCHEMA_EXPORT/TABLE/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE<br>Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE<br>Processing object type SCHEMA_EXPORT/VIEW/VIEW<br>Processing object type SCHEMA_EXPORT/VIEW/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/TRIGGER<br>Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS<br>Processing object type SCHEMA_EXPORT/STATISTICS/MARKER</p>
+</blockquote>
+<p>use : exclude=statistics</p>
 
       
 
@@ -965,8 +1102,6 @@
 <ul>
 <li>点击 <strong>保存</strong> 完成<br><img src="https://i.loli.net/2021/03/29/2ZUMfGeh5nTSytv.png" alt="image-20210329144223608"></li>
 </ul>
-<p>[^这是注脚]: this is more description</p>
-<p>go home</p>
 <h2 id="二、测试"><a href="#二、测试" class="headerlink" title="二、测试"></a>二、测试</h2><ul>
 <li>语义模型 –&gt; 预览</li>
 </ul>
@@ -1824,92 +1959,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-按钮事件对应的java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/">按钮点击事件对应的Java类</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/" class="archive-article-date">
-  	<time datetime="2021-03-18T03:17:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://i.loli.net/2021/03/18/SJ2EQWoYBXjdap5.jpg" alt="img"><img src="https://i.loli.net/2021/03/18/ywTSYskmRPirFN9.png" alt="img"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AceAddHandler</span> <span class="keyword">implements</span> <span class="title">IAppEventHandler</span>&lt;<span class="title">AddEvent</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleAppEvent</span><span class="params">(AddEvent e)</span> </span>&#123;</span><br><span class="line">		String pk_group = e.getContext().getPk_group();</span><br><span class="line">		String pk_org = e.getContext().getPk_org();</span><br><span class="line">		BillCardPanel panel = e.getBillForm().getBillCardPanel();</span><br><span class="line">		<span class="comment">// 设置主组织默认值</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_group&quot;</span>, pk_group);</span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_org&quot;</span>, pk_org);</span><br><span class="line">		<span class="comment">// 设置单据状态、单据业务日期默认值</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;approvestatus&quot;</span>, BillStatusEnum.FREE.value());</span><br><span class="line">		<span class="comment">// 设置组织版本</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_org_v&quot;</span>, SoUtil.getPk_vid(pk_org));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>CPGZEditAction.java用于处理修改保存后的事件。以下事件处理过程用于在保存后，审批流程过后 禁用单据上面的字段。 制单人提交后就无法再次修改原单据信息了。</p>
-<p><img src="https://i.loli.net/2021/03/18/SGY2dv4Mpy3gR5D.jpg" alt="img"></p>
-<blockquote>
-<p>pim/src/client/nc/ui/qc/pim_track/ace/action/CPGZEditAction.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">(ActionEvent e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    	<span class="keyword">super</span>.doAction(e);</span><br><span class="line">    	AbstractBill bill = (AbstractBill) <span class="keyword">this</span>.getModel().getSelectedData();</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">null</span> != bill &amp;&amp; bill <span class="keyword">instanceof</span> AggPim_trackform) &#123;</span><br><span class="line">		    BillCardPanel panel = editor.getBillCardPanel();</span><br><span class="line">		    BillItem[] headItems = panel.getHeadItems();</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    NCObject obj = NCObject.newInstance(getModel().getSelectedData());</span><br><span class="line">		    Integer fstatusflag = nc.bs.pubapp.pf.util.ApproveFlowUtil</span><br><span class="line">			    .getBillStatus(obj);</span><br><span class="line">		    <span class="keyword">if</span> (!BillStatusEnum.FREE.equalsValue(fstatusflag)) &#123;</span><br><span class="line">				<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">				    billItem.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">				&#125;			</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    IWorkflowService iW = NCLocator.getInstance().lookup(</span><br><span class="line">			    IWorkflowService.class);</span><br><span class="line">		    List list = iW.getEditablePreoperties(AppContext.getInstance()</span><br><span class="line">			    .getPkUser(), <span class="string">&quot;CPGZ-Cxx-001&quot;</span>, bill.getPrimaryKey(), <span class="number">2</span>); <span class="comment">//CPGZ-Cxx-001是交易类型</span></span><br><span class="line">		    <span class="keyword">if</span> (MMValueCheck.isNotEmpty(list)) &#123;</span><br><span class="line">			List&lt;String&gt; lHeadItems = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">			<span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">			    String item = object.toString();</span><br><span class="line">			 	lHeadItems.add(item);		 </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">			    <span class="keyword">if</span> (lHeadItems.contains(billItem.getKey())) &#123;</span><br><span class="line">				billItem.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">				billItem.getComponent().setBorder(</span><br><span class="line">					<span class="keyword">new</span> LineBorder(Color.red, <span class="number">2</span>));</span><br><span class="line">			    &#125;</span><br><span class="line">			&#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同时在XML配置文件中要配置如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--======= 动作：[newActions] [修改] ===========--&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;editAction&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.action.CPGZEditAction&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;model&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">&quot;bmModel&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;exceptionHandler&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">&quot;exceptionHandler&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/">展开全文 >></a>
         </p>
       
 
