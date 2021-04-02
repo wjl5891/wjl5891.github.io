@@ -152,6 +152,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-机电项目合同" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/02/%E6%9C%BA%E7%94%B5%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C/">基建机电项目合同-报表</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/02/%E6%9C%BA%E7%94%B5%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C/" class="archive-article-date">
+  	<time datetime="2021-04-02T02:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>技术部-刘易平 提出项目总结报表 “合同含税金额” 与 “含税结算额” 数字不同。</p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><img src="https://i.loli.net/2021/04/02/nNezIHCvQU8jqk3.png" alt="image-20210402100955865" style="zoom:80%;" />
+
+<p><img src="https://i.loli.net/2021/04/02/z1y74OvMgYNHi5x.png" alt="image-20210402101252861"></p>
+<p><img src="https://i.loli.net/2021/04/02/8wxdUAvoN6BT4Wg.png" alt="image-20210402101346944"></p>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>项目管理<ul>
+<li>项目看板<ul>
+<li>基建机电项目总览</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/02/%E6%9C%BA%E7%94%B5%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-流程生成订单维护" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -850,7 +937,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Oracle数据库执行Imp"><a href="#Oracle数据库执行Imp" class="headerlink" title="Oracle数据库执行Imp"></a>Oracle数据库执行Imp</h2><p>有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：</p>
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p><strong>在NC6.5做一些操作时，如发布元数据，保存某些单据。会提示错误信息： 索引 无法通过 (在表空间 NNC_INDEX01 中) 扩展</strong></p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox">  错误原因：</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  还原数据库脚本 <strong>imp.sh</strong> 未指定表空间的转换方式</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp sys/oracle@orcl  directory=dir_export  dumpfile=nc65191211.dmp     EXCLUDE=TABLE:\&quot;LIKE\&#x27;%TEMQ_%\&#x27;\&quot;   EXCLUDE=VIEW:\&quot;LIKE\&#x27;%TEMQ_%\&#x27;\&quot;    logfile=nc65191211.log  REMAP_SCHEMA=C##NC6519:C##LC005 REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA TABLE_EXISTS_ACTION = replace parallel=8</span><br></pre></td></tr></table></figure>
+
+<p><strong>REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA</strong><code>此处明确指定了表空间的转换，原表空间NNC_DATA01 导入到新表空间 T5_NNC_DATA</code></p>
+<p><font color="RED"><strong>但是未指定NNC_INDEX01表空间的转换</strong></font>所以系统默认还是转入到了<code>NNC_INDEX01</code>表空间，导致该空间无法扩展(一个表空间文件最大增长到32G)</p>
+<ul>
+<li>解决办法：</li>
+<li>可以把NNC_INDEX01表空间进行扩展，增加datafile文件。</li>
+<li>在impdb命令中显式指定转换的表空间。</li>
+</ul>
+<p><code>REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA,NNC_INDEX01:T5_NNC_INDEX</code></p>
+<p><strong>上述指令表明 NNC_DATA01表空间的数据导入 –&gt; T5_NNC_DATA</strong></p>
+<p><strong>NNC_INDEX01表空间的数据导入–&gt;T5_NNC_INDEX</strong></p>
+<h2 id="Impdb-执行"><a href="#Impdb-执行" class="headerlink" title="Impdb 执行"></a>Impdb 执行</h2><p>有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：</p>
 <blockquote>
 <p>Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX</p>
 </blockquote>
@@ -941,8 +1047,7 @@
 <blockquote>
 <p>alter system kill session ‘SID, SERIAL’; </p>
 </blockquote>
-<p><strong>Import 异常情况</strong></p>
-<blockquote>
+<h2 id="Import-异常情况"><a href="#Import-异常情况" class="headerlink" title="Import 异常情况"></a>Import 异常情况</h2><blockquote>
 <p>Connected to: Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production<br>ORA-39171: Job is experiencing a resumable wait.<br>Resumable error: ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM<br>Resumable stmt: UPDATE “SYS”.”SYS_IMPORT_FULL_09” SET processing_state = :1, processing_status = :2 WHERE process_order = :3 AND duplicate = 0 AND processing_state = :4 AND processing_status = :5<br>Resumable stmt status: TIMEOUT<br>Resumable stmt start: 03/31/21 17:48:35 stmt suspend: 03/31/21 17:48:35<br>ORA-31694: master table “SYS”.”SYS_IMPORT_FULL_09” failed to load/unload<br>ORA-02354: error in exporting/importing data<br>ORA-30032: the suspended (resumable) statement has timed out<br>ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM</p>
 </blockquote>
 <ul>
@@ -963,11 +1068,22 @@
 <p><code>alter database datafile &#39;/oracle/oradata/orcl/system02.dbf&#39; autoextend on next 128M maxsize unlimited;</code></p>
 <p><strong>设置数据文件自动扩展！</strong></p>
 <hr>
-<p><strong>Import 异常情况2</strong></p>
-<blockquote>
+<h2 id="Import-异常情况2"><a href="#Import-异常情况2" class="headerlink" title="Import 异常情况2"></a>Import 异常情况2</h2><blockquote>
 <p>Processing object type SCHEMA_EXPORT/TABLE/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE<br>Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE<br>Processing object type SCHEMA_EXPORT/VIEW/VIEW<br>Processing object type SCHEMA_EXPORT/VIEW/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/TRIGGER<br>Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS<br>Processing object type SCHEMA_EXPORT/STATISTICS/MARKER</p>
 </blockquote>
-<p>use : exclude=statistics</p>
+<p>可以use : exclude=statistics <!--跳过导入statistics--></p>
+<h2 id="Import-job"><a href="#Import-job" class="headerlink" title="Import job"></a>Import job</h2><p><strong>在导入时，如果原dump中有job对象。在导入之前必须把当然Oracle的job全部删除</strong></p>
+<p>先执行SQL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> dba_jobs <span class="comment">--查看当前数据库中所有的job </span></span><br></pre></td></tr></table></figure>
+
+<p><strong>delete from dba_jobs</strong> <!--删除所有已经存在的job--></p>
+<p><img src="https://i.loli.net/2021/04/02/qizmaZHgE4TuDbv.png" alt="image-20210402141911442"></p>
+<p>从上午10:00左右开始执行到下午17:50执行完成，共计8小时。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="创建Oracle用户的脚本"><a href="#创建Oracle用户的脚本" class="headerlink" title="创建Oracle用户的脚本"></a>创建Oracle用户的脚本</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建表空间</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>SPACE T11_NNC_DATA DATAFILE <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01a.dbf&#x27;</span> SIZE <span class="number">500</span>M AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">50</span>M EXTENT MANAGEMENT <span class="keyword">LOCAL</span> UNIFORM SIZE <span class="number">256</span>K ;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>SPACE T11_NNC_INDEX DATAFILE <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_index01.dbf&#x27;</span> SIZE <span class="number">500</span>M AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">50</span>M EXTENT MANAGEMENT <span class="keyword">LOCAL</span> UNIFORM SIZE <span class="number">128</span>K ; </span><br><span class="line"></span><br><span class="line"><span class="comment">--添加表空间文件</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01b.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01c.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01d.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01e.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01f.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"></span><br><span class="line"><span class="comment">--更改表空间属性，设置为自增长</span></span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01a.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01b.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01c.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01d.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01e.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01f.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_index01.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建联测账号</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> C##LC011 IDENTIFIED <span class="keyword">BY</span> liance2021 <span class="keyword">DEFAULT</span> TABLESPACE T11_NNC_DATA TEMPORARY TABLESPACE temp;</span><br><span class="line"></span><br><span class="line"><span class="comment">--授权</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">connect</span>,dba <span class="keyword">to</span> C##LC011;</span><br><span class="line"><span class="keyword">grant</span> read, write <span class="keyword">on</span> directory DIR_EXPORT <span class="keyword">to</span> C##LC011;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>完结，撒花!</strong></p>
 
       
 
@@ -1800,165 +1916,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-三张需要修改的单据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/">三张需要修改的单据</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2021-03-18T06:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制"><a href="#【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制" class="headerlink" title="【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制"></a>【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制</h3><h5 id="编辑前事件-xxx-栏位-gt-gt-gt-不可编辑"><a href="#编辑前事件-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="编辑前事件 [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑."></a>编辑前事件 [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑.</h5><h5 id="提交后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑"><a href="#提交后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="提交后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑"></a>提交后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑</h5><h4 id="1-客户投诉单"><a href="#1-客户投诉单" class="headerlink" title="1. 客户投诉单"></a>1. 客户投诉单</h4><p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
-<h4 id="2-改进措施指令单"><a href="#2-改进措施指令单" class="headerlink" title="2. 改进措施指令单"></a>2. 改进措施指令单</h4><p><img src="https://i.loli.net/2021/03/18/zlVab1t95KZfImQ.jpg" alt="img"></p>
-<p>【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、【措施计划完成日期】、【整改验证情况】</p>
-<p>新增时不可以编辑，审批后方可编辑。</p>
-<h4 id="3-8D报告"><a href="#3-8D报告" class="headerlink" title="3. 8D报告"></a>3. 8D报告</h4><p><img src="https://i.loli.net/2021/03/18/xCjW9YrmcVG6HMO.jpg" alt="img"></p>
-<hr>
-<h6 id="需求-《客户投诉单》"><a href="#需求-《客户投诉单》" class="headerlink" title="需求 《客户投诉单》"></a>需求 《客户投诉单》</h6><ul>
-<li>说明</li>
-</ul>
-<p>​        菜单 质量管理 –&gt; 客户投诉 –&gt; 客户投诉单</p>
-<ul>
-<li>截图</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
-<ul>
-<li><p>功能</p>
-<p>制单人 新建/修改 时<br>【改进意见及要求】、【投诉处理方案】、【跟踪及验证情况】三个栏位不可编辑</p>
-</li>
-</ul>
-<ul>
-<li>实现</li>
-</ul>
-<table><tr><td bgcolor=#D1EEEE>1.查找对应单据所在的模块,java file. 通过“功能注册”<td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/MxGskVgbd46W7wQ.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>2.在 参数注册 tab页，复制 参数值<td></tr></table>
-
-<p><code>nc/ui/qc/qc_custcomplaints/ace/view/Qc_custcomplaints_config.xml</code></p>
-<table><tr><td bgcolor=#D1EEEE> 然后在Eclipse里面 按下 ctrl + shift + t 打开类型. 把"/"全部更改为"." <td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/xEXs7T2BR9HpyCk.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>3.点击确定  找到" Qc_custcomplaints_config.xml" 所在的包 nc.ui.qc.qc_custcomplaints.ace.view .<td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/DhnKCQy28PH3Zm7.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>4.其中表头编辑前事件的java file
- nc.ui.qc.qc_custcomplaints.ace.handler.AceHeadTailBeforeEditHandler.class<td></tr></table>
-
-   <table><tr><td bgcolor=#D1EEEE>复制这个class 名字，在对应的qc/src 模块下面<td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/NosKq7HdOjZ1QPG.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>5.在单据模块 qc/src/client中新建包"nc.ui.qc.qc_custcomplaints.ace.handler" 
-然后再新建AceHeadTailBeforeEditHandler.java<td></tr></table>
-
-<table><tr><td bgcolor=#D1EEEE>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。<td></tr></table>
-
- <table><tr><td bgcolor=#D1EEEE>qc/src/private 是接口实现类 放本地实现公共接口的具体操作。<td></tr></table>
-
-<p>Q.如何查找单据上面对应的表字段?</p>
-<p>答：通过“单据模板初始化”</p>
-<p><img src="https://i.loli.net/2021/03/18/lO281tBeU5NP94h.jpg" alt="img"></p>
-<blockquote>
-<p>输入 pim</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/urpqZ4ICycFh965.jpg" alt="img"></p>
-<blockquote>
-<p>选择 模板类型 “Pim_trackform”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/DdKmsARwGl6tU5M.jpg" alt="img"></p>
-<blockquote>
-<p>点击 “修改”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/mDYOcrRZzVtPleW.jpg" alt="img"></p>
-<blockquote>
-<p>点击 “承担部门”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/tYW4fKB8LJjmgNu.jpg" alt="img"></p>
-<blockquote>
-<p>点击 tab “高级属性”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/yPOmKf429GJkZ8Q.jpg" alt="img"></p>
-<blockquote>
-<p>点击 部门的 放大镜</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/jtGP7A6nH23iLCJ.jpg" alt="img"></p>
-<blockquote>
-<p>取消勾选  是否可以选择非叶子节点。 ==&gt; 表示 不可以选择 (非叶子节点) 根、子 节点，只能选择叶节点.</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/dOhIr923JNuK7Sm.jpg" alt="img"></p>
-<blockquote>
-<p>点击 保存模板</p>
-</blockquote>
-<p> <img src="https://i.loli.net/2021/03/18/njwbqaXPRdUYlD7.jpg" alt="img"></p>
-<blockquote>
-<p>改变“模板标题”为 [开发改进跟踪表]</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/7U6sCeE8Kur2VvH.jpg" alt="img"> </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/">展开全文 >></a>
         </p>
       
 

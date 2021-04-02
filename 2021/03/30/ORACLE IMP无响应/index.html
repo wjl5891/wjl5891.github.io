@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Oracle impdb 挂起 or 似乎挂机 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Oracle数据库执行Imp有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：  Processing object type TABLE_EXPORT&#x2F;TABLE&#x2F;INDEX&#x2F;INDEX  import是否真的在执行？检查 DBA_DATAPUMP_JOBS  123select owner_name, job_name, operation, job_modefrom">
+  <meta name="description" content="起因在NC6.5做一些操作时，如发布元数据，保存某些单据。会提示错误信息： 索引 无法通过 (在表空间 NNC_INDEX01 中) 扩展    错误原因：    还原数据库脚本 imp.sh 未指定表空间的转换方式   1impdp sys&#x2F;oracle@orcl  directory&#x3D;dir_export  dumpfile&#x3D;nc65191211.dmp     EXCLUDE&#x3D;TABLE:\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle impdb 挂起 or 似乎挂机">
 <meta property="og:url" content="http://example.com/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Oracle数据库执行Imp有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：  Processing object type TABLE_EXPORT&#x2F;TABLE&#x2F;INDEX&#x2F;INDEX  import是否真的在执行？检查 DBA_DATAPUMP_JOBS  123select owner_name, job_name, operation, job_modefrom">
+<meta property="og:description" content="起因在NC6.5做一些操作时，如发布元数据，保存某些单据。会提示错误信息： 索引 无法通过 (在表空间 NNC_INDEX01 中) 扩展    错误原因：    还原数据库脚本 imp.sh 未指定表空间的转换方式   1impdp sys&#x2F;oracle@orcl  directory&#x3D;dir_export  dumpfile&#x3D;nc65191211.dmp     EXCLUDE&#x3D;TABLE:\">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/04/01/eutP7siQrBgfxMI.png">
 <meta property="og:image" content="https://i.loli.net/2021/04/01/26cmdL5pN8ylirq.png">
+<meta property="og:image" content="https://i.loli.net/2021/04/02/qizmaZHgE4TuDbv.png">
 <meta property="article:published_time" content="2021-03-30T01:17:00.000Z">
-<meta property="article:modified_time" content="2021-04-01T09:52:01.799Z">
+<meta property="article:modified_time" content="2021-04-02T06:30:45.485Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Oracle">
 <meta name="twitter:card" content="summary">
@@ -178,7 +179,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Oracle数据库执行Imp"><a href="#Oracle数据库执行Imp" class="headerlink" title="Oracle数据库执行Imp"></a>Oracle数据库执行Imp</h2><p>有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：</p>
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p><strong>在NC6.5做一些操作时，如发布元数据，保存某些单据。会提示错误信息： 索引 无法通过 (在表空间 NNC_INDEX01 中) 扩展</strong></p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox">  错误原因：</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox">  还原数据库脚本 <strong>imp.sh</strong> 未指定表空间的转换方式</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp sys/oracle@orcl  directory=dir_export  dumpfile=nc65191211.dmp     EXCLUDE=TABLE:\&quot;LIKE\&#x27;%TEMQ_%\&#x27;\&quot;   EXCLUDE=VIEW:\&quot;LIKE\&#x27;%TEMQ_%\&#x27;\&quot;    logfile=nc65191211.log  REMAP_SCHEMA=C##NC6519:C##LC005 REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA TABLE_EXISTS_ACTION = replace parallel=8</span><br></pre></td></tr></table></figure>
+
+<p><strong>REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA</strong><code>此处明确指定了表空间的转换，原表空间NNC_DATA01 导入到新表空间 T5_NNC_DATA</code></p>
+<p><font color="RED"><strong>但是未指定NNC_INDEX01表空间的转换</strong></font>所以系统默认还是转入到了<code>NNC_INDEX01</code>表空间，导致该空间无法扩展(一个表空间文件最大增长到32G)</p>
+<ul>
+<li>解决办法：</li>
+<li>可以把NNC_INDEX01表空间进行扩展，增加datafile文件。</li>
+<li>在impdb命令中显式指定转换的表空间。</li>
+</ul>
+<p><code>REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA,NNC_INDEX01:T5_NNC_INDEX</code></p>
+<p><strong>上述指令表明 NNC_DATA01表空间的数据导入 –&gt; T5_NNC_DATA</strong></p>
+<p><strong>NNC_INDEX01表空间的数据导入–&gt;T5_NNC_INDEX</strong></p>
+<h2 id="Impdb-执行"><a href="#Impdb-执行" class="headerlink" title="Impdb 执行"></a>Impdb 执行</h2><p>有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：</p>
 <blockquote>
 <p>Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX</p>
 </blockquote>
@@ -269,8 +289,7 @@
 <blockquote>
 <p>alter system kill session ‘SID, SERIAL’; </p>
 </blockquote>
-<p><strong>Import 异常情况</strong></p>
-<blockquote>
+<h2 id="Import-异常情况"><a href="#Import-异常情况" class="headerlink" title="Import 异常情况"></a>Import 异常情况</h2><blockquote>
 <p>Connected to: Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production<br>ORA-39171: Job is experiencing a resumable wait.<br>Resumable error: ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM<br>Resumable stmt: UPDATE “SYS”.”SYS_IMPORT_FULL_09” SET processing_state = :1, processing_status = :2 WHERE process_order = :3 AND duplicate = 0 AND processing_state = :4 AND processing_status = :5<br>Resumable stmt status: TIMEOUT<br>Resumable stmt start: 03/31/21 17:48:35 stmt suspend: 03/31/21 17:48:35<br>ORA-31694: master table “SYS”.”SYS_IMPORT_FULL_09” failed to load/unload<br>ORA-02354: error in exporting/importing data<br>ORA-30032: the suspended (resumable) statement has timed out<br>ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM</p>
 </blockquote>
 <ul>
@@ -291,11 +310,22 @@
 <p><code>alter database datafile &#39;/oracle/oradata/orcl/system02.dbf&#39; autoextend on next 128M maxsize unlimited;</code></p>
 <p><strong>设置数据文件自动扩展！</strong></p>
 <hr>
-<p><strong>Import 异常情况2</strong></p>
-<blockquote>
+<h2 id="Import-异常情况2"><a href="#Import-异常情况2" class="headerlink" title="Import 异常情况2"></a>Import 异常情况2</h2><blockquote>
 <p>Processing object type SCHEMA_EXPORT/TABLE/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE<br>Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE<br>Processing object type SCHEMA_EXPORT/VIEW/VIEW<br>Processing object type SCHEMA_EXPORT/VIEW/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/TRIGGER<br>Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS<br>Processing object type SCHEMA_EXPORT/STATISTICS/MARKER</p>
 </blockquote>
-<p>use : exclude=statistics</p>
+<p>可以use : exclude=statistics <!--跳过导入statistics--></p>
+<h2 id="Import-job"><a href="#Import-job" class="headerlink" title="Import job"></a>Import job</h2><p><strong>在导入时，如果原dump中有job对象。在导入之前必须把当然Oracle的job全部删除</strong></p>
+<p>先执行SQL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> dba_jobs <span class="comment">--查看当前数据库中所有的job </span></span><br></pre></td></tr></table></figure>
+
+<p><strong>delete from dba_jobs</strong> <!--删除所有已经存在的job--></p>
+<p><img src="https://i.loli.net/2021/04/02/qizmaZHgE4TuDbv.png" alt="image-20210402141911442"></p>
+<p>从上午10:00左右开始执行到下午17:50执行完成，共计8小时。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="创建Oracle用户的脚本"><a href="#创建Oracle用户的脚本" class="headerlink" title="创建Oracle用户的脚本"></a>创建Oracle用户的脚本</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建表空间</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>SPACE T11_NNC_DATA DATAFILE <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01a.dbf&#x27;</span> SIZE <span class="number">500</span>M AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">50</span>M EXTENT MANAGEMENT <span class="keyword">LOCAL</span> UNIFORM SIZE <span class="number">256</span>K ;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>SPACE T11_NNC_INDEX DATAFILE <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_index01.dbf&#x27;</span> SIZE <span class="number">500</span>M AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">50</span>M EXTENT MANAGEMENT <span class="keyword">LOCAL</span> UNIFORM SIZE <span class="number">128</span>K ; </span><br><span class="line"></span><br><span class="line"><span class="comment">--添加表空间文件</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01b.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01c.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01d.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01e.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01f.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"></span><br><span class="line"><span class="comment">--更改表空间属性，设置为自增长</span></span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01a.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01b.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01c.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01d.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01e.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01f.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_index01.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建联测账号</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> C##LC011 IDENTIFIED <span class="keyword">BY</span> liance2021 <span class="keyword">DEFAULT</span> TABLESPACE T11_NNC_DATA TEMPORARY TABLESPACE temp;</span><br><span class="line"></span><br><span class="line"><span class="comment">--授权</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">connect</span>,dba <span class="keyword">to</span> C##LC011;</span><br><span class="line"><span class="keyword">grant</span> read, write <span class="keyword">on</span> directory DIR_EXPORT <span class="keyword">to</span> C##LC011;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>完结，撒花!</strong></p>
 
       
 
