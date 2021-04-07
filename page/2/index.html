@@ -152,6 +152,122 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何设置单据转换规则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/">如何设置单据转换规则</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/" class="archive-article-date">
+  	<time datetime="2021-03-19T02:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NC-6-5中如何设置单据转换规则"><a href="#NC-6-5中如何设置单据转换规则" class="headerlink" title="NC 6.5中如何设置单据转换规则"></a>NC 6.5中如何设置单据转换规则</h1><blockquote>
+<p>用途：在需要通过Java后台保存上游单据后，自动生成下游单据时；需要配置单据转换规则。</p>
+</blockquote>
+<p>&#160;&#160;&#160;&#160;步骤：</p>
+<h5 id="1-打开功能“单据转换规则”"><a href="#1-打开功能“单据转换规则”" class="headerlink" title="1.打开功能“单据转换规则”"></a>1.打开功能“单据转换规则”</h5><p><img src="https://i.loli.net/2021/03/19/F9P2y5DCA4dfLpK.jpg" alt="img"></p>
+<h5 id="2-点击新增"><a href="#2-点击新增" class="headerlink" title="2.点击新增"></a>2.点击新增</h5><p><img src="https://i.loli.net/2021/03/19/fOkcat1Ezvr7s9H.jpg" alt="img"></p>
+<h5 id="3-在来源单据类型-点击"><a href="#3-在来源单据类型-点击" class="headerlink" title="3.在来源单据类型 点击"></a>3.在来源单据类型 点击</h5><p><img src="https://i.loli.net/2021/03/19/UR3HuZMz5tAJwcq.jpg" alt="img"></p>
+<h5 id="4-在文本框中输入-“产品开发”"><a href="#4-在文本框中输入-“产品开发”" class="headerlink" title="4.在文本框中输入 “产品开发”"></a>4.在文本框中输入 “产品开发”</h5><p><img src="https://i.loli.net/2021/03/19/nzAMsYSfkNmqoJT.jpg" alt="img"></p>
+<h5 id="5-然后-在-来源交易类型-点击"><a href="#5-然后-在-来源交易类型-点击" class="headerlink" title="5.然后 在 来源交易类型 点击"></a>5.然后 在 来源交易类型 点击<img src="https://i.loli.net/2021/03/19/9MApbFmDt6xCoUQ.jpg" alt="img"></h5><p><img src="https://i.loli.net/2021/03/19/WMKbJIzOVcZToym.jpg" alt="img"></p>
+<ul>
+<li>点击确定 , 然后点击 “目的单据类型” , 过滤 “4D11” 找出 项目登记</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/19/F7i8hft9BoSy3bW.jpg" alt="img"></p>
+<p><img src="https://i.loli.net/2021/03/19/aN4R56AXEFU7ZeJ.jpg" alt="img"></p>
+<h5 id="6-目的交易类型-选择-‘4D11-Cxx-01’-设计与开发建议书"><a href="#6-目的交易类型-选择-‘4D11-Cxx-01’-设计与开发建议书" class="headerlink" title="6.目的交易类型 选择 ‘4D11-Cxx-01’ 设计与开发建议书"></a>6.目的交易类型 选择 ‘4D11-Cxx-01’ 设计与开发建议书</h5><p>​    新增完成后</p>
+<p><img src="https://i.loli.net/2021/03/19/NyCFhEZbOMIqPGQ.jpg" alt="img"></p>
+<h5 id="7-点击“设置规则”-–-gt-进行单据转换规则的设定"><a href="#7-点击“设置规则”-–-gt-进行单据转换规则的设定" class="headerlink" title="7.点击“设置规则” –&gt; 进行单据转换规则的设定"></a>7.点击“设置规则” –&gt; 进行单据转换规则的设定</h5><p><img src="https://i.loli.net/2021/03/19/3LV6a8OpnWRhY7M.jpg" alt="img"></p>
+<h5 id="8-找到-pk-projectclass-“项目类型主键”-字段-，我们需要根据“开发改进跟踪表”中的-“开发建议”-字段选择项目来决定填入的-项目值。"><a href="#8-找到-pk-projectclass-“项目类型主键”-字段-，我们需要根据“开发改进跟踪表”中的-“开发建议”-字段选择项目来决定填入的-项目值。" class="headerlink" title="8.找到 pk_projectclass “项目类型主键” 字段 ，我们需要根据“开发改进跟踪表”中的 “开发建议” 字段选择项目来决定填入的 项目值。"></a>8.找到 pk_projectclass “项目类型主键” 字段 ，我们需要根据“开发改进跟踪表”中的 “开发建议” 字段选择项目来决定填入的 项目值。</h5><blockquote>
+<p>例如：Pim_trackform.DEF1 = ‘1001ZZ1000000047NILX’</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/03/19/fZUJr5KRuMXLcYT.jpg" alt="img"></p>
+<h5 id="9-选中pk-projectclass-项目类型-规则类型选择“公式”"><a href="#9-选中pk-projectclass-项目类型-规则类型选择“公式”" class="headerlink" title="9.选中pk_projectclass - 项目类型 .  规则类型选择“公式”."></a>9.选中pk_projectclass - 项目类型 .  规则类型选择“公式”.</h5><p>​      然后在规则一栏 点击放大镜按钮，弹出公式编辑器 窗口</p>
+<p><img src="https://i.loli.net/2021/03/19/pT6rtqvSLjbw7aC.jpg" alt="img"></p>
+<p><img src="https://i.loli.net/2021/03/19/swjZbkV49HUldTF.jpg" alt="img"></p>
+<h5 id="10-在公式中填入"><a href="#10-在公式中填入" class="headerlink" title="10.在公式中填入"></a>10.在公式中填入</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iif( getcolvalue(bd_defdoc ,code ,pk_defdoc ,def1 )==&quot;1&quot; ,&quot;1001A3100000001DGG64&quot; , &quot;1001ZZ1000000047NIN8&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>含义：select code from <code>bd_defdoc</code> where <code>pk_defdoc</code> = 字段[<code>def1</code>]的值.<br>如果def1 开发建议选择的时第1项 项目立项，则填入值’1001A3100000001DGG64’</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.type_code,b.type_name,b.pk_projectclass <span class="keyword">from</span> bd_projectclass b <span class="keyword">where</span> b.type_name <span class="keyword">like</span> <span class="string">&#x27;%研发项目%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/03/19/mdVOFMZ4cukHxAK.jpg" alt="img"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.type_code,b.type_name,b.pk_projectclass <span class="keyword">from</span> bd_projectclass b <span class="keyword">where</span> b.type_name <span class="keyword">like</span> <span class="string">&#x27;%技术改良%&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/03/19/KBhlVZGzj3mnqyI.jpg" alt="img"></p>
+<p>否则 填入值 ‘1001ZZ1000000047NIN8’ (技术改良)</p>
+<h5 id="11-选中def-自定义项16-规则类型选择“映射”"><a href="#11-选中def-自定义项16-规则类型选择“映射”" class="headerlink" title="11.选中def - 自定义项16 .  规则类型选择“映射”."></a>11.选中def - 自定义项16 .  规则类型选择“映射”.</h5><p>&nbsp;&nbsp;&nbsp;然后在规则一栏 选择pk_trackform 产品改进跟踪表主键</p>
+<p><img src="https://i.loli.net/2021/03/19/da3cPxheHlDuBrk.jpg" alt="img"></p>
+<ul>
+<li>‘规则名称’会自动带入 产品改进跟踪表主键</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/03/19/e54qDtPXkoh7iKs.jpg" alt="img"></p>
+<ul>
+<li>最后点击【保存交换规则】</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-三张需要修改的单据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -992,6 +1108,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Demo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1190,6 +1317,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Demo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1321,11 +1459,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color5">NC流程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">标准内容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Demo</a>
               </li>
             
             <div class="clearfix"></div>
