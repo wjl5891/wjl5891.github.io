@@ -1098,9 +1098,23 @@
 
 
 
+<p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/sql/sql_join_full.asp">full join 用法讲解</a></p>
+<p><a href="#">Oracle Pivot行转列函数</a></p>
+<p>Create table Student(<br>       STUID varchar2(20),<br>       STUNAME nvarchar2(100),<br>       COURSEID varchar2(20),<br>       COURSENAME nvarchar2(100),<br>       SCORE int<br>)</p>
+<!--drop table Student-->
+
+<p>select * from Student</p>
+<p><strong>方法一：</strong> 采用 group + sum</p>
+<hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> STUNAME, <span class="built_in">sum</span>(decode(COURSENAME,<span class="string">&#x27;英语&#x27;</span>,SCORE,<span class="number">0</span>)) <span class="keyword">as</span> &quot;英语&quot;,<span class="built_in">sum</span>(decode(COURSENAME,<span class="string">&#x27;数学&#x27;</span>,SCORE,<span class="number">0</span>)) <span class="keyword">as</span> &quot;数学&quot;,</span><br><span class="line"><span class="built_in">sum</span>(decode(COURSENAME,<span class="string">&#x27;语文&#x27;</span>,SCORE,<span class="number">0</span>)) <span class="keyword">as</span> &quot;语文&quot; <span class="keyword">from</span> Student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> STUNAME</span><br></pre></td></tr></table></figure>
 
 
 
+<p><strong>方法二</strong>： 使用Oracle Pivot</p>
+<hr>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ( <span class="comment">--外面必须要包裹一层</span></span><br><span class="line">       <span class="keyword">select</span> STUNAME <span class="keyword">as</span> 姓名,COURSENAME,SCORE <span class="keyword">from</span> Student</span><br><span class="line">)</span><br><span class="line">pivot (</span><br><span class="line">      <span class="built_in">sum</span>(SCORE) <span class="keyword">for</span> COURSENAME <span class="keyword">in</span> (<span class="string">&#x27;语文&#x27;</span> <span class="keyword">as</span> 语文,<span class="string">&#x27;数学&#x27;</span> <span class="keyword">as</span> 数学,<span class="string">&#x27;英语&#x27;</span> <span class="keyword">as</span> 英语)</span><br><span class="line">)</span><br><span class="line">`<span class="operator">&lt;</span><span class="operator">!</span><span class="comment">--sum(汇总的列)--&gt;/  &lt;!--哪行要行转列--&gt;/  &lt;!--行的哪些数据要转成列--&gt;`</span></span><br></pre></td></tr></table></figure>
+
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>
       
 
       
@@ -1311,6 +1325,8 @@
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.sioe.cn/yingyong/yanse-rgb-16/">rgb颜色对照表</a></p>
 <p>——————–2021-04-07——————<br>1.GAGG生产订单流程 操作手册撰写. 已完成md,doc. 已发布<br>2.nginx 在centos上配置启动成功<br>    nginx-1.19.9<br>    VMware-player-16.1.1-17801498.exe  215MB<br>    CentOS-8.3.2011-x86_64-dvd1.iso 8.62GB<br>3.参考教程 <a target="_blank" rel="noopener" href="https://www.runoob.com/linux/nginx-install-setup.html">https://www.runoob.com/linux/nginx-install-setup.html</a>    </p>
+<p>4.Nginx中文文档 <a target="_blank" rel="noopener" href="https://www.nginx.cn/doc/index.html">https://www.nginx.cn/doc/index.html</a></p>
+<p>5.Nginx 实现负载均衡 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33454884/article/details/89212702">https://blog.csdn.net/qq_33454884/article/details/89212702</a></p>
 
       
 

@@ -172,7 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h1><p>下面介绍科创公司根据销售计划或固定生产任务，在UC6.5中如何进行投入-产出的生成订单制作的操作流程.</p>
+        <p>[TOC]</p>
+<h1 id="流程说明"><a href="#流程说明" class="headerlink" title="流程说明"></a>流程说明</h1><p>下面介绍科创公司根据销售计划或固定生产任务，在UC6.5中如何进行投入-产出的生成订单制作的操作流程.</p>
 <p>根据下图所示流程进行阐述:</p>
 <img src="https://i.loli.net/2021/04/07/Rnq5mGCU2bvyLTZ.png" alt="image-20210407103719139" style="zoom:100%;" />
 
@@ -285,7 +286,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://i.loli.net/2021/04/07/1FjAtCxeUHBmLK3.png" alt="image-20210407151849008"></p>
+<h5 id="1-2-操作说明-1"><a href="#1-2-操作说明-1" class="headerlink" title="1-2. 操作说明"></a>1-2. 操作说明</h5><p><img src="https://i.loli.net/2021/04/07/1FjAtCxeUHBmLK3.png" alt="image-20210407151849008"></p>
 <ul>
 <li>点击【新增】下拉选单 选择 【流程生产订单】–俗称拉单。</li>
 </ul>
@@ -300,7 +301,14 @@
 <blockquote>
 <p>生产批次号 由生产部门自定义输入。</p>
 <p>然后保存。</p>
-<p>下面进行生产部门的盘点操作。</p>
+<p>提交–&gt;审批完成之后–&gt;点击执行–&gt;选择 “合格入库”</p>
+<p>生产批次号：手动输入</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/04/08/c5iNaszdkLy7YKX.png" alt="image-20210408093011019"></p>
+<p>执行 “合格入库”后系统自动跳转到 <strong>产成品入库</strong></p>
+<h4 id="2-产成品入库"><a href="#2-产成品入库" class="headerlink" title="2. 产成品入库"></a>2. 产成品入库</h4><p><img src="https://i.loli.net/2021/04/08/Mf6ySAsQPFwmGgd.png" alt="image-20210408093246914"></p>
+<blockquote>
+<p> 下面进行生产部门的盘点操作。</p>
 </blockquote>
 <h1 id="四、盘点"><a href="#四、盘点" class="headerlink" title="四、盘点"></a>四、盘点</h1><h4 id="1-在产材料盘点单"><a href="#1-在产材料盘点单" class="headerlink" title="1. 在产材料盘点单"></a>1. 在产材料盘点单</h4><h5 id="1-1-功能导航-3"><a href="#1-1-功能导航-3" class="headerlink" title="1-1. 功能导航"></a>1-1. 功能导航</h5><ul>
 <li>管理会计 / 产品成本<ul>
@@ -350,7 +358,408 @@
 <p>在产量 ：10 （假设这个月正在生产的产品数量）</p>
 </blockquote>
 <p><img src="https://i.loli.net/2021/04/07/g1uB8odJ7ejEaqi.png" alt="image-20210407161328994"></p>
-<h1 id="五、报表"><a href="#五、报表" class="headerlink" title="五、报表"></a>五、报表</h1><h4 id="1-收率报表"><a href="#1-收率报表" class="headerlink" title="1.收率报表"></a>1.收率报表</h4><h4 id="2-合格率报表"><a href="#2-合格率报表" class="headerlink" title="2.合格率报表"></a>2.合格率报表</h4>
+<h1 id="五、报表"><a href="#五、报表" class="headerlink" title="五、报表"></a>五、报表</h1><h4 id="1-收率报表"><a href="#1-收率报表" class="headerlink" title="1.收率报表"></a>1.收率报表</h4><h5 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h5><ul>
+<li>参考 “生产车间月报表(财务处理后)”</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/08/KaJXojEBS2MPlxR.png" alt="image-20210408100027361"></p>
+<p>报表样式：</p>
+<p><img src="https://i.loli.net/2021/04/09/6rfEvSdsbuAn5kN.png" alt="image-20210409111720609"></p>
+<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p>栏位说明：</p>
+<ul>
+<li>产品编码  <strong>bd_material</strong>.code</li>
+<li>产品名称  <strong>bd_material</strong>.name </li>
+<li>产品规格  <strong>bd_material</strong>.materialspec</li>
+<li>投入<ul>
+<li>原料编码  CM_INPROSTUFF_B.CMATERIALID</li>
+<li>名称  <strong>bd_material</strong>.name </li>
+<li>规格  <strong>bd_material</strong>.materialspec</li>
+<li>期初数量  sum(CM_INPROSTUFF_B.NNUM)</li>
+<li>本期领用  sum(IA_I6BILL_B.NNUM)</li>
+<li>期末数量  sum(CM_INPROSTUFF_B.NNUM)</li>
+</ul>
+</li>
+<li>产出<ul>
+<li>期初在产品  sum(CM_INPROCESS_B.NINPRONUM)</li>
+<li>本期入库  sum(IA_I3BILL_B.NNUM)</li>
+<li>期末在产品 sum(CM_INPROCESS_B.NINPRONUM)</li>
+</ul>
+</li>
+<li>收率</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DESC</td>
+<td>DATATYPE</td>
+<td>PK_GROUP</td>
+<td>PK_ORG</td>
+<td>CPERIOD</td>
+<td>CCOSTCENTERID</td>
+<td>product</td>
+<td>material</td>
+<td>NNUM</td>
+</tr>
+<tr>
+<td>描述</td>
+<td>类别</td>
+<td>集团</td>
+<td>组织</td>
+<td>会计期间</td>
+<td>成本中心</td>
+<td>产品</td>
+<td>原料</td>
+<td>数量</td>
+</tr>
+<tr>
+<td>期初原料</td>
+<td>A</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>原料领用数量</td>
+<td>B</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>CINVENTORYID✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>期末数量</td>
+<td>C</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>material✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>期初在产品数量</td>
+<td>D</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>product✔</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>产成品入库</td>
+<td>E</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>product✔</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>期末在产品数量</td>
+<td>F</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>product✔</td>
+<td>❌</td>
+<td>✔</td>
+</tr>
+</tbody></table>
+<p><em>terminnum (Num123) 期初原料+本期领用+期末原料的 小计</em><br><em>termoutnum (Num456) 期初在产品+本期入库+期末在产品 的 小计</em></p>
+<p><strong>字母数量含义对照表：</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A = 期初原料	D = 期初在产品</span><br><span class="line">B = 本期领用	E = 本期入库</span><br><span class="line">C = 期末原料	F = 期末在产品</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>SL 收率 = 收率计算方法：产出量/（原料领用量-上月在制-盘点剩余量）；合理收率约88.8% <strong>财务目前采用第2种计算方法</strong></li>
+<li>有两种收率计算公式:</li>
+</ul>
+<ol>
+<li>( 本期产出收率 )   = ( D + E - F ) / ( A + B - C ) * 100%</li>
+</ol>
+<blockquote>
+<p>( A + B - C ) 代表：期初原料消耗</p>
+<p>D - F  代表：期末原料消耗</p>
+<p>===举个例子===</p>
+<p><code>A:期初原料100个, C:期末原料剩下20个</code> ==&gt; A - C 用了80个原料</p>
+<p>+B : 本期领用过了 100个原料  </p>
+<p>100 + 80 = 180 本期耗用   </p>
+<hr>
+<p><code>D : 期初有100个在产品，F：期末有50个在产品</code>==&gt; D - F 100-50 = 50 个做成了成品！</p>
+<p>+E : 本期本来入库了105个成品</p>
+<p>105 + 50 = 155 本期产品</p>
+<hr>
+<p>本期产出 / 本期耗用 = 本期产出收率</p>
+<p>( D + E - F ) / ( A + B - C ) = SL</p>
+<p>155 / 180 = 0.86 * 100%  = 86%</p>
+</blockquote>
+<p>2.( 入库产品收率 )   = E /  ( (A + B - C) + D - F) * 100%</p>
+<blockquote>
+<p>入库产品收率 = 入库 /  总投入(在制品 也算成原料<code>非成品</code>)</p>
+<p>(A + B - C)  ：期初原料消耗</p>
+<p>D - F ：期末原料消耗</p>
+<p>相加就是总投入</p>
+<p>======举个例子=======</p>
+<p><code>A：期初有原料20个，B：本期领用了50个原料，C:到了期末盘点还剩10个原料</code> ==&gt; A + B - C = 20 + 50 -10  期初消耗原料60</p>
+<p><code>D:期初在制品有40个，F：期末在制品只有20个了。 </code> ==&gt; D - F = 40 - 20  期末消耗了20个原料 (这里假设1个原料做1个在制品.)</p>
+<p><code>E:本期入库了66个产品</code></p>
+<hr>
+<p>问：投入产出率是多少？</p>
+<p>入库产品收率 = 入库 /  总投入</p>
+<p>E /  ( (A + B - C) + D - F)</p>
+<p>66/  (60 + 20) = 0.825 * 100% = 82.5%</p>
+</blockquote>
+<h5 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h5><p>Relation Tables:</p>
+<table>
+<thead>
+<tr>
+<th>表</th>
+<th>中文描述</th>
+<th>PK 主键</th>
+<th>REF 外键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CM_INPROSTUFF</td>
+<td><strong>在产材料盘点单</strong></td>
+<td>CINPROSTUFFID</td>
+<td></td>
+</tr>
+<tr>
+<td>CM_INPROSTUFF_B</td>
+<td><strong>在产材料盘点单明细</strong></td>
+<td>CINPROSTUFF_BID</td>
+<td>CM_INPROSTUFF.CINPROSTUFFID</td>
+</tr>
+<tr>
+<td>CM_COSTOBJECT</td>
+<td><strong>成本对象</strong></td>
+<td>CCOSTOBJECTID</td>
+<td></td>
+</tr>
+<tr>
+<td>IA_I6BILL</td>
+<td><strong>材料出库单</strong></td>
+<td>CBILLID</td>
+<td></td>
+</tr>
+<tr>
+<td>IA_I6BILL_B</td>
+<td><strong>材料出库单明细</strong></td>
+<td>CBILL_BID</td>
+<td>IA_I6BILL.CBILLID</td>
+</tr>
+<tr>
+<td>ORG_COSTREGION</td>
+<td><strong>组织_成本域</strong></td>
+<td>PK_COSTREGION</td>
+<td></td>
+</tr>
+<tr>
+<td>BD_STORDOC</td>
+<td><strong>仓库</strong></td>
+<td>PK_STORDOC</td>
+<td></td>
+</tr>
+<tr>
+<td>CM_INPROCESS</td>
+<td><strong>在产品盘点单</strong></td>
+<td>CINPROCESSID</td>
+<td></td>
+</tr>
+<tr>
+<td>CM_INPROCESS_B</td>
+<td><strong>在产品盘点单明细</strong></td>
+<td>CINPROCESS_BID</td>
+<td>CM_INPROCESS.CINPROCESSID</td>
+</tr>
+<tr>
+<td>IA_I3BILL_B</td>
+<td><strong>产成品入库单明细</strong></td>
+<td>CBILL_BID</td>
+<td></td>
+</tr>
+</tbody></table>
+<h6 id="编审要点"><a href="#编审要点" class="headerlink" title="编审要点"></a>编审要点</h6><p><strong>期初原料:</strong><code>主表是CM_INPROSTUFF 在产材料盘点单</code></p>
+<ul>
+<li>PK_GROUP 集团</li>
+<li>PK_ORG 组织</li>
+<li>CPERIOD 会计期间 + 1 个月</li>
+<li>CCOSTCENTERID 成本中心</li>
+<li><code>CM_COSTOBJECT</code>.CMATERIALID 产品</li>
+<li><code>CM_INPROSTUFF_B</code>.CMATERIALID 物料</li>
+<li>sum(<code>CM_INPROSTUFF_B</code>.NNUM) 数量<ul>
+<li>按照 集团，组织，会计期间，成本中心，产品，物料 汇总 &lt;数量&gt;</li>
+<li>Where 条件 CM_INPROSTUFF.Ccostcenterid = ‘1001A31000000041ZMYM’ <strong>只筛选高纯GAGG粉体项目</strong><img src="https://i.loli.net/2021/04/09/EDX6m3dCWkMJ2Kw.png" alt="image-20210409150808339"></li>
+</ul>
+</li>
+</ul>
+<p><strong>期末领用:</strong></p>
+<p>同期初领用，区别是这里不用 会计期间 + 1 个月</p>
+<hr>
+<p><strong>本期领用：</strong><code>主表是 IA_I6BILL_B 材料出库单明细</code></p>
+<ul>
+<li><p>PK_GROUP 集团</p>
+</li>
+<li><p>ORG_COSTREGION.PK_ORG 组织</p>
+</li>
+<li><p>CACCOUNTPERIOD CPERIOD 会计期间</p>
+</li>
+<li><p>CCOSTCENTERID 成本中心</p>
+</li>
+<li><p>CCOSTOBJID 产品</p>
+</li>
+<li><p>CINVENTORYID 原料</p>
+</li>
+<li><p>sum(NNUM) 数量</p>
+<ul>
+<li><p><code>按照</code> 集团，组织，会计期间，成本中心，产品，原料 <code>分组</code> 汇总 &lt;数量&gt;</p>
+</li>
+<li><p>Where 条件 </p>
+<ul>
+<li><p>排除掉所有的 <strong>%材料%</strong> 仓库</p>
+</li>
+<li><p>出入库类型 必须满足以下类型</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>单据类型</th>
+<th>单据类型名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0001A310000000002OYK</td>
+<td>原料出库</td>
+</tr>
+<tr>
+<td>1001A31000000001KWS7</td>
+<td>来料加工原料出库</td>
+</tr>
+<tr>
+<td>1001A31000000001KWSI</td>
+<td>混料出库</td>
+</tr>
+<tr>
+<td>1001A31000000001KWT4</td>
+<td>研发物资出库</td>
+</tr>
+<tr>
+<td>1001A3100000000QUXRO</td>
+<td>假退料</td>
+</tr>
+</tbody></table>
+<ul>
+<li>IA_I6BILL_B.CCOSTCENTERID =’1001A31000000041ZMYM’ <strong>只筛选高纯GAGG粉体项目</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>期初在产品:</strong> <code>主表是 CM_INPROCESS 在产品盘点单</code></p>
+<ul>
+<li>PK_GROUP 集团</li>
+<li>PK_ORG 组织</li>
+<li>CPERIOD 会计期间 + 1 个月</li>
+<li>CCOSTCENTERID 成本中心</li>
+<li><code>cm_costobject</code>. CMATERIALID 产品</li>
+<li>sum(<code>CM_INPROCESS_B</code>.NINPRONUM) 数量<ul>
+<li><code>按照</code> 集团，组织，会计期间，成本中心，产品 <code>分组</code> 汇总 &lt;数量&gt;</li>
+<li>Where 条件 <ul>
+<li><code>CM_INPROCESS</code>.ccostcenterid= ‘1001A31000000041ZMYM’ <strong>只筛选高纯GAGG粉体项目</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>期末在产品:</strong></p>
+<p>同期初在产品，区别是这里不用 会计期间 + 1 个月</p>
+<hr>
+<p><strong>本期入库：</strong><code>主表是 IA_I3BILL_B 产成品入库单明细</code></p>
+<ul>
+<li><p>PK_GROUP 集团</p>
+</li>
+<li><p>ORG_COSTREGION.PK_ORG 组织</p>
+</li>
+<li><p>CACCOUNTPERIOD 会计期间 </p>
+</li>
+<li><p>CCOSTCENTERID 成本中心</p>
+</li>
+<li><p>CINVENTORYID 产品</p>
+</li>
+<li><p>sum(NNUM) 数量</p>
+<ul>
+<li><p><code>按照</code>集团，组织，会计期间，成本中心，产品 <code>分组</code> 汇总 &lt;数量&gt;</p>
+</li>
+<li><p>Where 条件</p>
+<ul>
+<li><p>ORG_COSTREGION.PK_ORG NOT IN  (‘0001A3100000000038HJ’, ‘0001A31000000002CJIR’) 排除艾科锐自有成本域</p>
+</li>
+<li><p>并且 IA_I3BILL_B.CCOSTCENTERID =’1001A310000000063ZU7’ –QDLC自有成本域</p>
+</li>
+<li><p>并且 <code>cm_costobject</code>.cmaterialid=’1001A31000000001TW6L’ – 电池级碳酸锂</p>
+</li>
+<li><p>并且  VSRCTRANTYPE IN (‘0001A310000000002OXY’, ‘1001A310000000061OUD’, ‘1001A31000000001KWPT’) </p>
+</li>
+<li><p>来源交易类型 满足以下条件</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>单据类型</th>
+<th>单据类型名称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0001A310000000002OXY</td>
+<td>产成品入库</td>
+</tr>
+<tr>
+<td>1001A31000000001KWPT</td>
+<td>混料入库</td>
+</tr>
+<tr>
+<td>1001A310000000061OUD</td>
+<td>艾科锐检测入库</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>并且 IA_I3BILL_B.CCOSTCENTERID =’1001A31000000041ZMYM’<strong>只筛选高纯GAGG粉体项目</strong></p>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><h4 id="2-合格率报表"><a href="#2-合格率报表" class="headerlink" title="2.合格率报表"></a>2.合格率报表</h4>
       
 
       
@@ -1452,6 +1861,13 @@
 </ul>
 <h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
 <li>《费用预算明细》、《费用预算汇总表-承担部门》、《费用预算汇总表-费用属性》需增加用户权限的控制.</li>
+<li>菜单导航<ul>
+<li>企业绩效管理<ul>
+<li><a href="#">费用预算分析</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p><img src="https://i.loli.net/2021/03/29/6hQALZbBWDM5EXO.png" alt="image-20210329114650531"></p>
 <ul>
