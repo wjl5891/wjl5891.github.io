@@ -155,9 +155,27 @@
     <article id="post-考勤卡记录查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/08/%E8%80%83%E5%8B%A4%E5%8D%A1%E8%AE%B0%E5%BD%95%E6%9F%A5%E8%AF%A2/">考勤机打卡记录</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/08/%E8%80%83%E5%8B%A4%E5%8D%A1%E8%AE%B0%E5%BD%95%E6%9F%A5%E8%AF%A2/" class="archive-article-date">
+  	<time datetime="2021-05-08T08:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-08</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>select<br>A.EmpNo,<br>A.empName,<br>convert(varchar,B.KqDate,23) as N_KqDate,<br>convert(varchar(8),dateadd(ss,B.KqTime,108),108) as N_KqTime ,<br>B.GUID ,<br>B.isncused<br>from [CenterSix1504].[dbo].[KQ_KqData] as B<br>inner join [CenterSix1504].[dbo].[RS_Emp] as A on A.EmpSysID=B.EmpSysID<br>where B.KqDate &gt;=’2021-04-30 00:00:00’ and B.KqDate &lt;=’2021-05-01 23:59:59’<br>–and convert(varchar(8),dateadd(ss,B.KqTime,108),108) &gt;’17:00:00’<br>–and isncused is null<br>and –a.empno=’060101011’<br>A.empname in (‘黄宝贵’,’张祖彪’,’钟华明’,’尹英群’,’刘旭雄’,’甘礼平’,’陈式强’,’巫兴明’)</p>
+        <p><strong>考勤机application会把所有打卡记录保存在192.168.192.130 SQL Server的CenterSix1504中</strong></p>
+<p><em><strong>NC6.5会每天用定时任务把前一天的打卡记录保存到NC oracleDB中。</strong></em></p>
+<p><em><strong>保存成功的记录会在<code>KQ_KqData</code>表中把字段<code>isncused</code>修改为 1</strong></em></p>
+<p>select<br>A.EmpNo,<br>A.empName,<br>convert(varchar,B.KqDate,23) as N_KqDate,<br>convert(varchar(8),dateadd(ss,B.KqTime,108),108) as N_KqTime ,<br>B.GUID ,<br>B.isncused<br>from [CenterSix1504].[dbo].[KQ_KqData] as B<br>inner join [CenterSix1504].[dbo].[RS_Emp] as A on A.EmpSysID=B.EmpSysID<br>where B.KqDate &gt;=’2021-04-30 00:00:00’ and B.KqDate &lt;=’2021-05-01 23:59:59’<br>–and convert(varchar(8),dateadd(ss,B.KqTime,108),108) &gt;’17:00:00’<br>–and isncused is null<br>and –a.empno=’060101011’<br>A.empname in (‘黄宝贵’,’张祖彪’,’钟华明’,’尹英群’,’刘旭雄’,’甘礼平’,’陈式强’,’巫兴明’)</p>
 <hr>
 <p>update  [CenterSix1504].[dbo].[KQ_KqData] set isncused=null  where GUID in<br>(select<br>B.GUID<br>from [CenterSix1504].[dbo].[KQ_KqData] as B<br>inner join [CenterSix1504].[dbo].[RS_Emp] as A on A.EmpSysID=B.EmpSysID<br>where B.KqDate &gt;=’2021-05-01 00:00:00’ and B.KqDate &lt;=’2021-05-01 23:59:59’<br>–and convert(varchar(8),dateadd(ss,B.KqTime,108),108) &gt;’17:00:00’<br>–and A.empname in (‘黄宝贵’,’张祖彪’,’钟华明’,’尹英群’,’刘旭雄’,’甘礼平’,’陈式强’,’巫兴明’)<br>)</p>
 
@@ -168,11 +186,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/07/%E8%80%83%E5%8B%A4%E5%8D%A1%E8%AE%B0%E5%BD%95%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/08/%E8%80%83%E5%8B%A4%E5%8D%A1%E8%AE%B0%E5%BD%95%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
         </p>
       
 
@@ -2674,6 +2703,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GQD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
               <li class="article-tag-list-item">
