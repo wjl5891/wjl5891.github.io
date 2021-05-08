@@ -152,6 +152,1008 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-考勤卡记录查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>select<br>A.EmpNo,<br>A.empName,<br>convert(varchar,B.KqDate,23) as N_KqDate,<br>convert(varchar(8),dateadd(ss,B.KqTime,108),108) as N_KqTime ,<br>B.GUID ,<br>B.isncused<br>from [CenterSix1504].[dbo].[KQ_KqData] as B<br>inner join [CenterSix1504].[dbo].[RS_Emp] as A on A.EmpSysID=B.EmpSysID<br>where B.KqDate &gt;=’2021-04-30 00:00:00’ and B.KqDate &lt;=’2021-05-01 23:59:59’<br>–and convert(varchar(8),dateadd(ss,B.KqTime,108),108) &gt;’17:00:00’<br>–and isncused is null<br>and –a.empno=’060101011’<br>A.empname in (‘黄宝贵’,’张祖彪’,’钟华明’,’尹英群’,’刘旭雄’,’甘礼平’,’陈式强’,’巫兴明’)</p>
+<hr>
+<p>update  [CenterSix1504].[dbo].[KQ_KqData] set isncused=null  where GUID in<br>(select<br>B.GUID<br>from [CenterSix1504].[dbo].[KQ_KqData] as B<br>inner join [CenterSix1504].[dbo].[RS_Emp] as A on A.EmpSysID=B.EmpSysID<br>where B.KqDate &gt;=’2021-05-01 00:00:00’ and B.KqDate &lt;=’2021-05-01 23:59:59’<br>–and convert(varchar(8),dateadd(ss,B.KqTime,108),108) &gt;’17:00:00’<br>–and A.empname in (‘黄宝贵’,’张祖彪’,’钟华明’,’尹英群’,’刘旭雄’,’甘礼平’,’陈式强’,’巫兴明’)<br>)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/07/%E8%80%83%E5%8B%A4%E5%8D%A1%E8%AE%B0%E5%BD%95%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-员工考核系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/30/%E5%91%98%E5%B7%A5%E8%80%83%E6%A0%B8%E7%B3%BB%E7%BB%9F/">虔东考核</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/30/%E5%91%98%E5%B7%A5%E8%80%83%E6%A0%B8%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
+  	<time datetime="2021-04-30T03:12:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="2021-03"><a href="#2021-03" class="headerlink" title="2021-03"></a>2021-03</h3><p><img src="https://i.loli.net/2021/04/30/P8iInfwpXj1tGFQ.png" alt="image-20210430101351772"></p>
+<p><img src="https://i.loli.net/2021/04/30/KRrUsFS9c2ynwLJ.png" alt="image-20210430111055208"></p>
+<hr>
+<h3 id="2021-04"><a href="#2021-04" class="headerlink" title="2021-04"></a>2021-04</h3><p><img src="https://i.loli.net/2021/04/30/gwzKhF9ktC7I4jT.png" alt="image-20210430110937367"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GQD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/30/%E5%91%98%E5%B7%A5%E8%80%83%E6%A0%B8%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-科力安远生产部成本表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/%E7%A7%91%E5%8A%9B%E5%AE%89%E8%BF%9C%E7%94%9F%E4%BA%A7%E9%83%A8%E6%88%90%E6%9C%AC%E8%A1%A8/">科力安远生产部单位成本表</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/%E7%A7%91%E5%8A%9B%E5%AE%89%E8%BF%9C%E7%94%9F%E4%BA%A7%E9%83%A8%E6%88%90%E6%9C%AC%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2021-04-20T01:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><p>安远科力公司需要按照各个车间工序计算统计分摊成本以及消耗原料信息等</p>
+<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>菜单 管理会计 –&gt; 利润中心交易 –&gt; 成本单据管理(分摊)</p>
+<p>菜单  管理会计 –&gt; 利润中心交易 –&gt; 业务单据 –&gt; 收入单据管理</p>
+<p>取 “安远科力稀土新材料有限公司，生产部”的 实际产量、产出数量.</p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/04/22/BMwyWJ91QPfKxsD.png" alt="image-20210422104139206"></p>
+<ul>
+<li><p>成本分摊表（<code>pcto_costbillfromfentan</code>，<code>pcto_costbillfromfentan_b</code>） </p>
+</li>
+<li><p>收入金额表（<code>pcto_srbill</code>，<code>pcto_srbill_b</code>）</p>
+</li>
+<li><p>成本汇总表（<code>pcto_costbill</code>， <code>pcto_costbill_b</code>)</p>
+</li>
+</ul>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><p>报表栏位说明</p>
+<table>
+<thead>
+<tr>
+<th>序</th>
+<th>栏位名称</th>
+<th>表</th>
+<th>字段</th>
+<th>类型</th>
+<th>大小</th>
+<th>栏位说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>成本对象</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>金属产品 如：金属镧</td>
+</tr>
+<tr>
+<td>2</td>
+<td>总产量</td>
+<td>pcto_srbill_b</td>
+<td>yield</td>
+<td>NUMBER</td>
+<td>28</td>
+<td>Sum(收入单据<strong>产出数量</strong>)</td>
+</tr>
+<tr>
+<td></td>
+<td>安远产量</td>
+<td>pcto_srbill_b</td>
+<td>anyuancl</td>
+<td>NUMBER</td>
+<td>28</td>
+<td>case 部门=1001A310000000000EY5 then sum(actual_output)</td>
+</tr>
+<tr>
+<td></td>
+<td>总产出数量</td>
+<td>pcto_srbill_b</td>
+<td>actual_output</td>
+<td>NUMBER</td>
+<td>28</td>
+<td>Sum(收入单据<strong>实际产量</strong>)</td>
+</tr>
+<tr>
+<td></td>
+<td>安远产出数量</td>
+<td>pcto_srbill_b</td>
+<td>ayccsl</td>
+<td>NUMBER</td>
+<td>28</td>
+<td>case 部门=1001A310000000000EY5 then sum(yield)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>一车间</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>安远一车间生产该产品的成本</td>
+</tr>
+<tr>
+<td>4</td>
+<td>二车间</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>安远二车间生产该产品的成本</td>
+</tr>
+<tr>
+<td>5</td>
+<td>三车间</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>安远三车间生产该产品的成本</td>
+</tr>
+<tr>
+<td>6</td>
+<td>备料</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>科力&amp;安远备料车间 <strong>按产量比率分摊</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td>辅助</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>科力&amp;安远辅助工段 <strong>同上</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td>质检</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>科力&amp;安远质检综合部 <strong>同上</strong></td>
+</tr>
+<tr>
+<td>9</td>
+<td>包装</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>科力&amp;安远包装车间 <strong>同上</strong></td>
+</tr>
+<tr>
+<td>10</td>
+<td>氟化锂金额</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>统计原料含有氟化锂的成本金额</td>
+</tr>
+<tr>
+<td>11</td>
+<td>合计1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>统计总成本 <strong>1~3车间+备料+辅助+质检+包装+氟化锂金额</strong></td>
+</tr>
+<tr>
+<td>12</td>
+<td>单位成本1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>计算得出单位成本 <strong>(合计1/安远产量)</strong></td>
+</tr>
+<tr>
+<td>13</td>
+<td>盐消耗数量</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>原料 含<strong>盐</strong>的消耗量</td>
+</tr>
+<tr>
+<td>14</td>
+<td>盐消耗金额</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>原料 含<strong>盐</strong>的成本</td>
+</tr>
+<tr>
+<td>15</td>
+<td>氟化物耗用量</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>ayscbcbft_02安远生产部单位成本表(氟化物消耗)</td>
+</tr>
+<tr>
+<td>16</td>
+<td>氟化物单位成本</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>用科力的<strong>科力生产部单位成本表(氟化物加工单价)</strong></td>
+</tr>
+<tr>
+<td>17</td>
+<td>合计</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>该成本对象(含氟化物的) 总成本金额</td>
+</tr>
+<tr>
+<td>18</td>
+<td>单位成本</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>合计/总产量=单位成本</td>
+</tr>
+</tbody></table>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p>单位           pk_dept</p>
+<hr>
+<p>科力一车间:  1001A310000000000EUP</p>
+<p>科力二车间：1001A310000000000EUW</p>
+<p>科力三车间:  1001A310000000000EV3</p>
+<p>科力四车间：1001A310000000000EVA</p>
+<p>科力五车间：1001A310000000000EVH</p>
+<p>备料工段：1001A310000000000EWG</p>
+<p>科力辅助车间：1001A310000000000EVO</p>
+<p>质检室：1001A310000000000EW9</p>
+<p>产品包装组：1001A310000000000EWU</p>
+<p>科力安远一车间：1001A310000000000EYQ</p>
+<p>科力安远二车间：1001A310000000000EYX</p>
+<p>科力安远三车间：1001A310000000000EZ4</p>
+<h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><h3 id="安远科力车间工段总产量的计算"><a href="#安远科力车间工段总产量的计算" class="headerlink" title="安远科力车间工段总产量的计算"></a>安远科力车间工段总产量的计算</h3><p>分析语义模型 </p>
+<p><img src="https://i.loli.net/2021/04/20/6Xm1dqvfxEoVs37.png" alt="image-20210420152017494"></p>
+<p>参考 用友钟老师的 <strong>科力生产部单位成本表(单位成本)</strong> 语义模型01 <font color="blue"><strong>klscbcbft_01</strong></font></p>
+<p>pk_org = ‘0001A3100000000037UG’ — 赣州科力稀土新材料有限公司</p>
+<p>pk_org = ‘0001A31000000000390Q’ — 安远科力稀土新材料有限公司</p>
+<p>pcto_costbill.transtypepk = ‘1001ZZ1000000023HYGN’ –分摊类型=工序流转</p>
+<!--钟：科力12345车间，换成 安远12345车间 org=公司 group=集团 dept=部门 -->
+
+<p>bd_marbasclass：<strong>物料基本分类</strong> <code>原料</code>包含 Level 1~3</p>
+<p><strong>bd_material</strong> ：<strong>物料基本信息（多版本）包含所有的物料Item</strong></p>
+<p>第1个结果集</p>
+<blockquote>
+<p>从【收入单据、物料 、原料 】信息中</p>
+<p>按 【集团】 、【物料】  分组</p>
+<p>汇 【集团】、 【物料】、【产量】</p>
+<p>Where 条件 【公司 】是 ”生产部“  ps:有两个<code>一个安远的一个科力的</code>  <mark>AND</mark> 产量&gt;0 <mark>AND</mark> 会计期间=YYY <mark>摘要</mark>=空白</p>
+</blockquote>
+<p>第2个结果集</p>
+<blockquote>
+<p>从【<a href="#%E6%88%90%E6%9C%AC%E5%88%86%E6%91%8A">分摊</a>、会计期间、原料】信息中</p>
+<p>按 【集团】 、【原料】  分组</p>
+<p>汇 【集团】、【原料】、【成本】</p>
+<p>Where 条件 【公司 】=  <strong>赣州科力稀土新材料有限公司</strong>  <mark>AND</mark> 成本&lt;&gt;0 <mark>AND</mark> 销售数据（def4）=’’</p>
+</blockquote>
+<p>第3个结果集</p>
+<ul>
+<li>aa <ul>
+<li>从【<a href="#%E6%88%90%E6%9C%AC%E5%88%86%E6%91%8A">分摊</a>、会计期间、物料、原料】信息中</li>
+<li>按  【集团】、【物料】、【原料】  分组</li>
+<li>汇  【集团】、【物料】、【原料】 、【成本】</li>
+<li>Where 条件【公司 】=  <strong>赣州科力稀土新材料有限公司</strong>  <mark>AND</mark> 成本&lt;&gt;0 <mark>AND</mark>  物料(a.def4 )&lt;&gt;空白</li>
+</ul>
+</li>
+<li>bb<ul>
+<li>a<ul>
+<li>从 【<a href="#%E6%88%90%E6%9C%AC%E5%88%86%E6%91%8A">分摊</a>、会计期间、物料、原料】信息中</li>
+<li>按  【集团】、【物料】 分组</li>
+<li>汇  【集团】、【物料】、【成本】</li>
+<li>Where 条件 【公司】 =  <strong>赣州科力稀土新材料有限公司</strong>  <mark>AND</mark> 成本&lt;&gt;0 <mark>AND</mark>  物料(a.def4 )&lt;&gt;空白</li>
+</ul>
+</li>
+<li>b<ul>
+<li>从 【<a href="#%E6%88%90%E6%9C%AC%E6%B1%87%E6%80%BB">汇总</a>、物料】信息中</li>
+<li>按 【集团】、【物料】 分组</li>
+<li>汇 【集团】、【物料】、【总消耗】</li>
+<li>Where 条件 【公司】 =  <strong>赣州科力稀土新材料有限公司</strong>  <mark>AND</mark> 成本&lt;&gt;0 <mark>AND</mark> 分摊类型=工序流转</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>a &lt;– b 关联起来 形成 **bb **</p>
+<p>条件是 a.【物料】=b.【物料】</p>
+<p>获取 【集团】、【物料】、a.【成本】、a【成本】-【总消耗（车间工序流转）】= 【扣完耗用的成本】</p>
+</blockquote>
+<ul>
+<li>aa &lt;– bb 关联起来  形成 <strong>t</strong></li>
+<li>条件是 aa.【物料】= bb.【物料】</li>
+<li>获取【集团】、【物料】、【产量】0、【aa.分摊的成本】/【bb.成本】* 【bb.扣完耗用的成本】<!--【流转消耗后的成本】--></li>
+</ul>
+<p>第1个结果集</p>
+<p>Union</p>
+<p>第2个结果集</p>
+<p>Union</p>
+<p>第3个结果集</p>
+<p>【集团】、【物料】、【产量】、【分摊后的成本】or 【流转消耗后的成本】、【成本/产量】 单位成本</p>
+<h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><p>收入单据：</p>
+<p><img src="https://i.loli.net/2021/04/22/VhT6AmlkWpCB45t.png" alt="image-20210422103144305"></p>
+<p><img src="https://i.loli.net/2021/04/22/BMwyWJ91QPfKxsD.png" alt="image-20210422104139206"></p>
+<p>**总产量:**上图红色框：科力 + 安远 生产部 相加得出 实际产量 (actual_output)</p>
+<p><strong>安远产量:</strong> 上图  安远 生产部 的 实际产量</p>
+<p><strong>总产出数量 ：</strong>上图红色框：科力 + 安远 生产部 相加得出 <font color="Red"><strong>产出数量</strong></font> (yield)</p>
+<p><strong>安远产出数量：</strong>上图  安远 生产部 的 <font color="Red"><strong>产出数量</strong></font></p>
+<p>成本取 安远科力稀土新材料有限公司的 <strong>物料</strong> <code>金额</code></p>
+<p><img src="https://i.loli.net/2021/04/22/VwF18vNAdiTDxP3.png" alt="image-20210422104528287"></p>
+<p>参考语义模型 钟老师的  <code>klscbcbft_06</code> , <strong>科力生产部单位成本表(明细)</strong></p>
+<img src="https://i.loli.net/2021/04/22/TZe9q4EkPzMg8yG.png" alt="image-20210422110939211" style="zoom:80%;" />
+
+<p>第1个结果集</p>
+<blockquote>
+<p>从【收入单据、物料信息 】表中</p>
+<p>按 部门 ，物料  分组</p>
+<p>汇总【  部门  】、【物料】、【产量】、【实际产量】</p>
+<p>条件汇总</p>
+<pre><code>+  当部门是“安远生产部”时 汇总 实际产量
++  当部门是“科力生成部”时 汇总 实际产量 和 产出数量
+</code></pre>
+<p>Where 条件 【公司 】是 ”生产部“  ps:有两个  <mark>AND</mark> 产量&gt;0</p>
+</blockquote>
+<p>第2个结果集</p>
+<blockquote>
+<p>从【分摊、会计期间、物料】 表中</p>
+<p>按 【组织】、【物料】 分组</p>
+<p>汇总 【科力一车间】、【科力二车间】、【科力三车间】、【科力四车间】、【科力五车间】、【备料工段】、【科力辅助车间】、【质检室】、【产品包装组】、【科力安远一车间】、【科力安远二车间】、【科力安远三车间】的各个物料【成本】</p>
+<p>Where 条件 【组织】是 赣州科力稀土新材料有限公司 or  安远科力稀土新材料有限公司</p>
+</blockquote>
+<ul>
+<li>这两个结果集union合并在一起就是<strong>物料、总产量、安远的产量、XX车间成本、XX段成本</strong></li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/25/iETYXuPtweA5RNB.png" alt="image-20210425104752464"></p>
+<p>安远 产量要统计 ”金属镧“，摘要=空白的。 </p>
+<p>摘要 不是 空白的是氟化物，不属于安远生产的。</p>
+<h3 id="氟化锂金额计算"><a href="#氟化锂金额计算" class="headerlink" title="氟化锂金额计算"></a>氟化锂金额计算</h3><p>参考钟老师的 klscbcbft_07 <strong>科力生产部单位成本表(机物料)</strong></p>
+<p><img src="https://i.loli.net/2021/04/26/mo8TXOMCVfaUxyg.png" alt="image-20210426102517359"></p>
+<p>第1个结果集 bb</p>
+<ul>
+<li>a <ul>
+<li>从【<a href="#%E6%88%90%E6%9C%AC%E5%88%86%E6%91%8A">分摊</a>、会计期间、物料、原料】信息中</li>
+<li>按  【集团】 ，【物料】  分组</li>
+<li>汇总 【 集团 】、【物料】、 【成本】</li>
+<li>Where 条件【公司 】=  <strong>赣州科力稀土新材料有限公司</strong>  <mark>AND</mark> 【会计期间】= YYY</li>
+</ul>
+</li>
+<li>b<ul>
+<li>从 【<a href="#%E6%88%90%E6%9C%AC%E6%B1%87%E6%80%BB">汇总</a>、物料】信息中</li>
+<li>按 【集团】、【物料】 分组</li>
+<li>汇总 【集团】、【物料】、【消耗】</li>
+<li>Where 条件 【公司】 =  <strong>赣州科力稀土新材料有限公司</strong>  <mark>AND</mark> 【会计期间】=YYY <mark>AND</mark> 分摊类型=工序流转</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>a &lt;– b 关联起来 形成 <strong>bb</strong></p>
+<p>按条件  a.【物料】 = b.【物料】</p>
+<p>获取 【集团】、【物料】、【成本】、【扣除耗用的成本】</p>
+<p>如：【成本】100元 ， 【消耗】10元，【扣除耗用的成本】= 90元</p>
+</blockquote>
+<p>第2个结果集 aa</p>
+<ul>
+<li>aa<ul>
+<li>从【<a href="#%E6%88%90%E6%9C%AC%E5%88%86%E6%91%8A">分摊</a>、会计期间、物料、原料】 信息中</li>
+<li>按 【集团】 、【物料】、【原料】 分组</li>
+<li>汇 【集团】 、【物料】、【原料】、【成本】</li>
+<li>Where 条件 【公司】 =  <strong>赣州科力稀土新材料有限公司</strong> AND 【会计期间】 = YYY</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>aa &lt;— bb 关联  形成  <strong>t</strong></p>
+<p>按 aa.【原料】 = bb.【物料】</p>
+<p>获取 【集团】 、 【物料】、【原料】、【扣完耗用后的成本金额】</p>
+<p><mark>aa.原料的成本 / bb.物料的成本 X  bb.扣除流转的成本</mark> = 最终原料消耗成本</p>
+<p><strong>例子一：$100   /   $ 120  x  ($120-$30)  =  100/120 * 90 = 75</strong></p>
+<p>假设: 1:1.2比率，1个原料做成 1.2个物料， 扣完流转消耗后为 75元成本</p>
+<p><strong>例子二：$100 / $ 100 * ($100 - $20) = 100 / 100 * 80 = 80</strong></p>
+<p>假设：1:1比率，1个原料做成1个物料，扣完流转消耗后为 80元成本</p>
+</blockquote>
+<p>从 <strong>t</strong> 中</p>
+<p>按 【集团】、【物料】 分组</p>
+<p>汇 【集团】、【物料】、【原料 含 盐、氟化锂】的成本金额、【原料 含 钙】的成本金额、【非以上两种的成本金额】</p>
+<h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><p>下面是科力生产部单位成本表(明细)的sql</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t.matname,</span><br><span class="line">       <span class="built_in">sum</span>(nvl(t.output,<span class="number">0</span>)) <span class="keyword">AS</span> output,</span><br><span class="line">       <span class="built_in">sum</span>(nvl(t.yield,<span class="number">0</span>)) <span class="keyword">as</span> yield,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> t.pk_dept<span class="operator">=</span><span class="string">&#x27;1001A310000000000EY5&#x27;</span> <span class="keyword">then</span> nvl(t.output,<span class="number">0</span>) <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> anyuancl,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> t.pk_dept<span class="operator">=</span><span class="string">&#x27;1001A310000000000EU4&#x27;</span> <span class="keyword">then</span> nvl(t.output,<span class="number">0</span>) <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> klsjcl,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> t.pk_dept<span class="operator">=</span><span class="string">&#x27;1001A310000000000EU4&#x27;</span> <span class="keyword">then</span> nvl(t.yield,<span class="number">0</span>) <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> klccsl,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> t.pk_dept<span class="operator">=</span><span class="string">&#x27;1001A310000000000EY5&#x27;</span> <span class="keyword">then</span> nvl(t.yield,<span class="number">0</span>) <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> ayccsl,</span><br><span class="line">       <span class="keyword">null</span> <span class="keyword">as</span> yichejian,<span class="keyword">null</span> <span class="keyword">as</span> erchejian,<span class="keyword">null</span> <span class="keyword">as</span> sanchejian,<span class="keyword">null</span> <span class="keyword">as</span> sichejian,</span><br><span class="line">       <span class="keyword">null</span> <span class="keyword">as</span> wuchejian,<span class="keyword">null</span> <span class="keyword">as</span> beiliaochejian,<span class="keyword">null</span> <span class="keyword">as</span> fuzhuchejian,<span class="keyword">null</span> <span class="keyword">as</span> zhijianchejian,</span><br><span class="line">       <span class="keyword">null</span> <span class="keyword">as</span> baozhuangchejian,<span class="keyword">null</span> <span class="keyword">as</span> anyuanyichejian,<span class="keyword">null</span> <span class="keyword">as</span> anyuanerchejian,</span><br><span class="line">       <span class="keyword">null</span> <span class="keyword">as</span> anyuansanchejian,<span class="keyword">null</span> <span class="keyword">as</span> heji,</span><br><span class="line">       <span class="string">&#x27;0001A310000000000EXB&#x27;</span> <span class="keyword">as</span> pk_group</span><br><span class="line"><span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> nvl(b.pk_marbasclass, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> b.pk_marbasclass</span><br><span class="line">                 <span class="keyword">else</span> b.cmaterialoid</span><br><span class="line">                 <span class="keyword">end</span> <span class="keyword">as</span> matpk,</span><br><span class="line">             <span class="keyword">case</span> <span class="keyword">when</span> nvl(b.pk_marbasclass, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span>  d.name <span class="keyword">else</span> c.name</span><br><span class="line">                 <span class="keyword">end</span> <span class="keyword">as</span> matname,</span><br><span class="line">             <span class="built_in">sum</span>(b.actual_output) <span class="keyword">as</span> output, <span class="built_in">sum</span>(b.yield) <span class="keyword">as</span> yield, a.pk_dept <span class="keyword">as</span> pk_dept</span><br><span class="line">      <span class="keyword">from</span> pcto_srbill a</span><br><span class="line">               <span class="keyword">left</span> <span class="keyword">join</span> pcto_srbill_b b</span><br><span class="line">                         <span class="keyword">on</span> a.pk_srbill <span class="operator">=</span> b.pk_srbill</span><br><span class="line">               <span class="keyword">left</span> <span class="keyword">join</span> bd_material c</span><br><span class="line">                         <span class="keyword">on</span> b.cmaterialoid <span class="operator">=</span> c.pk_material</span><br><span class="line">               <span class="keyword">left</span> <span class="keyword">join</span> bd_marbasclass d</span><br><span class="line">                         <span class="keyword">on</span> b.pk_marbasclass <span class="operator">=</span> d.pk_marbasclass</span><br><span class="line">      <span class="keyword">where</span> nvl(a.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">and</span> nvl(b.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">and</span> a.pk_dept <span class="keyword">in</span> (<span class="string">&#x27;1001A310000000000EU4&#x27;</span>, <span class="string">&#x27;1001A310000000000EY5&#x27;</span>)</span><br><span class="line">        <span class="comment">--and a.def2 &lt;= (parameter(&#x27;param1&#x27;))</span></span><br><span class="line">        <span class="comment">--and a.def2 &gt;= parameter(&#x27;param1&#x27;)</span></span><br><span class="line">        <span class="keyword">and</span> nvl(b.explanation,<span class="string">&#x27;~&#x27;</span>)<span class="operator">=</span><span class="string">&#x27;~&#x27;</span></span><br><span class="line">      <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">case</span></span><br><span class="line">                   <span class="keyword">when</span> nvl(b.pk_marbasclass, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> b.pk_marbasclass</span><br><span class="line">                   <span class="keyword">else</span> b.cmaterialoid <span class="keyword">end</span>,</span><br><span class="line">               <span class="keyword">case</span></span><br><span class="line">                   <span class="keyword">when</span> nvl(b.pk_marbasclass, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> d.name</span><br><span class="line">                   <span class="keyword">else</span> c.name</span><br><span class="line">                   <span class="keyword">end</span>,a.pk_dept) t</span><br><span class="line"><span class="keyword">where</span> (nvl(t.output, <span class="number">0</span>) <span class="operator">&gt;</span> <span class="number">0</span> <span class="keyword">or</span> nvl(t.yield, <span class="number">0</span>) <span class="operator">&gt;</span> <span class="number">0</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> t.matname</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">case</span></span><br><span class="line">           <span class="keyword">when</span> b.pk_dept <span class="keyword">in</span> (<span class="string">&#x27;1001A310000000000EUW&#x27;</span>,</span><br><span class="line">                              <span class="string">&#x27;1001A310000000000EVH&#x27;</span>,</span><br><span class="line">                              <span class="string">&#x27;1001A310000000000EUP&#x27;</span>) <span class="keyword">and</span> d.name <span class="keyword">like</span> <span class="string">&#x27;%合金&#x27;</span> <span class="keyword">then</span></span><br><span class="line">               concat(<span class="string">&#x27;电解&#x27;</span>, replace(d.name, <span class="string">&#x27;合金&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">               <span class="built_in">trim</span>(replace(d.name, <span class="string">&#x27;(产品)&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">           <span class="keyword">end</span> <span class="keyword">as</span> matname,</span><br><span class="line">       <span class="number">0</span> <span class="keyword">as</span> output, <span class="number">0</span> <span class="keyword">as</span> yield, <span class="number">0</span> <span class="keyword">as</span> anyuancl, <span class="number">0</span> <span class="keyword">as</span> klsjcl, <span class="number">0</span> <span class="keyword">as</span> klccsl, <span class="number">0</span> <span class="keyword">as</span> ayccsl,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EUP&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> yichejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EUW&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> erchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EV3&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> sanchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EVA&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> sichejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EVH&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> wuchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EWG&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> beiliaochejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EVO&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> fuzhuchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EW9&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span>  <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> zhijianchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EWU&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> baozhuangchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EYQ&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> anyuanyichejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EYX&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> anyuanerchejian,</span><br><span class="line">       <span class="built_in">sum</span>(<span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EZ4&#x27;</span> <span class="keyword">then</span> a.sum <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> anyuansanchejian,</span><br><span class="line">       <span class="built_in">sum</span>(a.sum) <span class="keyword">as</span> heji, b.pk_group</span><br><span class="line"><span class="keyword">from</span> pcto_costbillfromfentan_b a</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> pcto_costbillfromfentan b</span><br><span class="line">                   <span class="keyword">on</span> a.pk_costbillfromfentan <span class="operator">=</span> b.pk_costbillfromfentan</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> bd_accperiodmonth c</span><br><span class="line">                   <span class="keyword">on</span> b.def2 <span class="operator">=</span> c.pk_accperiodmonth</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> bd_marbasclass d</span><br><span class="line">                   <span class="keyword">on</span> a.pk_marbasclass <span class="operator">=</span> d.pk_marbasclass</span><br><span class="line"><span class="keyword">where</span> nvl(a.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> nvl(a.sum, <span class="number">0</span>) <span class="operator">&lt;&gt;</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.def4, <span class="string">&#x27;~&#x27;</span>) <span class="operator">=</span> <span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> b.pk_org <span class="keyword">in</span> (<span class="string">&#x27;0001A3100000000037UG&#x27;</span>,<span class="string">&#x27;0001A31000000000390Q&#x27;</span>)</span><br><span class="line">  <span class="comment">--and c.yearmth &lt;= parameter(&#x27;param1&#x27;)</span></span><br><span class="line">  <span class="comment">--and c.yearmth &gt;= parameter(&#x27;param1&#x27;)</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">case</span> <span class="keyword">when</span> b.pk_dept <span class="keyword">in</span> (<span class="string">&#x27;1001A310000000000EUW&#x27;</span>,</span><br><span class="line">                                <span class="string">&#x27;1001A310000000000EVH&#x27;</span>,</span><br><span class="line">                                <span class="string">&#x27;1001A310000000000EUP&#x27;</span>) <span class="keyword">and</span> d.name <span class="keyword">like</span> <span class="string">&#x27;%合金&#x27;</span> <span class="keyword">then</span></span><br><span class="line">                 concat(<span class="string">&#x27;电解&#x27;</span>, replace(d.name, <span class="string">&#x27;合金&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">             <span class="keyword">else</span></span><br><span class="line">                 <span class="built_in">trim</span>(replace(d.name, <span class="string">&#x27;(产品)&#x27;</span>, <span class="string">&#x27;&#x27;</span>))</span><br><span class="line">             <span class="keyword">end</span>, b.pk_group</span><br></pre></td></tr></table></figure>
+
+<h3 id="报表格式设计"><a href="#报表格式设计" class="headerlink" title="报表格式设计"></a><strong>报表格式设计</strong></h3><img src="https://i.loli.net/2021/04/25/Io5TfaR8Q1lrDkd.png" alt="image-20210425141804619" style="zoom:80%;" />
+
+
+
+<img src="https://i.loli.net/2021/04/25/y8QfWqMsUZgP9B5.png" alt="image-20210425142011208" style="zoom:80%;" />
+
+<p>klscbcbft_01 科力生产部单位成本表(单位成本)</p>
+<p>klayscbft 科力安远生产部单位成本表</p>
+<hr>
+<p>自由报表编码：klayscbft 自由报表名称：科力安远生产部单位成本表</p>
+<img src="https://i.loli.net/2021/04/25/htGBqRs4JzcLFDl.png" alt="image-20210425143819591" style="zoom:80%;" />
+
+<p>查询条件 “会计期间” 设置</p>
+<p><img src="https://i.loli.net/2021/04/25/egWKGi3TodtsrkD.png" alt="image-20210425143907195" style="zoom:80%;" /><img src="https://i.loli.net/2021/04/25/K4xH2soeQtUWvfR.png" alt="image-20210425144819151"></p>
+<img src="https://i.loli.net/2021/04/25/K4xH2soeQtUWvfR.png" alt="image-20210425144840268" style="zoom:80%;" />
+
+<p>查询条件 “成本对象” 设置</p>
+<img src="https://i.loli.net/2021/04/25/NWil5hRCmtJ3xdZ.png" alt="image-20210425144033488" style="zoom:80%;" />
+
+<img src="https://i.loli.net/2021/04/25/3sBkSLUhbReZV9I.png" alt="image-20210425144101927" style="zoom:80%;" />
+
+<img src="https://i.loli.net/2021/04/25/ZvFUizdWLtGAMYf.png" alt="image-20210425144117039" style="zoom:80%;" />
+
+<img src="https://i.loli.net/2021/04/25/FEK85I9hVWqtxYs.png" alt="image-20210425144126529" style="zoom:80%;" />
+
+<p>氟化锂金额 的计算 参考</p>
+<p><img src="https://i.loli.net/2021/04/25/TXjsaE2UbqxlLOz.png" alt="image-20210425151519156"></p>
+<p>同样是修改一下部门，用case when判断是氟化锂。</p>
+<blockquote>
+<p>氟化锂金额的获取方式：</p>
+<p>判断原料名称如果是 xx盐xx 、xx氟化锂xx 、则汇总 分摊后的金额.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*ayscbcbft_02 安远生产部单位成本表(氟化物消耗)*/</span></span><br><span class="line"><span class="keyword">select</span> g.name <span class="keyword">as</span> proname, f.name <span class="keyword">as</span> matname, <span class="built_in">sum</span>(b.nassistnum) <span class="keyword">as</span> nnum</span><br><span class="line"><span class="keyword">from</span> ic_material_b b <span class="comment">--材料出库单表体</span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material c <span class="keyword">on</span> b.cmaterialoid <span class="operator">=</span> c.pk_material <span class="comment">--物料</span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_defdoc a <span class="keyword">on</span> c.pk_marbasclass <span class="operator">=</span> a.def2 <span class="comment">--自定义档案</span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material d <span class="keyword">on</span> b.ccostobject <span class="operator">=</span> d.pk_material <span class="keyword">and</span> a.def4 <span class="operator">=</span> d.pk_marbasclass <span class="comment">--物料</span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> ic_material_h e <span class="keyword">on</span> b.cgeneralhid <span class="operator">=</span> e.cgeneralhid <span class="comment">--材料出库单表头</span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass f <span class="keyword">on</span> c.pk_marbasclass <span class="operator">=</span> f.pk_marbasclass <span class="comment">--物料分类，原料 </span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass g <span class="keyword">on</span> d.pk_marbasclass <span class="operator">=</span> g.pk_marbasclass <span class="comment">--物料分类，原料</span></span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_stordoc h <span class="keyword">on</span> e.cwarehouseid <span class="operator">=</span> h.pk_stordoc  <span class="comment">--仓库</span></span><br><span class="line"><span class="keyword">where</span> nvl(a.def4, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">and</span> nvl(a.def2, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="comment">--def2 原料-物料分类 , def4 产品-物料分类</span></span><br><span class="line">  <span class="keyword">and</span> a.pk_defdoclist <span class="operator">=</span> <span class="string">&#x27;1001A3100000003R5SVH&#x27;</span> <span class="keyword">and</span> nvl(b.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&lt;=</span> <span class="keyword">parameter</span>(<span class="string">&#x27;param1&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&gt;=</span> <span class="keyword">parameter</span>(<span class="string">&#x27;param1&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> h.iscalculatedinvcost <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span> <span class="keyword">and</span> h.iscommissionout<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> e.vtrantypecode <span class="keyword">in</span> (<span class="string">&#x27;4D-Cxx-11&#x27;</span>, <span class="string">&#x27;4D-01&#x27;</span>, <span class="string">&#x27;4D-Cxx-04&#x27;</span>, <span class="string">&#x27;4D-Cxx-02&#x27;</span>, <span class="string">&#x27;4D-Cxx-01&#x27;</span>, <span class="string">&#x27;4D-Cxx-20&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> e.pk_org <span class="keyword">in</span> ( <span class="string">&#x27;0001A31000000000390Q&#x27;</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> g.name, f.name</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> g.name, c.name, <span class="built_in">sum</span>(b.nassistnum)</span><br><span class="line"><span class="keyword">from</span> ic_material_b b</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material c <span class="keyword">on</span> b.cmaterialoid <span class="operator">=</span> c.pk_material</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_defdoc a <span class="keyword">on</span> c.pk_material <span class="operator">=</span> a.def1</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material d <span class="keyword">on</span> b.ccostobject <span class="operator">=</span> d.pk_material <span class="keyword">and</span> a.def4 <span class="operator">=</span> d.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> ic_material_h e <span class="keyword">on</span> b.cgeneralhid <span class="operator">=</span> e.cgeneralhid</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass f <span class="keyword">on</span> c.pk_marbasclass <span class="operator">=</span> f.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass g <span class="keyword">on</span> d.pk_marbasclass <span class="operator">=</span> g.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_stordoc h <span class="keyword">on</span> e.cwarehouseid <span class="operator">=</span> h.pk_stordoc</span><br><span class="line"><span class="keyword">where</span> nvl(a.def4, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">and</span> nvl(a.def1, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> a.pk_defdoclist <span class="operator">=</span> <span class="string">&#x27;1001A3100000003R5SVH&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&lt;=</span> <span class="keyword">parameter</span>(<span class="string">&#x27;param1&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&gt;=</span> <span class="keyword">parameter</span>(<span class="string">&#x27;param1&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> h.iscalculatedinvcost <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span> <span class="keyword">and</span> h.iscommissionout<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> g.name <span class="keyword">not</span> <span class="keyword">like</span> <span class="string">&#x27;电解%&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> e.vtrantypecode <span class="keyword">in</span> (<span class="string">&#x27;4D-Cxx-11&#x27;</span>, <span class="string">&#x27;4D-01&#x27;</span>, <span class="string">&#x27;4D-Cxx-04&#x27;</span>, <span class="string">&#x27;4D-Cxx-02&#x27;</span>, <span class="string">&#x27;4D-Cxx-01&#x27;</span>, <span class="string">&#x27;4D-Cxx-20&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> e.pk_org <span class="keyword">in</span> ( <span class="string">&#x27;0001A31000000000390Q&#x27;</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> g.name, c.name</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> d.name, f.name, <span class="built_in">sum</span>(b.nassistnum)</span><br><span class="line"><span class="keyword">from</span> ic_material_b b</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material c</span><br><span class="line">                    <span class="keyword">on</span> b.cmaterialoid <span class="operator">=</span> c.pk_material</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_defdoc a</span><br><span class="line">                    <span class="keyword">on</span> c.pk_marbasclass <span class="operator">=</span> a.def2</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material d</span><br><span class="line">                    <span class="keyword">on</span> b.ccostobject <span class="operator">=</span> d.pk_material</span><br><span class="line">                        <span class="keyword">and</span> a.def3 <span class="operator">=</span> d.pk_material</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> ic_material_h e</span><br><span class="line">                    <span class="keyword">on</span> b.cgeneralhid <span class="operator">=</span> e.cgeneralhid</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass f</span><br><span class="line">                    <span class="keyword">on</span> c.pk_marbasclass <span class="operator">=</span> f.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass g</span><br><span class="line">                    <span class="keyword">on</span> d.pk_marbasclass <span class="operator">=</span> g.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_stordoc h</span><br><span class="line">                    <span class="keyword">on</span> e.cwarehouseid <span class="operator">=</span> h.pk_stordoc</span><br><span class="line"><span class="keyword">where</span> nvl(a.def3, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> nvl(a.def2, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> a.pk_defdoclist <span class="operator">=</span> <span class="string">&#x27;1001A3100000003R5SVH&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&lt;=</span> <span class="string">&#x27;2021-01&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&gt;=</span> <span class="string">&#x27;2021-01&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> h.iscalculatedinvcost <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> h.iscommissionout<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> e.vtrantypecode <span class="keyword">in</span> (<span class="string">&#x27;4D-Cxx-11&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-01&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-04&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-02&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-01&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-20&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> e.pk_org <span class="keyword">in</span> ( <span class="string">&#x27;0001A31000000000390Q&#x27;</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> d.name, f.name</span><br><span class="line"></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> d.name, c.name, <span class="built_in">sum</span>(b.nassistnum)</span><br><span class="line"><span class="keyword">from</span> ic_material_b b</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material c</span><br><span class="line">                    <span class="keyword">on</span> b.cmaterialoid <span class="operator">=</span> c.pk_material</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_defdoc a</span><br><span class="line">                    <span class="keyword">on</span> c.pk_material <span class="operator">=</span> a.def1</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_material d</span><br><span class="line">                    <span class="keyword">on</span> b.ccostobject <span class="operator">=</span> d.pk_material</span><br><span class="line">                        <span class="keyword">and</span> a.def3 <span class="operator">=</span> d.pk_material</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> ic_material_h e</span><br><span class="line">                    <span class="keyword">on</span> b.cgeneralhid <span class="operator">=</span> e.cgeneralhid</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass f</span><br><span class="line">                    <span class="keyword">on</span> c.pk_marbasclass <span class="operator">=</span> f.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_marbasclass g</span><br><span class="line">                    <span class="keyword">on</span> d.pk_marbasclass <span class="operator">=</span> g.pk_marbasclass</span><br><span class="line">         <span class="keyword">inner</span> <span class="keyword">join</span> bd_stordoc h</span><br><span class="line">                    <span class="keyword">on</span> e.cwarehouseid <span class="operator">=</span> h.pk_stordoc</span><br><span class="line"><span class="keyword">where</span> nvl(a.def3, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> nvl(a.def1, <span class="string">&#x27;~&#x27;</span>) <span class="operator">&lt;&gt;</span> <span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> a.pk_defdoclist <span class="operator">=</span> <span class="string">&#x27;1001A3100000003R5SVH&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.dr, <span class="number">0</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&lt;=</span> <span class="keyword">parameter</span>(<span class="string">&#x27;param1&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> substr(e.dbilldate, <span class="number">0</span>, <span class="number">7</span>) <span class="operator">&gt;=</span> <span class="keyword">parameter</span>(<span class="string">&#x27;param1&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> h.iscalculatedinvcost <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> h.iscommissionout<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> e.vtrantypecode <span class="keyword">in</span> (<span class="string">&#x27;4D-Cxx-11&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-01&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-04&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-02&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-01&#x27;</span>,</span><br><span class="line">                          <span class="string">&#x27;4D-Cxx-20&#x27;</span>)</span><br><span class="line">  <span class="keyword">and</span> e.pk_org <span class="keyword">in</span> ( <span class="string">&#x27;0001A31000000000390Q&#x27;</span>)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> d.name, c.name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p><img src="https://i.loli.net/2021/04/30/Iu8of69d4JSvtXg.png" alt="image-20210430103712302"></p>
+<p>菜单：38 管理会计——3822 利润中心交易——382259 成本分摊档案 —— 安远生产部单位成本表</p>
+<p>导航：</p>
+<ul>
+<li>管理会计 <ul>
+<li> <a href="#">利润中心交易</a> / 成本分摊档案</li>
+<li>安远生产部单位成本表</li>
+</ul>
+</li>
+</ul>
+<p>最后找王兴分配一下权限。    </p>
+<h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1><p><img src="https://i.loli.net/2021/04/27/wO32HmaSMZ9e4BA.png" alt="image-20210427154119106"></p>
+<p><strong>下面整理整个报表的撰写逻辑：</strong></p>
+<p>前半部分：单元格 A ~ M 成本对象——包装</p>
+<p><img src="https://i.loli.net/2021/04/29/Aisf9jkgGNmJewo.png" alt="image-20210429100418236"></p>
+<p><img src="https://i.loli.net/2021/04/29/r24WYjCmoEbtLcJ.png" alt="image-20210429100457199"></p>
+<p>报表用 的语义模型为 <strong>“klayscbft 安远生产部单位成本表”</strong></p>
+<img src="https://i.loli.net/2021/05/07/CzMnGYLAZgvNK9h.png" alt="image-20210507172536122"  />
+
+<table>
+<thead>
+<tr>
+<th>语义模型</th>
+<th>列1</th>
+<th>列2</th>
+<th>列3</th>
+<th>列4</th>
+<th>列5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>t_1 科力安远生产部单位成本表</td>
+<td>成本对象</td>
+<td>总产量</td>
+<td>安远产量</td>
+<td>总产出数量</td>
+<td>安远产出数量</td>
+</tr>
+<tr>
+<td>t_1 参考的是 klscbcbft_01</td>
+<td>一车间</td>
+<td>二车间</td>
+<td>三车间</td>
+<td>备料</td>
+<td>辅助</td>
+</tr>
+<tr>
+<td>科力生产部单位成本表(单位成本)</td>
+<td>质检</td>
+<td>包装</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t_2 参考的是<strong>klscbcbft_07科力生产部单位成本表(机物料)</strong></td>
+<td>氟化锂金额</td>
+<td></td>
+<td></td>
+<td>盐消耗金额</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>合计1</td>
+<td></td>
+<td></td>
+<td>单位成本1</td>
+<td></td>
+</tr>
+<tr>
+<td>ayscbcbft_08 <strong>参考的是klscbcbft_08科力生产部成本报表(盐消耗)</strong></td>
+<td>盐消耗数量</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ayscbcbft_02 <strong>参考的是klscbcbft_02  科力生产部单位成本表(氟化物消耗)</strong></td>
+<td>氟化物耗用量</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t_3 只有原料的单价。需要关联出对应的产品，用产品关联到t_1的成本对象</td>
+<td>氟化物单位成本</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>也就是要再join 一次 klscbcbft_02</td>
+<td>合计</td>
+<td>合计1</td>
+<td>加盐消耗金额</td>
+<td>加氟化物</td>
+<td>(用量*单位成本)</td>
+</tr>
+<tr>
+<td>t_3.name=klscbcbft_02.matname 再用 klscbcbft_02.proname=t1.成本对象</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t_4 <strong>科力四车间氟化物单位成本</strong> 用于取<code>氟化物单位成本</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://i.loli.net/2021/05/07/naocT79tPsVUgmG.png" alt="image-20210507172941593"><strong>单位成本</strong> = 一车间+二车间+三车间+备料+辅助+质检+包装+氟化锂金额+盐金额+氟化物金额 /  除以  安远产量</p>
+<p><strong>氟化物单位成本</strong> = 氟化物金额 / 氟化物用量</p>
+<p><strong>氟化物金额</strong> = 数量(氟化物用量) * 单价<code>(单位成本 or 统一单价)</code></p>
+<p><strong>氟化物用量</strong> = 安远的材料出库单耗用量</p>
+<p><strong>盐消耗金额</strong> = <strong>氟化物单位成本</strong>  X  <strong>盐消耗数量</strong></p>
+<p><strong>盐消耗数量</strong> = 所有含氟化物的消耗数量<code>ayscbcbft_08</code></p>
+<p><strong>氟化锂金额</strong> = 原料含有 <code>%氟化锂% </code> 的分摊金额</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--t3 取氟化物的统一单价</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    c.name,b.unit_price,a.pk_group</span><br><span class="line"><span class="keyword">from</span> pcto_srjg a</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> pcto_srjg_b b</span><br><span class="line">                   <span class="keyword">on</span> a.pk_srjg<span class="operator">=</span>b.pk_srjg</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> bd_marbasclass c</span><br><span class="line">                   <span class="keyword">on</span> b.pk_marbasclass<span class="operator">=</span>c.pk_marbasclass</span><br><span class="line"><span class="keyword">where</span> a.pk_dept<span class="operator">=</span><span class="string">&#x27;1001A310000000000EU4&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> nvl(a.dr,<span class="number">0</span>)<span class="operator">=</span><span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.dr,<span class="number">0</span>)<span class="operator">=</span><span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> nvl(b.pk_marbasclass,<span class="string">&#x27;~&#x27;</span>)<span class="operator">&lt;&gt;</span><span class="string">&#x27;~&#x27;</span></span><br><span class="line">  <span class="keyword">and</span> c.name <span class="keyword">like</span> <span class="string">&#x27;氟化%&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>氟化物用量 *  氟化物单价</p>
+<p>sum ((nvl(ayscbcbft_02.NNUM,0)) * (nvl(t_4.DWCB,nvl(t_3.UNIT_PRICE,0))))</p>
+<p>盐消耗金额 = (nvl(t_4.DWCB,nvl(t_3.UNIT_PRICE,0))) * ayscbcbft_08.NUM</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/%E7%A7%91%E5%8A%9B%E5%AE%89%E8%BF%9C%E7%94%9F%E4%BA%A7%E9%83%A8%E6%88%90%E6%9C%AC%E8%A1%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-安装LINUX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/18/%E5%AE%89%E8%A3%85LINUX/">Linux系统安装Oracle11g</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/18/%E5%AE%89%E8%A3%85LINUX/" class="archive-article-date">
+  	<time datetime="2021-04-18T05:37:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>cat  /etc/redhat -release</p>
+<p>yum repolist</p>
+<p>yum grouplist</p>
+<p>yum groupinstall -y “Server with GUI”</p>
+<p>yum -y install fonts-chinese</p>
+<p>yum -y install fonts-ISO8859-2</p>
+<p>临时解决SSH终端中文乱码问题：</p>
+<p>export LC_ALL=zh_CN.GB2312;export LANG=zh_CN.GB2312</p>
+<p>./runInstaller</p>
+<p>sunloginclient-11.0.0.36662.x86_64.rpm</p>
+<p><strong>在Linux如何安装rpm文件?</strong></p>
+<hr>
+<ol start="2">
+<li><p>启动相关数据库和监听服务</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">以oracle身份登录数据库： su -oracle</span><br><span class="line">   </span><br><span class="line">进入 sqlplus 控制台：sqlplus/nolog -------------这里不需要开通  listener进程</span><br><span class="line">   </span><br><span class="line">以系统管理员登录：connect/ as sysdba</span><br><span class="line">   </span><br><span class="line">关闭数据库：shutdown   immediate -------------关闭上次不正确的Oracle数据库对象，比如不包含监听状态的数据库对象</span><br><span class="line">   </span><br><span class="line">退出sqlplus控制台：exit</span><br><span class="line">   </span><br><span class="line">进入监听器控制台：lsnrctl</span><br><span class="line">   </span><br><span class="line">关闭监听器：stop</span><br><span class="line">   </span><br><span class="line">启动监听器：start  -----------------------重新打开数据库监听listener进程</span><br><span class="line">   </span><br><span class="line">退出监听控制台：exit</span><br><span class="line">   </span><br><span class="line">进入 sqlplus 控制台：sqlplus/nolog</span><br><span class="line">   </span><br><span class="line">以系统管理员登录：connect/ as sysdba</span><br><span class="line">   </span><br><span class="line">启动数据库：startup  ---------------------------重新打开数据库进程</span><br><span class="line">   </span><br><span class="line">退出sqlplus控制台：exit</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>上面操作的原因如下：</p>
+<p>　   1.sqlplus / as sysdba 这是典型的操作系统认证，不需要listener进程 　　<br>　　2.sqlplus sys/oracle 这种连接方式只能连接本机数据库，同样不需要listener进程 　　<br>　　3.sqlplus sys/oracle@orcl 这种方式需要listener进程处于可用状态。最普遍的通过网络连接。<br>————————————————</p>
+<p>u01/oracle/app/u01/product/11.2.0/dbhome_1/hs/admin</p>
+<p>LISTENER =<br>  (DESCRIPTION_LIST =<br>    (DESCRIPTION =<br>      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))<br>      (ADDRESS = (PROTOCOL = TCP)(HOST=192.168.135.243)(PORT = 1521))<br>    )<br>  )<br>ADR_BASE_LISTENER = /home/oracle/app/oracle</p>
+<p><img src="https://i.loli.net/2021/04/19/Nt7rIpRuanm2gbX.png" alt="image-20210419153702101"></p>
+<p>listener.ora</p>
+<p>alter user 用户名 identified by 新密码；</p>
+<ul>
+<li>在VM中安装了一段时间的CENTOS-8,过了好几周没登录，root密码忘记，下面的链接有重置密码的方法。</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gnail_oug/article/details/94721777">https://blog.csdn.net/gnail_oug/article/details/94721777</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/18/%E5%AE%89%E8%A3%85LINUX/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-外部复检结果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/16/%E5%A4%96%E9%83%A8%E5%A4%8D%E6%A3%80%E7%BB%93%E6%9E%9C/">外部复检结果分单录入</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/16/%E5%A4%96%E9%83%A8%E5%A4%8D%E6%A3%80%E7%BB%93%E6%9E%9C/" class="archive-article-date">
+  	<time datetime="2021-04-16T01:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h2><h3 id="增加打印功能"><a href="#增加打印功能" class="headerlink" title="增加打印功能"></a>增加打印功能</h3><h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>​      需要修改的单据名：《外部复检结果分单录入》 —— 增加一个按钮</p>
+<p>​      <mark>参考的原始单据名：《艾科锐外部委托单》 —— 原样打印</mark></p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/04/16/DCSbnpe4kFVmoxq.png" alt="image-20210416095741407"></p>
+<ul>
+<li>原样打印画面样式</li>
+<li>该模板的设置界面在<code>输出模板初始化</code>功能.</li>
+<li>找到 供应链 —— 销售管理 —— 销售订单 ——艾科锐内部委托单<ul>
+<li>委托单原样分样 <!--prinEntry.setTemplateCode("400603014020"); //设置打印输出模板的编号--></li>
+</ul>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/04/16/jUFczuIALJVsX4G.png" alt="image-20210416112505704" style="zoom:80%;" />
+
+<p>下图是 点击【修改】后显示 ”模板编辑器“:</p>
+<img src="https://i.loli.net/2021/04/16/BsVJqOK2yI6Dj5d.png" alt="image-20210416112537337" style="zoom:80%;" />
+
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>行1：条形码<code>分析编号+样袋号</code></li>
+<li>行2：WS210101-02001  (0)  <code>样品编号+样袋序号</code> </li>
+<li>行3：2021/01/02  16:35 <code>上单时间</code></li>
+<li>行4：稀土精矿 <code>样品名称</code> <code>样品规格</code></li>
+<li>行5：HY-20201221-01  <code>送样编号</code></li>
+<li>行6：REO,配分(0)      <code>表体的物料名称</code></li>
+<li>行7：备注：除钍后总量 <code>样品状态</code></li>
+</ul>
+<p>​     </p>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><blockquote>
+<p>先分析原功能实现打印的大概逻辑：</p>
+<img src="https://i.loli.net/2021/04/16/swBoOayNWi8r5c2.png" alt="image-20210416113302487" style="zoom:50%;" />
+
+<p>参考的单据是上游单据“艾科锐外部委托单”。下游“检验结果分单录入” 只是把上游的检验结果拿一部分过来，再加上自己的检验结果。</p>
+<p>并附加上自身单据的分析编号，复检结果！</p>
+</blockquote>
+<p><mark>模板设置—业务单元</mark></p>
+<p>所属组织：赣州艾科锐检测技术有限公司</p>
+<p>子节点：</p>
+<ul>
+<li>艾科锐分析系统<ul>
+<li>外部检测分析<ul>
+<li>艾科锐外部委托单</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单据模板：<ul>
+<li>组织模板 &gt; 销售订单 - 艾科锐外部委托单新</li>
+</ul>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/04/16/AVMG5Cy3aUY2utn.png" alt="image-20210416111658411" style="zoom:80%;" />
+
+<ul>
+<li>点击【修改】</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/16/wyPMAESYotVzalb.png" alt="image-20210416112953734"></p>
+<p>在<mark>模板设置-集团</mark></p>
+<p>找到 </p>
+<ul>
+<li>艾科锐分析系统<ul>
+<li>外部检测分析<ul>
+<li>选择 <strong>外部复检结果分单录入</strong> <ul>
+<li>点击– <strong>复检结果录入</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/04/16/aGLhRoC6xsWznwK.png" alt="image-20210416114921246" style="zoom:80%;" />
+
+<p>点击修改 会进入 <img src="https://i.loli.net/2021/04/16/X47hmpxnwBPMFqr.png" alt="image-20210416115205335" style="zoom: 80%;" />的设置界面，可以查看用到的表名，字段名。</p>
+<img src="https://i.loli.net/2021/04/16/O52ojLAP8GhaWzZ.png" alt="image-20210416115357916" style="zoom:150%;" />
+
+<p><img src="https://i.loli.net/2021/04/16/M98aCxLSTF1IYd3.png" alt="image-20210416115421641"></p>
+<p><img src="https://i.loli.net/2021/04/16/JRBD8umQFV7piKn.png" alt="image-20210416150141570"></p>
+<p>外部复检结果录入</p>
+<p>表体Table : TestResultsentryson_v</p>
+<h2 id="二、测试"><a href="#二、测试" class="headerlink" title="二、测试"></a>二、测试</h2><p>SaleOrderPrintSample.java <code>原样打印事件的类继承关系图</code></p>
+<p><img src="https://i.loli.net/2021/04/26/2lkijvNhgHJ1VE6.png" alt="image-20210426140710046"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/16/%E5%A4%96%E9%83%A8%E5%A4%8D%E6%A3%80%E7%BB%93%E6%9E%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-地磅采集系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -198,7 +1200,7 @@
 <img src="https://i.loli.net/2021/04/14/lYzNZkWUecpgDI3.png" alt="image-20210414112102331" style="zoom:80%;" />
 
 <p>操作完成后，重新启动电脑！</p>
-<h1 id="二、地磅基本信息"><a href="#二、地磅基本信息" class="headerlink" title="二、地磅基本信息"></a>二、地磅基本信息</h1><h5 id="1-1-功能导航"><a href="#1-1-功能导航" class="headerlink" title="1-1. 功能导航"></a>1-1. 功能导航</h5><ul>
+<h1 id="二、配置地磅"><a href="#二、配置地磅" class="headerlink" title="二、配置地磅"></a>二、配置地磅</h1><h3 id="1-功能导航"><a href="#1-功能导航" class="headerlink" title="1. 功能导航"></a>1. 功能导航</h3><ul>
 <li><p>供应链 / 供应链基础设置</p>
 <ul>
 <li><a href="#">采购设置</a><ul>
@@ -208,7 +1210,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="1-2-操作说明"><a href="#1-2-操作说明" class="headerlink" title="1-2. 操作说明"></a>1-2. 操作说明</h5><p>首先进入  <code>地磅基础信息</code> –&gt;  设置地磅采集配置信息:</p>
+<h3 id="2-操作说明"><a href="#2-操作说明" class="headerlink" title="2. 操作说明"></a>2. 操作说明</h3><p>首先进入  <code>地磅基础信息</code> –&gt;  设置地磅采集配置信息:</p>
 <p>参照Awen串口调试助手：</p>
 <p>设置</p>
 <ul>
@@ -221,7 +1223,7 @@
 <li>奇偶校验 <code>0</code></li>
 </ul>
 <p><img src="https://i.loli.net/2021/04/14/MYbhwW74cP8DiOr.png" alt="image-20210414114117080"></p>
-<h5 id="1-3-地磅测试"><a href="#1-3-地磅测试" class="headerlink" title="1-3. 地磅测试"></a>1-3. 地磅测试</h5><p>先按照下图设置好虚拟串口信息，再点击【地磅测试】按钮</p>
+<h3 id="3-地磅测试"><a href="#3-地磅测试" class="headerlink" title="3. 地磅测试"></a>3. 地磅测试</h3><p>先按照下图设置好虚拟串口信息，再点击【地磅测试】按钮</p>
 <p><img src="https://i.loli.net/2021/04/14/1g39DJtHjxErlXP.png" alt="image-20210414114255315"></p>
 <p><img src="https://i.loli.net/2021/04/14/GHupxtasXhWwk82.png" alt="image-20210414114308716"></p>
 <p><img src="https://i.loli.net/2021/04/14/FKrgvLmJlDT8HqQ.png" alt="image-20210414114317749"></p>
@@ -230,7 +1232,7 @@
 <p>点击【确定】退出！ <strong>（一定要退出，否则会一直占用Com2)</strong></p>
 <h1 id="三、销售地磅"><a href="#三、销售地磅" class="headerlink" title="三、销售地磅"></a>三、销售地磅</h1><p><strong><font color="blue" size="3">销售出货时车辆出厂需要通过地磅系统采集出货重量</font></strong> </p>
 <p>[^出厂采集]: 先采集空车重量，再采集装车后的重量 ，差值即货重</p>
-<h5 id="1-1-功能导航-1"><a href="#1-1-功能导航-1" class="headerlink" title="1-1. 功能导航"></a>1-1. 功能导航</h5><ul>
+<h3 id="1-功能导航-1"><a href="#1-功能导航-1" class="headerlink" title="1. 功能导航"></a>1. 功能导航</h3><ul>
 <li><p>供应链 / 供应链基础设置</p>
 <ul>
 <li><a href="#">采购设置</a><ul>
@@ -240,7 +1242,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="1-2-操作说明-1"><a href="#1-2-操作说明-1" class="headerlink" title="1-2. 操作说明"></a>1-2. 操作说明</h5><p>首先新增一张“销售地磅”单据</p>
+<h3 id="2-操作说明-1"><a href="#2-操作说明-1" class="headerlink" title="2. 操作说明"></a>2. 操作说明</h3><p>首先新增一张“销售地磅”单据</p>
 <blockquote>
 <p>业务单元选择： 力赛科 或  福默斯</p>
 <p>点击【读数】，读取空车的重量。</p>
@@ -261,10 +1263,10 @@
 </ul>
 <img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210414142116059.png" alt="image-20210414142116059" style="zoom:80%;" />
 
-<p>勾选两张发货单。 合计重量 = 1500 + 10 = 1600 kg</p>
+<p>勾选两张发货单。 合计重量 = 1500 + 10 = 1510 kg</p>
 <p><img src="https://i.loli.net/2021/04/14/GrkAYM9HLbus34X.png" alt="image-20210414142702473"></p>
 <blockquote>
-<p>[实际重量] = 发货单 汇总的 出货重量**(1510kg)** 而上面计算得出的过磅重量为 <strong>1000kg</strong></p>
+<p>[实际重量] = 发货单 汇总的 出货重量 <strong>(1510kg)</strong>  而上面计算得出的过磅重量为 <strong>1000kg</strong></p>
 <p>差异 -510kg 为少发货。存在异常!</p>
 <p>[差异] = [过磅重量] - [实际重量]  (<strong>1000 - 1510 = -510</strong>)</p>
 <p>[实际重量] 在点击[参照发货单] 或 [参照备料计划] 拉单时自动产生。</p>
@@ -272,7 +1274,7 @@
 <p>修改-保存结束。</p>
 <h1 id="四、采购地磅"><a href="#四、采购地磅" class="headerlink" title="四、采购地磅"></a>四、采购地磅</h1><p><strong><font color="blue" size="3">采购进货时车辆入厂需要通过地磅系统采集入库重量</font></strong></p>
 <p>[^进厂采集]: 先采集满载重量，再采集空车后的重量 ，差值即载货量</p>
-<h5 id="1-1-功能导航-2"><a href="#1-1-功能导航-2" class="headerlink" title="1-1. 功能导航"></a>1-1. 功能导航</h5><ul>
+<h3 id="1-功能导航-2"><a href="#1-功能导航-2" class="headerlink" title="1. 功能导航"></a>1. 功能导航</h3><ul>
 <li><p>供应链 / 供应链基础设置</p>
 <ul>
 <li><a href="#">采购设置</a><ul>
@@ -282,11 +1284,11 @@
 </ul>
 </li>
 </ul>
-<h5 id="1-2-操作说明-2"><a href="#1-2-操作说明-2" class="headerlink" title="1-2. 操作说明"></a>1-2. 操作说明</h5><p>点击新增一笔“采购地磅”单据</p>
+<h3 id="2-操作说明-2"><a href="#2-操作说明-2" class="headerlink" title="2. 操作说明"></a>2. 操作说明</h3><p>点击新增一笔“采购地磅”单据</p>
 <blockquote>
 <p>业务单元选择： 力赛科 或  福默斯</p>
 <p>输入[车牌号]</p>
-<p>[[满载时间] = 系统自动带出当前系统时间</p>
+<p>[满载时间] = 系统自动带出当前系统时间</p>
 <p>[满载司磅员] = 当前登录用户</p>
 <p>[单据日期] = 当前日期</p>
 </blockquote>
@@ -1114,7 +2116,7 @@
 <h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><p>测试版</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> replace <span class="keyword">view</span> prd_mth_benefit_rpt</span><br><span class="line"><span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> abc.PK_GROUP,abc.PK_ORG,abc.CPERIOD,abc.CCOSTCENTERID,abc.product,abc.material,</span><br><span class="line">NVL(abc.a,<span class="number">11</span>) a,NVL(abc.b,<span class="number">13</span>) b, NVL(abc.c,<span class="number">14</span>) c,</span><br><span class="line">NVL(def.d,<span class="number">12</span>) D,NVL(def.e,<span class="number">18</span>) E ,NVL(def.f,<span class="number">15</span>) F <span class="keyword">from</span> (</span><br><span class="line">  <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="string">&#x27;1&#x27;</span> DATATYPE，CM_INPROSTUFF.PK_GROUP, <span class="comment">--期初原料</span></span><br><span class="line">          CM_INPROSTUFF.PK_ORG,</span><br><span class="line">          TO_CHAR(ADD_MONTHS(TO_DATE(CM_INPROSTUFF.CPERIOD <span class="operator">||</span> <span class="string">&#x27;-01&#x27;</span>,</span><br><span class="line">                                               <span class="string">&#x27;YYYY-MM-DD HH24:MI:SS&#x27;</span>),</span><br><span class="line">                                       <span class="number">1</span>),</span><br><span class="line">                            <span class="string">&#x27;YYYY-MM&#x27;</span>) CPERIOD, <span class="comment">-- + 1个月作为下一个月的期初</span></span><br><span class="line">          CM_INPROSTUFF.CCOSTCENTERID,</span><br><span class="line">          cb.cmaterialid product,<span class="comment">--取出 成本中心的产品名称</span></span><br><span class="line">          CM_INPROSTUFF_B.CMATERIALID <span class="keyword">as</span> material, <span class="comment">--在产材料盘点单明细.物料名称</span></span><br><span class="line"></span><br><span class="line">          <span class="built_in">SUM</span>(decode(m.name , <span class="string">&#x27;硫酸铝铵&#x27;</span>,CM_INPROSTUFF_B.NNUM<span class="operator">*</span><span class="number">0.1125</span>,CM_INPROSTUFF_B.NNUM)) NNUM</span><br><span class="line">   <span class="keyword">FROM</span> CM_INPROSTUFF CM_INPROSTUFF</span><br><span class="line">            <span class="keyword">INNER</span> <span class="keyword">JOIN</span> CM_INPROSTUFF_B CM_INPROSTUFF_B</span><br><span class="line">                       <span class="keyword">ON</span> CM_INPROSTUFF.CINPROSTUFFID <span class="operator">=</span> CM_INPROSTUFF_B.CINPROSTUFFID</span><br><span class="line">       <span class="keyword">left</span> <span class="keyword">join</span> cm_costobject cb <span class="keyword">on</span> cb.ccostobjectid  <span class="operator">=</span> CM_INPROSTUFF.CCOSTOBJECTID <span class="comment">--关联 成本对象</span></span><br><span class="line">       <span class="keyword">left</span> <span class="keyword">join</span> bd_material m <span class="keyword">on</span> m.pk_material <span class="operator">=</span> CM_INPROSTUFF_B.CMATERIALID</span><br><span class="line">   <span class="keyword">WHERE</span> <span class="comment">--(CM_INPROSTUFF.DR = 0 AND CM_INPROSTUFF_B.DR = 0) and </span></span><br><span class="line">         CM_INPROSTUFF.Ccostcenterid <span class="operator">=</span> <span class="string">&#x27;1001A31000000041ZMYM&#x27;</span></span><br><span class="line">   <span class="keyword">GROUP</span> <span class="keyword">BY</span> CM_INPROSTUFF.PK_GROUP,</span><br><span class="line">            CM_INPROSTUFF.PK_ORG,</span><br><span class="line">            CM_INPROSTUFF.CPERIOD,</span><br><span class="line">            CM_INPROSTUFF.CCOSTCENTERID,</span><br><span class="line">            cb.cmaterialid,</span><br><span class="line">            CM_INPROSTUFF_B.CMATERIALID</span><br><span class="line">  <span class="keyword">union</span> <span class="keyword">all</span>         </span><br><span class="line">  <span class="keyword">SELECT</span> <span class="string">&#x27;2&#x27;</span> DATATYPE,   <span class="comment">----原料领用数量 </span></span><br><span class="line">           IA_I6BILL_B.PK_GROUP PK_GROUP,</span><br><span class="line">           ORG_COSTREGION.PK_ORG PK_ORG,</span><br><span class="line">           IA_I6BILL_B.CACCOUNTPERIOD CPERIOD,</span><br><span class="line">           IA_I6BILL_B.CCOSTCENTERID CCOSTCENTERID,        </span><br><span class="line">           IA_I6BILL_B.CCOSTOBJID,<span class="comment">--取出 成本中心的产品名称</span></span><br><span class="line">           IA_I6BILL_B.CINVENTORYID, <span class="comment">--原料</span></span><br><span class="line">           <span class="built_in">SUM</span>(decode(m.name , <span class="string">&#x27;硫酸铝铵&#x27;</span>,IA_I6BILL_B.NNUM<span class="operator">*</span><span class="number">0.1125</span>,IA_I6BILL_B.NNUM)) NNUM</span><br><span class="line">      <span class="keyword">FROM</span> IA_I6BILL IA_I6BILL</span><br><span class="line">     <span class="keyword">INNER</span> <span class="keyword">JOIN</span> IA_I6BILL_B IA_I6BILL_B</span><br><span class="line">        <span class="keyword">ON</span> IA_I6BILL.CBILLID <span class="operator">=</span> IA_I6BILL_B.CBILLID</span><br><span class="line">     <span class="keyword">INNER</span> <span class="keyword">JOIN</span> ORG_COSTREGION ORG_COSTREGION</span><br><span class="line">        <span class="keyword">ON</span> IA_I6BILL_B.PK_ORG <span class="operator">=</span> ORG_COSTREGION.PK_COSTREGION</span><br><span class="line">        <span class="keyword">left</span> <span class="keyword">join</span> bd_material m <span class="keyword">on</span> m.pk_material <span class="operator">=</span> IA_I6BILL_B.CINVENTORYID</span><br><span class="line">      <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> BD_STORDOC BD</span><br><span class="line">        <span class="keyword">ON</span> IA_I6BILL.CSTORDOCID <span class="operator">=</span> BD.PK_STORDOC</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="comment">--IA_I6BILL.DR = 0 AND IA_I6BILL_B.DR = 0 AND</span></span><br><span class="line">        BD.NAME <span class="keyword">NOT</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%材料%&#x27;</span></span><br><span class="line">       <span class="keyword">AND</span> ORG_COSTREGION.PK_ORG <span class="keyword">NOT</span> <span class="keyword">IN</span></span><br><span class="line">           (<span class="string">&#x27;0001A3100000000038HJ&#x27;</span>, <span class="string">&#x27;0001A31000000002CJIR&#x27;</span>)</span><br><span class="line">       <span class="keyword">AND</span> IA_I6BILL.CTRANTYPEID <span class="keyword">IN</span></span><br><span class="line">           (<span class="string">&#x27;0001A310000000002OYK&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;1001A31000000001KWS7&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;1001A31000000001KWT4&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;1001A31000000001KWSI&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;1001A3100000000QUXRO&#x27;</span>)</span><br><span class="line">            <span class="keyword">and</span> IA_I6BILL_B.CCOSTCENTERID <span class="operator">=</span><span class="string">&#x27;1001A31000000041ZMYM&#x27;</span></span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> IA_I6BILL_B.PK_GROUP,</span><br><span class="line">              ORG_COSTREGION.PK_ORG,</span><br><span class="line">              IA_I6BILL_B.CACCOUNTPERIOD,</span><br><span class="line">              IA_I6BILL_B.CCOSTCENTERID,</span><br><span class="line">              IA_I6BILL_B.CCOSTOBJID,</span><br><span class="line">              IA_I6BILL_B.CINVENTORYID</span><br><span class="line">  <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">  <span class="keyword">SELECT</span> <span class="string">&#x27;3&#x27;</span> DATATYPE，CM_INPROSTUFF.PK_GROUP, <span class="comment">-- 期末数量</span></span><br><span class="line">          CM_INPROSTUFF.PK_ORG,</span><br><span class="line">          CM_INPROSTUFF.CPERIOD,</span><br><span class="line">          CM_INPROSTUFF.CCOSTCENTERID,</span><br><span class="line">          cb.cmaterialid product,<span class="comment">--取出 成本中心的产品名称</span></span><br><span class="line">          CM_INPROSTUFF_B.CMATERIALID <span class="keyword">as</span> material,</span><br><span class="line">       <span class="built_in">SUM</span>(decode(m.name , <span class="string">&#x27;硫酸铝铵&#x27;</span>,CM_INPROSTUFF_B.NNUM<span class="operator">*</span><span class="number">0.1125</span>,CM_INPROSTUFF_B.NNUM))</span><br><span class="line">   <span class="keyword">FROM</span> CM_INPROSTUFF CM_INPROSTUFF</span><br><span class="line">            <span class="keyword">INNER</span> <span class="keyword">JOIN</span> CM_INPROSTUFF_B CM_INPROSTUFF_B</span><br><span class="line">                       <span class="keyword">ON</span> CM_INPROSTUFF.CINPROSTUFFID <span class="operator">=</span> CM_INPROSTUFF_B.CINPROSTUFFID</span><br><span class="line">       <span class="keyword">left</span> <span class="keyword">join</span> cm_costobject cb <span class="keyword">on</span> cb.ccostobjectid  <span class="operator">=</span> CM_INPROSTUFF.CCOSTOBJECTID <span class="comment">--关联 成本对象</span></span><br><span class="line">       <span class="keyword">left</span> <span class="keyword">join</span> bd_material m <span class="keyword">on</span> m.pk_material <span class="operator">=</span> CM_INPROSTUFF_B.CMATERIALID</span><br><span class="line">   <span class="keyword">WHERE</span> <span class="comment">--(CM_INPROSTUFF.DR = 0 AND CM_INPROSTUFF_B.DR = 0) and </span></span><br><span class="line">         CM_INPROSTUFF.Ccostcenterid <span class="operator">=</span> <span class="string">&#x27;1001A31000000041ZMYM&#x27;</span></span><br><span class="line">   <span class="keyword">GROUP</span> <span class="keyword">BY</span> CM_INPROSTUFF.PK_GROUP,</span><br><span class="line">            CM_INPROSTUFF.PK_ORG,</span><br><span class="line">            CM_INPROSTUFF.CPERIOD,</span><br><span class="line">            CM_INPROSTUFF.CCOSTCENTERID,</span><br><span class="line">            cb.cmaterialid,</span><br><span class="line">            CM_INPROSTUFF_B.CMATERIALID</span><br><span class="line">   ) rec123</span><br><span class="line">  Pivot(</span><br><span class="line">    <span class="built_in">sum</span>(NNUM) <span class="keyword">for</span> DATATYPE <span class="keyword">in</span> (<span class="string">&#x27;1&#x27;</span> <span class="keyword">as</span> a ,<span class="string">&#x27;2&#x27;</span> <span class="keyword">as</span> b,<span class="string">&#x27;3&#x27;</span> <span class="keyword">as</span> c)</span><br><span class="line">  )</span><br><span class="line">) abc <span class="keyword">full</span> <span class="keyword">join</span> </span><br><span class="line"> (</span><br><span class="line">  <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> (  <span class="comment">--在产品盘点数量 期初</span></span><br><span class="line">   (<span class="keyword">SELECT</span> <span class="string">&#x27;4&#x27;</span> DATATYPE, CM_INPROCESS.PK_GROUP PK_GROUP, </span><br><span class="line">           CM_INPROCESS.PK_ORG PK_ORG,</span><br><span class="line">           TO_CHAR(ADD_MONTHS(TO_DATE(CM_INPROCESS.CPERIOD <span class="operator">||</span> <span class="string">&#x27;-01&#x27;</span>,</span><br><span class="line">                                               <span class="string">&#x27;YYYY-MM-DD HH24:MI:SS&#x27;</span>),</span><br><span class="line">                                       <span class="number">1</span>),</span><br><span class="line">                            <span class="string">&#x27;YYYY-MM&#x27;</span>) CPERIOD, <span class="comment">-- + 1个月作为下一个月的期初</span></span><br><span class="line">           CM_INPROCESS.CCOSTCENTERID CCOSTCENTERID,</span><br><span class="line">           cb.cmaterialid product,<span class="comment">--取出 成本中心的产品名称</span></span><br><span class="line">           <span class="built_in">SUM</span>(CM_INPROCESS_B.NINPRONUM) NNUM</span><br><span class="line">      <span class="keyword">FROM</span> CM_INPROCESS CM_INPROCESS</span><br><span class="line">     <span class="keyword">INNER</span> <span class="keyword">JOIN</span> CM_INPROCESS_B CM_INPROCESS_B</span><br><span class="line">        <span class="keyword">ON</span> CM_INPROCESS.CINPROCESSID <span class="operator">=</span> CM_INPROCESS_B.CINPROCESSID</span><br><span class="line">     <span class="keyword">left</span> <span class="keyword">join</span> cm_costobject cb <span class="keyword">on</span> cb.ccostobjectid  <span class="operator">=</span> CM_INPROCESS_b.ccostobjectid  <span class="comment">--关联 成本对象</span></span><br><span class="line">     <span class="keyword">WHERE</span> <span class="comment">--(CM_INPROCESS.DR = 0 AND CM_INPROCESS_B.DR = 0) and </span></span><br><span class="line">     CM_INPROCESS.ccostcenterid <span class="operator">=</span><span class="string">&#x27;1001A31000000041ZMYM&#x27;</span></span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> CM_INPROCESS.PK_ORG,</span><br><span class="line">              CM_INPROCESS.PK_GROUP,</span><br><span class="line">              CM_INPROCESS.CPERIOD,</span><br><span class="line">              CM_INPROCESS.CCOSTCENTERID,</span><br><span class="line">              cb.cmaterialid)  </span><br><span class="line">  <span class="keyword">union</span> <span class="keyword">all</span> <span class="comment">--在产品盘点数量 期末</span></span><br><span class="line">   (<span class="keyword">SELECT</span> <span class="string">&#x27;6&#x27;</span> DATATYPE, CM_INPROCESS.PK_GROUP PK_GROUP,</span><br><span class="line">           CM_INPROCESS.PK_ORG PK_ORG,</span><br><span class="line">           CM_INPROCESS.CPERIOD,</span><br><span class="line">           CM_INPROCESS.CCOSTCENTERID CCOSTCENTERID,</span><br><span class="line">           cb.cmaterialid product,<span class="comment">--取出 成本中心的产品名称</span></span><br><span class="line">           <span class="built_in">SUM</span>(CM_INPROCESS_B.NINPRONUM) NNUM</span><br><span class="line">      <span class="keyword">FROM</span> CM_INPROCESS CM_INPROCESS</span><br><span class="line">     <span class="keyword">INNER</span> <span class="keyword">JOIN</span> CM_INPROCESS_B CM_INPROCESS_B</span><br><span class="line">        <span class="keyword">ON</span> CM_INPROCESS.CINPROCESSID <span class="operator">=</span> CM_INPROCESS_B.CINPROCESSID</span><br><span class="line">     <span class="keyword">left</span> <span class="keyword">join</span> cm_costobject cb <span class="keyword">on</span> cb.ccostobjectid  <span class="operator">=</span> CM_INPROCESS_b.ccostobjectid <span class="comment">--关联 成本对象   </span></span><br><span class="line">     <span class="keyword">WHERE</span> <span class="comment">--(CM_INPROCESS.DR = 0 AND CM_INPROCESS_B.DR = 0) and </span></span><br><span class="line">     CM_INPROCESS.ccostcenterid <span class="operator">=</span><span class="string">&#x27;1001A31000000041ZMYM&#x27;</span></span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> CM_INPROCESS.PK_ORG,</span><br><span class="line">              CM_INPROCESS.PK_GROUP,</span><br><span class="line">              CM_INPROCESS.CPERIOD,</span><br><span class="line">              CM_INPROCESS.CCOSTCENTERID,</span><br><span class="line">              cb.cmaterialid)  </span><br><span class="line">  <span class="keyword">union</span> <span class="keyword">all</span> <span class="comment">--产成品入库      </span></span><br><span class="line">   (<span class="keyword">SELECT</span> <span class="string">&#x27;5&#x27;</span> DATATYPE,</span><br><span class="line">           IA_I3BILL_B.PK_GROUP PK_GROUP,</span><br><span class="line">           ORG_COSTREGION.PK_ORG PK_ORG,</span><br><span class="line">           IA_I3BILL_B.CACCOUNTPERIOD CPERIOD,</span><br><span class="line">           NVL(IA_I3BILL_B.CCOSTCENTERID, <span class="string">&#x27;~&#x27;</span>) CCOSTCENTERID,</span><br><span class="line">           IA_I3BILL_B.CINVENTORYID <span class="keyword">as</span> product , <span class="comment">--产品</span></span><br><span class="line">           <span class="built_in">SUM</span>(IA_I3BILL_B.NNUM) NNUM</span><br><span class="line">      <span class="keyword">FROM</span> IA_I3BILL_B IA_I3BILL_B</span><br><span class="line">     <span class="keyword">INNER</span> <span class="keyword">JOIN</span> ORG_COSTREGION ORG_COSTREGION</span><br><span class="line">        <span class="keyword">ON</span> IA_I3BILL_B.PK_ORG <span class="operator">=</span> ORG_COSTREGION.PK_COSTREGION</span><br><span class="line">     <span class="keyword">left</span> <span class="keyword">join</span> cm_costobject cb <span class="keyword">on</span> cb.cmaterialid <span class="operator">=</span> IA_I3BILL_B.CINVENTORYID</span><br><span class="line">     <span class="keyword">WHERE</span> <span class="comment">--IA_I3BILL_B.DR = 0 AND</span></span><br><span class="line">        ORG_COSTREGION.PK_ORG <span class="keyword">NOT</span> <span class="keyword">IN</span></span><br><span class="line">           (<span class="string">&#x27;0001A3100000000038HJ&#x27;</span>, <span class="string">&#x27;0001A31000000002CJIR&#x27;</span>) <span class="keyword">and</span> IA_I3BILL_B.CCOSTCENTERID <span class="operator">=</span><span class="string">&#x27;1001A310000000063ZU7&#x27;</span> <span class="keyword">and</span> cb.cmaterialid<span class="operator">=</span><span class="string">&#x27;1001A31000000001TW6L&#x27;</span></span><br><span class="line">        <span class="keyword">AND</span> IA_I3BILL_B.VSRCTRANTYPE <span class="keyword">IN</span></span><br><span class="line">           (<span class="string">&#x27;0001A310000000002OXY&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;1001A310000000061OUD&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;1001A31000000001KWPT&#x27;</span>) <span class="keyword">and</span> IA_I3BILL_B.CCOSTCENTERID <span class="operator">=</span><span class="string">&#x27;1001A31000000041ZMYM&#x27;</span></span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> IA_I3BILL_B.PK_GROUP,</span><br><span class="line">              ORG_COSTREGION.PK_ORG,</span><br><span class="line">              IA_I3BILL_B.CACCOUNTPERIOD,</span><br><span class="line">              IA_I3BILL_B.CCOSTCENTERID,</span><br><span class="line">              IA_I3BILL_B.CINVENTORYID</span><br><span class="line">              )                   </span><br><span class="line">  ) rec456 </span><br><span class="line">  Pivot(</span><br><span class="line">    <span class="built_in">sum</span>(NNUM) <span class="keyword">for</span> DATATYPE <span class="keyword">in</span> (<span class="string">&#x27;4&#x27;</span> <span class="keyword">as</span> d ,<span class="string">&#x27;5&#x27;</span> <span class="keyword">as</span> e,<span class="string">&#x27;6&#x27;</span> <span class="keyword">as</span> f)</span><br><span class="line">  )</span><br><span class="line">) def <span class="keyword">on</span> abc.pk_group <span class="operator">=</span> def.pk_group <span class="keyword">and</span> abc.pk_org <span class="operator">=</span> def.pk_org <span class="keyword">and</span> abc.cperiod <span class="operator">=</span> def.cperiod <span class="keyword">and</span> abc.CCOSTCENTERID <span class="operator">=</span> def.CCOSTCENTERID</span><br><span class="line"><span class="keyword">and</span> abc.product <span class="operator">=</span> def.product</span><br></pre></td></tr></table></figure>
 
-<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p><mark>语义模型添加</mark></p>
+<p><mark>语义模型添加</mark></p>
 <p>语义模型编码：GAGG_prd_mth_benefit_rpt</p>
 <p>语义模型名称：高纯粉生产月收率表</p>
 <p>导航：生产类报表</p>
@@ -1133,7 +2135,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="2-合格率报表"><a href="#2-合格率报表" class="headerlink" title="2. 合格率报表"></a>2. 合格率报表</h4><h5 id="截图-1"><a href="#截图-1" class="headerlink" title="截图"></a>截图</h5><p>报表样式：</p>
+<h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><h4 id="2-合格率报表"><a href="#2-合格率报表" class="headerlink" title="2. 合格率报表"></a>2. 合格率报表</h4><h5 id="截图-1"><a href="#截图-1" class="headerlink" title="截图"></a>截图</h5><p>报表样式：</p>
 <p><img src="https://i.loli.net/2021/04/12/fIhQBkXbSDP69sU.png" alt="image-20210412140925039"></p>
 <h5 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h5><p>产品入库单</p>
 <ul>
@@ -1562,1046 +2564,6 @@
 
 
   
-    <article id="post-高纯产品成本表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/31/%E9%AB%98%E7%BA%AF%E4%BA%A7%E5%93%81%E6%88%90%E6%9C%AC%E8%A1%A8/">高纯产品成本表-报表</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/31/%E9%AB%98%E7%BA%AF%E4%BA%A7%E5%93%81%E6%88%90%E6%9C%AC%E8%A1%A8/" class="archive-article-date">
-  	<time datetime="2021-03-31T09:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><center><font size="15"><blod>《高纯产品成本表》</blod></font></center><br/>
-
-
-
-
-<center><font size="15"><blod>详细版本</blod></font></center>
-
-<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>菜单 管理会计 –&gt; 利润中心交易 –&gt; 成本单据管理(分摊)</p>
-<pre><code> 管理会计 --&gt; 利润中心交易 --&gt; 业务单据 --&gt; 收入单据管理
-</code></pre>
-<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/03/31/Xuq1Ss3wBpZjfH4.jpg" alt="img"></p>
-<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><p>报表栏位说明</p>
-<table>
-<thead>
-<tr>
-<th>序</th>
-<th>栏位名称</th>
-<th>表</th>
-<th>字段</th>
-<th>类型</th>
-<th>大小</th>
-<th>栏位说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>元素</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>物料</td>
-</tr>
-<tr>
-<td>2</td>
-<td>总产量</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>高纯综合办</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>成本1</td>
-</tr>
-<tr>
-<td>4</td>
-<td>高纯一车间</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>成本2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>沉淀工段</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>成本3</td>
-</tr>
-<tr>
-<td>6</td>
-<td>灼烧工段</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>液碱</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>工业盐酸</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>工业草酸</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>精制盐酸</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>11</td>
-<td>精制草酸</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>12</td>
-<td>合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>成本合计</td>
-</tr>
-<tr>
-<td>13</td>
-<td>单位成本</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>表尾栏位说明</p>
-<table>
-<thead>
-<tr>
-<th>序</th>
-<th>栏位名称</th>
-<th>表</th>
-<th>字段</th>
-<th>类型</th>
-<th>大小</th>
-<th>栏位说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>文本显示</td>
-</tr>
-<tr>
-<td>2</td>
-<td>总产量合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>sum(总产量)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>高纯综合办合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>高纯一车间合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>沉淀工段合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>灼烧工段合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>液碱合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>工业盐酸合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>工业草酸合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>精制盐酸合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>11</td>
-<td>精制草酸合计</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p><img src="https://i.loli.net/2021/03/31/mvJVNUWr2kH7Mns.jpg" alt="img"></p>
-<ul>
-<li>上图是成本分摊的。(责任中心==高纯部门，高纯部门下的车间；物料==元素；金额=成本)</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/wVIBbtChzdD7JU1.jpg" alt="img"></p>
-<ul>
-<li>上图是总的成本。里面包含（实际产量==总产出，会计期间，责任中心组织==部门，物料==元素）</li>
-</ul>
-<p>a) 元素：pcto_costbillfromfentan_b.pk_material</p>
-<p>b) 总产量：pcto_srbill_b.actual_output</p>
-<h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><img src="https://i.loli.net/2021/03/31/v7DVzNLsamM3YrW.jpg" alt="img"  />
-
-<p><img src="https://i.loli.net/2021/03/31/eRAHnWdhXMgmcN1.jpg" alt="img"></p>
-<ul>
-<li>成本单据管理(分摊) 【物料】,通过“单据模板初始化”找到【物料】用的字段是pcto_costbillfromfentan表的def4字段</li>
-</ul>
-<h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><ul>
-<li>在语义模型中增加语义模型</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/rqSf9HBgiz5Kv1D.jpg" alt="img"></p>
-<ul>
-<li><p>语义模型编码：GCCPCBB 语义模型名称：高纯产品成本表    分类：责任中心</p>
-</li>
-<li><p>点击【确定】后启动【语义模型设计器】</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/MqHU5sd3pRuYm1P.jpg" alt="img"></p>
-<ul>
-<li>点击 “语义脚本” 弹出 “语义脚本编辑器”：</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/CjI4ESWBA53rbpe.jpg" alt="img"></p>
-<ul>
-<li><p>在“编辑器”中 填入以下SQL：<code>select * from zrzx_gccbftb</code></p>
-</li>
-<li><p>下一步 修改字段名称为中文描述：</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/LOBfo6YCuNS4nR5.jpg" alt="img"></p>
-<p><img src="https://i.loli.net/2021/03/31/g4sGjDoT37AO5JV.jpg" alt="img"></p>
-<ul>
-<li>然后点【保存】、【关闭】</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/XnLKjJYu1S3E6Hy.jpg" alt="img"></p>
-<ul>
-<li>在“自由报表-集团”添加一份报表<br>点击“格式设计”</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/3y48tdmrOSzXphH.jpg" alt="img">点击右上角的【插入语义模型】</p>
-<p><img src="https://i.loli.net/2021/03/31/rJwD6pzCXI7LTRx.jpg" alt="img"></p>
-<ul>
-<li>过滤“责任中心”找到“GCCPCBB” - 高纯产品成本表</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/GR6vt1CFBwHhPlT.jpg" alt="img"></p>
-<ul>
-<li>提示“语义模型未定义元数据”</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/DfGNqw8iFbyuVJB.jpg" alt="img"></p>
-<ul>
-<li>回到语义模型，点击 【选择字段】 点击 “增加” , 双击 【表：】 表_1(t_1)</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/k4yGHWflgLpNnaB.jpg" alt="img"></p>
-<ul>
-<li>依次点击 “会计期间(YEARMTH)”、【增加】按钮<br>点击 元素 - 关联 放大镜</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/8pSuo6V2AFMChKc.jpg" alt="img"></p>
-<ul>
-<li>参照字段过滤“物料基本信息（多版本）”，点击【确定】</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/SrZfzU3CLNvBDwV.jpg" alt="img"></p>
-<ul>
-<li><p>然后点击【保存】</p>
-</li>
-<li><p>这样可以在语义模型中添加成功“高纯产品成本表(GCCPCBB)”</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/eYXPCDoqJvN7M6O.jpg" alt="img"></p>
-<h3 id="报表格式设计"><a href="#报表格式设计" class="headerlink" title="报表格式设计"></a><strong>报表格式设计</strong></h3><p><img src="https://i.loli.net/2021/03/31/SmnyY6oUeQ287Cv.jpg" alt="img"></p>
-<ul>
-<li>点击“语义模型”-高纯产品成本表(GCCPCBB) 拖拽到报表第(0,0)单元格 ，生成如上图描述的内容。</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/IYrc4976lqdeZPX.jpg" alt="img"></p>
-<ul>
-<li>元素需要用关联“物料基本信息”–物料名称. 把右边的 name 物料名称 拖拽到元素栏位底下。<br><strong>保存时“提示未设置组织集团！”</strong>，回到语义模型需要自己增加PK_GROUP（集团字段）</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/nytClLFeUrTsEoj.jpg" alt="img"></p>
-<ul>
-<li><p>增加一个字段 </p>
-</li>
-<li><p>【显示名】：集团</p>
-</li>
-<li><p>【编码】：PK_GROUP</p>
-</li>
-<li><p>【表达式】：’0001A310000000000EXB’ –虔东集团</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/Tqajlvy53NwO9c7.jpg" alt="img"></p>
-<p><img src="https://i.loli.net/2021/03/31/ycFB1UxqY375bd2.jpg" alt="img"></p>
-<ul>
-<li><p>添加完成！点击【保存】、【完成】按钮</p>
-</li>
-<li><p>回到“自由报表-集团”– 报表设计</p>
-</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/QbGHzhekNAKLg2J.jpg" alt="img"></p>
-<ul>
-<li>添加两列“合计”、“单位成本”，把“实际产量” 文字改为 “总产量” 并移动到B列<br>下面给“合计”添加公式 做计算总成本。</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/duI682AEkl9yq47.jpg" alt="img"></p>
-<p><img src="https://i.loli.net/2021/03/31/oWmp3hiJDROn6LV.jpg" alt="img"></p>
-<ul>
-<li>在公式内容里填入： C2+D2+E2+F2+G2+H2+I2+J2+K2 加总</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/dLkMNDpAvFCWjso.jpg" alt="img"></p>
-<p><img src="https://i.loli.net/2021/03/31/8gOl13tFpcLxSez.png" alt="img">单位成本 填入公式： L2/B2 成本合计/总产量 。点击【保存】</p>
-<p>设置小数栏位保留4位小数点。</p>
-<p><img src="https://i.loli.net/2021/03/31/Rn4xQ8HZJ7C5Duv.jpg" alt="img"></p>
-<ul>
-<li>点击显示查询面板设置查询条件</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/31/H9Tortw3QWlRJL2.jpg" alt="img"></p>
-<p><img src="https://i.loli.net/2021/03/31/H9Tortw3QWlRJL2.jpg"></p>
-<p>将 YEARMTH 会计期间 拖拽到左边面板。 并点击向下箭头<img src="https://i.loli.net/2021/03/31/LJT5oqAHW69iKSN.jpg" alt="img"></p>
-<ul>
-<li><p>下面添加小计一栏<br><img src="https://i.loli.net/2021/03/31/sOFuS6kXgRl4P9G.jpg" alt="img"></p>
-</li>
-<li><p>选择[实际产量]单元格 右键点击选择“插入小计”-“求和”<br>自动生成 后面的小计求和值.</p>
-</li>
-</ul>
-<h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><p>生成报表查询的SQL</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> replace <span class="keyword">view</span> zrzx_gccbftb <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> m.<span class="operator">*</span>, n.sjcl</span><br><span class="line">  <span class="keyword">from</span> (<span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line">          <span class="keyword">from</span> (<span class="keyword">select</span> decode(d.name, <span class="string">&#x27;高纯部&#x27;</span>, m.name, d.name) <span class="keyword">as</span> dept_name,</span><br><span class="line">                       p.yearmth,</span><br><span class="line">                       ft_b.pk_material,</span><br><span class="line">                       <span class="built_in">sum</span>(ft_b.sum) <span class="keyword">as</span> cbje</span><br><span class="line">                  <span class="keyword">from</span> pcto_costbillfromfentan ft</span><br><span class="line">                 <span class="keyword">inner</span> <span class="keyword">join</span> pcto_costbillfromfentan_b ft_b</span><br><span class="line">                    <span class="keyword">on</span> ft.pk_costbillfromfentan <span class="operator">=</span> ft_b.pk_costbillfromfentan</span><br><span class="line">                 <span class="keyword">inner</span> <span class="keyword">join</span> bd_accperiodmonth p</span><br><span class="line">                    <span class="keyword">on</span> ft.def2 <span class="operator">=</span> p.pk_accperiodmonth</span><br><span class="line">                 <span class="keyword">inner</span> <span class="keyword">join</span> org_dept d</span><br><span class="line">                    <span class="keyword">on</span> ft.pk_dept <span class="operator">=</span> d.pk_dept</span><br><span class="line">                   <span class="keyword">and</span> d.code <span class="keyword">like</span> <span class="string">&#x27;10010002%&#x27;</span></span><br><span class="line">                  <span class="keyword">left</span> <span class="keyword">join</span> bd_material m</span><br><span class="line">                    <span class="keyword">on</span> ft.def4 <span class="operator">=</span> m.pk_material</span><br><span class="line">                 <span class="keyword">where</span> ft.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> ft_b.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> p.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">                 <span class="keyword">group</span> <span class="keyword">by</span> decode(d.name, <span class="string">&#x27;高纯部&#x27;</span>, m.name, d.name) ，p.yearmth，ft_b.pk_material</span><br><span class="line">                ) pivot(<span class="built_in">sum</span>(cbje) <span class="keyword">for</span> dept_name <span class="keyword">in</span>(<span class="string">&#x27;高纯综合办&#x27;</span> gc1,</span><br><span class="line">                                                   <span class="string">&#x27;高纯一车间&#x27;</span> gc2,</span><br><span class="line">                                                   <span class="string">&#x27;沉淀工段&#x27;</span> cd,</span><br><span class="line">                                                   <span class="string">&#x27;灼烧工段&#x27;</span> zs,</span><br><span class="line">                                                   <span class="string">&#x27;液碱&#x27;</span> yj,</span><br><span class="line">                                                   <span class="string">&#x27;工业盐酸&#x27;</span> gyys,</span><br><span class="line">                                                   <span class="string">&#x27;工业草酸&#x27;</span> gycs,</span><br><span class="line">                                                   <span class="string">&#x27;精制盐酸&#x27;</span> jzys,</span><br><span class="line">                                                   <span class="string">&#x27;精制草酸&#x27;</span> jzcs))) m</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> a.def2, b.cmaterialoid, <span class="built_in">sum</span>(b.actual_output) <span class="keyword">as</span> sjcl</span><br><span class="line">               <span class="keyword">from</span> pcto_srbill a</span><br><span class="line">              <span class="keyword">inner</span> <span class="keyword">join</span> pcto_srbill_b b</span><br><span class="line">                 <span class="keyword">on</span> a.pk_srbill <span class="operator">=</span> b.pk_srbill</span><br><span class="line">              <span class="keyword">where</span> pk_dept <span class="operator">=</span> <span class="string">&#x27;1001A310000000000EJU&#x27;</span> <span class="comment">--只需要统计高纯部门的产量</span></span><br><span class="line">                <span class="keyword">and</span> a.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> b.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> a.def2, b.cmaterialoid) n</span><br><span class="line">    <span class="keyword">on</span> m.yearmth <span class="operator">=</span> n.def2</span><br><span class="line">   <span class="keyword">and</span> m.pk_material <span class="operator">=</span> n.cmaterialoid</span><br></pre></td></tr></table></figure>
-
-<h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1><p><strong>发布报表到主页</strong></p>
-<p><img src="https://i.loli.net/2021/04/01/1zDEmFpfuChiGwq.jpg" alt="img"></p>
-<p><code>管理会计——利润中心交易——成本分摊档案——高纯产品成本表</code></p>
-<p><img src="https://i.loli.net/2021/04/01/29tOkaYAM5W67rH.jpg" alt="img"></p>
-<p>取消勾选 ： 打开即查询</p>
-<p>组织类型：选择 group 集团</p>
-<p>点击：下一步</p>
-<p><img src="https://i.loli.net/2021/04/01/AYeOzftpyTg3chl.jpg" alt="img"></p>
-<p>点击 完成。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/31/%E9%AB%98%E7%BA%AF%E4%BA%A7%E5%93%81%E6%88%90%E6%9C%AC%E8%A1%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-合金产品核算系数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/30/%E5%90%88%E9%87%91%E4%BA%A7%E5%93%81%E6%A0%B8%E7%AE%97%E7%B3%BB%E6%95%B0/">合金产品核算系数-自定义档案</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/30/%E5%90%88%E9%87%91%E4%BA%A7%E5%93%81%E6%A0%B8%E7%AE%97%E7%B3%BB%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2021-03-30T02:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="自定义档案的修改"><a href="#自定义档案的修改" class="headerlink" title="自定义档案的修改"></a>自定义档案的修改</h1><h2 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h2><p>修改菜单名称从 ‘合金产品核算系数’ –&gt; ‘虔东产品核算系数’</p>
-<p>增加一个栏位 ‘物料’</p>
-<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>菜单 管理会计 –&gt; 利润中心交易 –&gt; 成本分摊档案 –&gt; 合金产品核算系数</p>
-<p><img src="https://i.loli.net/2021/03/30/bAlmzqenNBTVECK.png" alt="image-20210330104925077"></p>
-<ul>
-<li>在<code>菜单注册</code>中修改 <strong>菜单项名称</strong>为 “虔东产品核算系数”</li>
-</ul>
-<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/03/30/cjfDn8SeEWpG4Yy.png" alt="image-20210330105146401"></p>
-<ul>
-<li>由上图所示 该单据是<strong>列表</strong>，属于<code>自定义档案</code> 类型。</li>
-</ul>
-<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><p>第4个栏位**“物料” ** 是需要新增的 , 添加在 第3栏 **“物料分类” **和 <strong>“系数”</strong> 之间</p>
-<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p>在<strong>模板设置-集团</strong>中查看到该功能的模板定义情况(PS .<code>在<strong>单据模板初始化</strong>中找不到</code>)。</p>
-<blockquote>
-<p>像这种列表形式的 —— 在 “模板设置”</p>
-<p>像表头-表体-表尾的 —— 在 “单据模板初始化”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/30/o1kdLZ5AcCSbEXD.png" alt="image-20210330105711871"></p>
-<p>如图所示：<strong>自定义4</strong> 对应与 <strong><font color="red">物料</font></strong></p>
-<p>​                   <strong>自定义3</strong> 对应与 <strong><font color="red">系数</font></strong></p>
-<p>如何得知 <code>自定义x</code> 显示的是什么内容，进入 <code>用户定义属性设置-集团</code>功能</p>
-<p><img src="https://i.loli.net/2021/03/30/2MlGxqyQeWVgdA1.png" alt="image-20210330113501895"></p>
-<p>如图所示： <strong>属性序号</strong> 4 代表 <strong>物料</strong> , <strong>数据类型</strong> 选择 <strong>物料基本信息(多版本)</strong> , </p>
-<p><strong>显示属性</strong>    显示 . <em>按这里的显示名称显示</em> / </p>
-<p>​                    按模板显示  按照<code>模板设置-集团</code>中的内容显示</p>
-<ul>
-<li>查找模板设置中的该单据内容：</li>
-</ul>
-<img src="https://i.loli.net/2021/03/30/pPJy465KjwnkI7z.png" alt="image-20210330114439183" style="zoom:80%;" />
-
-<p>输入：虔东产品核算系数.  找到默认的单据模板 <code>合金产品核算系数[默认]</code></p>
-<p><img src="https://i.loli.net/2021/03/30/FXZ5qCsSNyjVzQ6.png" alt="image-20210330114631672"></p>
-<p>点击修改.</p>
-<p><img src="https://i.loli.net/2021/03/30/mU1JKrApjlkiTLz.png" alt="image-20210330114716857"></p>
-<p>选择 <strong>卡片式界面调整</strong> </p>
-<p><img src="https://i.loli.net/2021/03/30/leVcUrg5TBu7bNq.png" alt="image-20210330114956583"></p>
-<p>将 <strong>自定义4</strong> 移动到 <code>自定义3</code> 之前 , 点确定</p>
-<p><img src="https://i.loli.net/2021/03/30/5cZERKuIPNgkGUD.png" alt="image-20210330115047263"></p>
-<p>实际界面效果就如下所示了:</p>
-<p><img src="https://i.loli.net/2021/03/30/OqURDgbIyCKzwxs.png" alt="image-20210330115059815"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/30/%E5%90%88%E9%87%91%E4%BA%A7%E5%93%81%E6%A0%B8%E7%AE%97%E7%B3%BB%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ORACLE IMP无响应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/">Oracle impdb 挂起 or 似乎挂机</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/" class="archive-article-date">
-  	<time datetime="2021-03-30T01:17:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p><strong>在NC6.5做一些操作时，如发布元数据，保存某些单据。会提示错误信息： 索引 无法通过 (在表空间 NNC_INDEX01 中) 扩展</strong></p>
-<p>错误原因：还原数据库脚本 <strong>imp.sh</strong> 未指定表空间的转换方式</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp sys/oracle@orcl  directory=dir_export  dumpfile=nc65191211.dmp     EXCLUDE=TABLE:\&quot;LIKE\&#x27;%TEMQ_%\&#x27;\&quot;   EXCLUDE=VIEW:\&quot;LIKE\&#x27;%TEMQ_%\&#x27;\&quot;    logfile=nc65191211.log  REMAP_SCHEMA=C##NC6519:C##LC005 REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA TABLE_EXISTS_ACTION = replace parallel=8</span><br></pre></td></tr></table></figure>
-
-<p><strong>REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA</strong><code>此处明确指定了表空间的转换，原表空间NNC_DATA01 导入到新表空间 T5_NNC_DATA</code></p>
-<p><font color="RED"><strong>但是未指定NNC_INDEX01表空间的转换</strong></font>所以系统默认还是转入到了<code>NNC_INDEX01</code>表空间，导致该空间无法扩展(一个表空间文件最大增长到32G)</p>
-<ul>
-<li>解决办法：</li>
-<li>可以把NNC_INDEX01表空间进行扩展，增加datafile文件。</li>
-<li>在impdb命令中显式指定转换的表空间。</li>
-</ul>
-<p><code>REMAP_TABLESPACE=NNC_DATA01:T5_NNC_DATA,NNC_INDEX01:T5_NNC_INDEX</code></p>
-<p><strong>上述指令表明 NNC_DATA01表空间的数据导入 –&gt; T5_NNC_DATA</strong></p>
-<p><strong>NNC_INDEX01表空间的数据导入–&gt;T5_NNC_INDEX</strong></p>
-<h2 id="Impdb-执行"><a href="#Impdb-执行" class="headerlink" title="Impdb 执行"></a>Impdb 执行</h2><p>有时在执行imp or impdb时出现无反应或挂起，或输出以下log信息：</p>
-<blockquote>
-<p>Processing object type TABLE_EXPORT/TABLE/INDEX/INDEX</p>
-</blockquote>
-<p>import是否真的在执行？检查 DBA_DATAPUMP_JOBS </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> owner_name, job_name, operation, job_mode</span><br><span class="line"><span class="keyword">from</span> dba_datapump_jobs </span><br><span class="line"><span class="keyword">where</span> state<span class="operator">=</span><span class="string">&#x27;EXECUTING&#x27;</span> ;</span><br></pre></td></tr></table></figure>
-
-<p>返回如下信息：</p>
-<blockquote>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OWNER_NAME JOB_NAME           OPERATION JOB_MODE</span><br><span class="line">---------- ------------------ --------- --------</span><br><span class="line">DUNBARNOR  SYS_IMPORT_FULL_01 IMPORT    FULL</span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<p>如上我们看到有一个import工作在执行，这是个不错的信息，我们有哪些会话在执行这个任务呢？</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> owner_name, job_name, session_type </span><br><span class="line"><span class="keyword">from</span> dba_datapump_sessions;</span><br></pre></td></tr></table></figure>
-
-<p>返回如下信息：</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">OWNER_NAME JOB_NAME           SESSION_TYPE</span><br><span class="line">---------- ------------------ -------------</span><br><span class="line">SYS  		SYS_IMPORT_FULL_06 DBMS_DATAPUMP</span><br><span class="line">SYS  		SYS_IMPORT_FULL_06 MASTER</span><br><span class="line">SYS  		SYS_IMPORT_FULL_06 WORKER</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>从上面的结果可以看到，我们有一个主会话， 和一些工作单元。 我们执行sh imp.sh脚本中指定任务工作单元数是8个 `parallel=8。</p>
-<p>但是他们真的在执行工作吗？</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> v.status, v.sid,v.serial#,io.block_changes,event </span><br><span class="line"><span class="keyword">from</span> v$sess_io io, v$session v </span><br><span class="line"><span class="keyword">where</span> io.sid <span class="operator">=</span> v.sid </span><br><span class="line"><span class="keyword">and</span> v.saddr <span class="keyword">in</span> (</span><br><span class="line">    <span class="keyword">select</span> saddr </span><br><span class="line">    <span class="keyword">from</span> dba_datapump_sessions</span><br><span class="line">) <span class="keyword">order</span> <span class="keyword">by</span> sid;</span><br></pre></td></tr></table></figure>
-
-<p>返回如下信息：</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATUS SID  SERIAL# BLOCK_CHANGES EVENT</span><br><span class="line">------ ---- ------- ------------- --------------------------------------------</span><br><span class="line">ACTIVE 45   27      197679        enq: TM - contention </span><br><span class="line">ACTIVE 324  431     5484          wait for unread message on broadcast channel</span><br><span class="line">ACTIVE 614  89      15406         statement suspended, wait error to be cleared</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>任务确实被挂起了！</p>
-<p>让我们检查一下数据导入任务会话模块的详细情况：</p>
-<p><em>因篇幅有限，截取前30个sql_text文本内容</em></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> s.sid, s.module, s.state, </span><br><span class="line">       substr(s.event, <span class="number">1</span>, <span class="number">21</span>) <span class="keyword">as</span> event,</span><br><span class="line">       s.seconds_in_wait <span class="keyword">as</span> secs, </span><br><span class="line">       substr(sql.sql_text, <span class="number">1</span>, <span class="number">30</span>) <span class="keyword">as</span> sql_text</span><br><span class="line"><span class="keyword">from</span> v$session s</span><br><span class="line"><span class="keyword">join</span> v$<span class="keyword">sql</span> <span class="keyword">sql</span> <span class="keyword">on</span> sql.sql_id <span class="operator">=</span> s.sql_id</span><br><span class="line"><span class="keyword">where</span> s.module <span class="keyword">like</span> <span class="string">&#x27;Data Pump%&#x27;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> s.module, s.sid;</span><br></pre></td></tr></table></figure>
-
-<p>返回如下信息：</p>
-<blockquote>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SID   MODULE            STATE    EVENT                  SECS SQL_TEXT</span><br><span class="line">----  ----------------  -------  ---------------------  ---- --------------------------------------</span><br><span class="line">614   Data Pump Master  WAITING  enq: TM - contention   5343  UPDATE &quot;SYS&quot;.&quot;SYS_IMPORT_FULL_06&quot; SET</span><br><span class="line">45    Data Pump Worker  WAITING  statement suspended    2     BEGIN    SYS.KUPW$WORKER.MAIN(&#x27;SYS_IM</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><em><strong>enq:TM - contention 表示事务上的等待事件</strong></em> ,锁争夺的解决!</p>
-<!--查看被锁定的表-->
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.owner TABLEOWNER, b.object_name TABLENAME, c.OSUSER LOCKBY,</span><br><span class="line">c.USERNAME LOGINID, c.sid SID, c.SERIAL# SERIAL</span><br><span class="line"><span class="keyword">from</span> v$locked_object a,dba_objects b, v$session c </span><br><span class="line"><span class="keyword">where</span> b.object_id <span class="operator">=</span> a.object_id <span class="keyword">AND</span> a.SESSION_ID <span class="operator">=</span>c.sid; </span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>TABLEOWNER</th>
-<th>TABLENAME</th>
-<th>LOCKBY</th>
-<th>LOGINID</th>
-<th>SID</th>
-<th>SERIAL</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SYS</td>
-<td>PLAN_TABLE$</td>
-<td>remake</td>
-<td>C##LC007</td>
-<td>3969</td>
-<td>4270</td>
-</tr>
-<tr>
-<td>SYS</td>
-<td>PLAN_TABLE$</td>
-<td>remake</td>
-<td>C##LC007</td>
-<td>3983</td>
-<td>20621</td>
-</tr>
-<tr>
-<td>SYS</td>
-<td>SYS_IMPORT_FULL_06</td>
-<td>oracle</td>
-<td>SYS</td>
-<td>1702</td>
-<td>55774</td>
-</tr>
-<tr>
-<td>SYS</td>
-<td>SYS_IMPORT_FULL_06</td>
-<td>oracle</td>
-<td>SYS</td>
-<td>3418</td>
-<td>44680</td>
-</tr>
-</tbody></table>
-<!--通过SID, SERIAL解锁 -->
-
-<blockquote>
-<p>alter system kill session ‘SID, SERIAL’; </p>
-</blockquote>
-<h2 id="Import-异常情况"><a href="#Import-异常情况" class="headerlink" title="Import 异常情况"></a>Import 异常情况</h2><blockquote>
-<p>Connected to: Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production<br>ORA-39171: Job is experiencing a resumable wait.<br>Resumable error: ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM<br>Resumable stmt: UPDATE “SYS”.”SYS_IMPORT_FULL_09” SET processing_state = :1, processing_status = :2 WHERE process_order = :3 AND duplicate = 0 AND processing_state = :4 AND processing_status = :5<br>Resumable stmt status: TIMEOUT<br>Resumable stmt start: 03/31/21 17:48:35 stmt suspend: 03/31/21 17:48:35<br>ORA-31694: master table “SYS”.”SYS_IMPORT_FULL_09” failed to load/unload<br>ORA-02354: error in exporting/importing data<br>ORA-30032: the suspended (resumable) statement has timed out<br>ORA-01653: unable to extend table SYS.SYS_IMPORT_FULL_09 by 8 in tablespace SYSTEM</p>
-</blockquote>
-<ul>
-<li><h5 id="提示ORA-01653-无法在SYSTEM表空间扩展空间"><a href="#提示ORA-01653-无法在SYSTEM表空间扩展空间" class="headerlink" title="提示ORA-01653:无法在SYSTEM表空间扩展空间."></a>提示<code>ORA-01653</code>:无法在SYSTEM表空间扩展空间.</h5></li>
-</ul>
-<p><strong>查看表空间使用情况</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.tablespace_name &quot;表空间名&quot;,</span><br><span class="line">total &quot;表空间大小&quot;,</span><br><span class="line"><span class="keyword">free</span> &quot;表空间剩余大小&quot;,</span><br><span class="line">(total <span class="operator">-</span> <span class="keyword">free</span>) &quot;表空间使用大小&quot;,</span><br><span class="line">total <span class="operator">/</span> (<span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span>) &quot;表空间大小(G)&quot;,</span><br><span class="line"><span class="keyword">free</span> <span class="operator">/</span> (<span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span>) &quot;表空间剩余大小(G)&quot;,</span><br><span class="line">(total <span class="operator">-</span> <span class="keyword">free</span>) <span class="operator">/</span> (<span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span> <span class="operator">*</span> <span class="number">1024</span>) &quot;表空间使用大小(G)&quot;,</span><br><span class="line">round((total <span class="operator">-</span> <span class="keyword">free</span>) <span class="operator">/</span> total, <span class="number">4</span>) <span class="operator">*</span> <span class="number">100</span> &quot;使用率 %&quot;</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> tablespace_name, <span class="built_in">SUM</span>(bytes) <span class="keyword">free</span></span><br><span class="line"><span class="keyword">FROM</span> dba_free_space</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> tablespace_name) a,</span><br><span class="line">(<span class="keyword">SELECT</span> tablespace_name, <span class="built_in">SUM</span>(bytes) total</span><br><span class="line"><span class="keyword">FROM</span> dba_data_files</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> tablespace_name) b</span><br><span class="line"><span class="keyword">WHERE</span> a.tablespace_name <span class="operator">=</span> b.tablespace_name </span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2021/04/01/eutP7siQrBgfxMI.png" alt="image-20210401082627467"></p>
-<p><strong>查看空间文件大小和位置</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 　　b.file_name 物理文件名,</span><br><span class="line">       　　b.tablespace_name 表空间,</span><br><span class="line">       　　b.bytes <span class="operator">/</span> <span class="number">1024</span> <span class="operator">/</span> <span class="number">1024</span> 大小M,</span><br><span class="line">       　　(b.bytes <span class="operator">-</span> <span class="built_in">sum</span>(nvl(a.bytes, <span class="number">0</span>))) <span class="operator">/</span> <span class="number">1024</span> <span class="operator">/</span> <span class="number">1024</span> 已使用M,</span><br><span class="line">       　　substr((b.bytes <span class="operator">-</span> <span class="built_in">sum</span>(nvl(a.bytes, <span class="number">0</span>))) <span class="operator">/</span> (b.bytes) <span class="operator">*</span> <span class="number">100</span>, <span class="number">1</span>, <span class="number">5</span>) 利用率 　　<span class="keyword">from</span> dba_free_space a,</span><br><span class="line">       dba_data_files b 　　<span class="keyword">where</span> a.file_id <span class="operator">=</span> b.file_id 　　<span class="keyword">group</span> <span class="keyword">by</span> b.tablespace_name,</span><br><span class="line">       b.file_name,</span><br><span class="line">       b.bytes 　　<span class="keyword">order</span> <span class="keyword">by</span> b.tablespace_name;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.loli.net/2021/04/01/26cmdL5pN8ylirq.png" alt="image-20210401095647026"></p>
-<blockquote>
-<p>给System表空间增加一个数据文件:</p>
-</blockquote>
-<p><code>alter tablespace system add datafile &#39;/oracle/oradata/orcl/system02.dbf&#39; size 10G ;</code></p>
-<p><code>alter database datafile &#39;/oracle/oradata/orcl/system02.dbf&#39; autoextend on next 128M maxsize unlimited;</code></p>
-<p><strong>设置数据文件自动扩展！</strong></p>
-<hr>
-<h2 id="Import-异常情况2"><a href="#Import-异常情况2" class="headerlink" title="Import 异常情况2"></a>Import 异常情况2</h2><blockquote>
-<p>Processing object type SCHEMA_EXPORT/TABLE/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE<br>Processing object type SCHEMA_EXPORT/PACKAGE/COMPILE_PACKAGE/PACKAGE_SPEC/ALTER_PACKAGE_SPEC<br>Processing object type SCHEMA_EXPORT/FUNCTION/ALTER_FUNCTION<br>Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE<br>Processing object type SCHEMA_EXPORT/VIEW/VIEW<br>Processing object type SCHEMA_EXPORT/VIEW/COMMENT<br>Processing object type SCHEMA_EXPORT/PACKAGE/PACKAGE_BODY<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/FUNCTIONAL_INDEX/INDEX<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/FUNCTIONAL_INDEX/INDEX_STATISTICS<br>Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT<br>Processing object type SCHEMA_EXPORT/TABLE/TRIGGER<br>Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS<br>Processing object type SCHEMA_EXPORT/STATISTICS/MARKER</p>
-</blockquote>
-<p>如果嫌<code>Processing object type SCHEMA_EXPORT/STATISTICS/MARKER</code>导入时间太长</p>
-<p>可以use : exclude=statistics <!--跳过导入statistics--></p>
-<h2 id="Import-job"><a href="#Import-job" class="headerlink" title="Import job"></a>Import job</h2><p><strong>在导入时，如果原dmp中有job对象。在导入之前必须把当前Oracle的job全部删除</strong></p>
-<p>先执行SQL</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> dba_jobs <span class="comment">--查看当前数据库中所有的job </span></span><br></pre></td></tr></table></figure>
-
-<p><strong>delete from dba_jobs</strong> <!--删除所有已经存在的job--></p>
-<p><img src="https://i.loli.net/2021/04/02/qizmaZHgE4TuDbv.png" alt="image-20210402141911442"></p>
-<p>从上午10:00左右开始执行到下午17:50执行完成，共计8小时。</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="创建Oracle用户的脚本"><a href="#创建Oracle用户的脚本" class="headerlink" title="创建Oracle用户的脚本"></a>创建Oracle用户的脚本</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建表空间</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>SPACE T11_NNC_DATA DATAFILE <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01a.dbf&#x27;</span> SIZE <span class="number">500</span>M AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">50</span>M EXTENT MANAGEMENT <span class="keyword">LOCAL</span> UNIFORM SIZE <span class="number">256</span>K ;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span>SPACE T11_NNC_INDEX DATAFILE <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_index01.dbf&#x27;</span> SIZE <span class="number">500</span>M AUTOEXTEND <span class="keyword">ON</span> NEXT <span class="number">50</span>M EXTENT MANAGEMENT <span class="keyword">LOCAL</span> UNIFORM SIZE <span class="number">128</span>K ; </span><br><span class="line"></span><br><span class="line"><span class="comment">--添加表空间文件</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01b.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01c.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01d.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01e.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span>space T11_NNC_DATA <span class="keyword">add</span> datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01f.dbf&#x27;</span> size <span class="number">1024</span>m;</span><br><span class="line"></span><br><span class="line"><span class="comment">--更改表空间属性，设置为自增长</span></span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01a.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01b.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01c.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01d.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01e.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_DATA01f.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"><span class="keyword">alter</span> database datafile <span class="string">&#x27;/oracle/oradata/orcl/T11_NNC_index01.dbf&#x27;</span> autoextend <span class="keyword">on</span> next <span class="number">128</span>M maxsize unlimited;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建联测账号</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> C##LC011 IDENTIFIED <span class="keyword">BY</span> liance2021 <span class="keyword">DEFAULT</span> TABLESPACE T11_NNC_DATA TEMPORARY TABLESPACE temp;</span><br><span class="line"></span><br><span class="line"><span class="comment">--授权</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">connect</span>,dba <span class="keyword">to</span> C##LC011;</span><br><span class="line"><span class="keyword">grant</span> read, write <span class="keyword">on</span> directory DIR_EXPORT <span class="keyword">to</span> C##LC011;</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>完结，撒花!</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/30/ORACLE%20IMP%E6%97%A0%E5%93%8D%E5%BA%94/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-费用预算明细" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/29/%E8%B4%B9%E7%94%A8%E9%A2%84%E7%AE%97%E6%98%8E%E7%BB%86/">费用预算汇总表-承担部门</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/29/%E8%B4%B9%E7%94%A8%E9%A2%84%E7%AE%97%E6%98%8E%E7%BB%86/" class="archive-article-date">
-  	<time datetime="2021-03-29T03:33:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h2><h3 id="增加权限控管"><a href="#增加权限控管" class="headerlink" title="增加权限控管"></a>增加权限控管</h3><h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><ul>
-<li>通过“费用预算权限档案”关联查询出权限设置相关数据</li>
-</ul>
-<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p> <img src="https://i.loli.net/2021/03/29/DbAaepUWwSKodPJ.jpg" alt="img"></p>
-<ul>
-<li><p>图示说明:根据权限档案中设定的用户可以访问’授权组织’的数据，</p>
-</li>
-<li><p>例如：刘丹可以访问 [虔东财务部]、[科力财务部]的数据.</p>
-</li>
-</ul>
-<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
-<li>《费用预算明细》、《费用预算汇总表-承担部门》、《费用预算汇总表-费用属性》需增加用户权限的控制.</li>
-<li>菜单导航<ul>
-<li>企业绩效管理<ul>
-<li><a href="#">费用预算分析</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p><img src="https://i.loli.net/2021/03/29/6hQALZbBWDM5EXO.png" alt="image-20210329114650531"></p>
-<ul>
-<li>先从自由报表-集团中查看 《费用预算汇总表-承担部门》 用的哪个语义模型</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/erSBK9wsEZmVgOf.png" alt="image-20210329135824805"></p>
-<ul>
-<li>点击 <code>格式设计</code></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/u9GYVWLxdjaOgvB.png" alt="image-20210329140002893"></p>
-<ul>
-<li>语义模型使用 <strong>费用预算汇总表</strong> <a href="#">fyys001</a></li>
-</ul>
-<blockquote>
-<p>打开语义模型查看 报表设计</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/29/ZBYEbWSj1gG37nF.png" alt="image-20210329140859110"></p>
-<ul>
-<li>输入上面查询得到的 <strong>语义模型编码</strong> <code>fyys001</code></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/YJa1pnd6hEm3rQL.png" alt="image-20210329141306182"></p>
-<p><img src="https://i.loli.net/2021/03/29/ynq5vOUlo9CgM6G.png" alt="image-20210329141329814"></p>
-<ul>
-<li>点击 语义模型 <code>设计</code> 按钮 进入<strong>语义模型设计器</strong></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/4dHB8uxYCNMcbep.png" alt="image-20210329141437956"></p>
-<ul>
-<li>右键点击 <code>语义脚本 t1 表_1</code> 选择<strong>编辑</strong></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/H2ybirFGDmUQMjK.png" alt="image-20210329141555972"></p>
-<ul>
-<li>打开该脚本 SQL<br><img src="https://i.loli.net/2021/03/29/RZYUlAbr1hMf5EB.png" alt="image-20210329141638432"></li>
-<li>点击<strong>语义脚本</strong>新增一个<code>数据集</code></li>
-</ul>
-<ul>
-<li><p>编辑器中写入SQL</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> d.DEF1 userid,d.DEF3 orgid,s.code <span class="keyword">from</span> bd_defdoc d <span class="keyword">inner</span> <span class="keyword">join</span> org_orgs s </span><br><span class="line"><span class="keyword">on</span> d.def3 <span class="operator">=</span> s.pk_org</span><br><span class="line"><span class="keyword">where</span> pk_defdoclist <span class="operator">=</span> <span class="string">&#x27;1001A31000000048OLWM&#x27;</span> <span class="keyword">and</span> d.DEF1 <span class="operator">=</span> macro(<span class="string">&#x27;LoginUser&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/R49E5xmagfdnwTJ.png" alt="image-20210329143609230"></p>
-<ul>
-<li>点击下一步, 点击 <strong>连接条件</strong><img src="https://i.loli.net/2021/03/29/RjfQaXx4kNZEDpo.png" alt="image-20210329143814891"></li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/UTDeYhzLojsAHKB.png" alt="image-20210329143942772"></p>
-<blockquote>
-<p>增加 <code>经典模式</code> 表_1 内连接 表_2  on  主体编码 = CODE</p>
-</blockquote>
-<ul>
-<li>点击 <strong>保存</strong> 完成<br><img src="https://i.loli.net/2021/03/29/2ZUMfGeh5nTSytv.png" alt="image-20210329144223608"></li>
-</ul>
-<h2 id="二、测试"><a href="#二、测试" class="headerlink" title="二、测试"></a>二、测试</h2><ul>
-<li>语义模型 –&gt; 预览</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/29/qWHF4RcaLKSZ2N5.png" alt="image-20210329145947478"></p>
-<blockquote>
-<p>预算组织 输入 财务部</p>
-<p>勾选 <code>虔东财务部</code> 、<code>科力财务部</code></p>
-</blockquote>
-<ul>
-<li>点击确定<br><img src="https://i.loli.net/2021/03/29/QwtabzjBMFLlSNH.png" alt="image-20210329150122630"></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/29/%E8%B4%B9%E7%94%A8%E9%A2%84%E7%AE%97%E6%98%8E%E7%BB%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VIM简单使用说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/24/VIM%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">vim基础教程</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/24/VIM%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" class="archive-article-date">
-  	<time datetime="2021-03-24T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>找一下FN的ASMS需求文件，DBA，开发文档. 放在哪了？</p>
-</blockquote>
-<h3 id="NordPass的密码建议"><a href="#NordPass的密码建议" class="headerlink" title="NordPass的密码建议"></a>NordPass的密码建议</h3><hr>
-<p><strong>1、创建密码时要避免使用字典单词、数字组合或相邻键盘组合的字符串。</strong>例如，password、qwerty或123456都是很糟糕的密码，因为它们太容易被破解。</p>
-<p><strong>2、不要使用重复的字符</strong>，比如aaaa或123abc，并且<strong>最好不要选择那些并非机密的个人信息作为密码</strong>，比如你的电话号码、出生日期或姓名。</p>
-<p><strong>3、切勿在多个帐户之间重复使用密码，为每个帐户创建一个独特的、尽量长（不要少于12个字符）的密码，最好使用大小写字母、数字和符号的混合</strong>，可以显著降低密码被破解的风险。</p>
-<p><strong>4、确保至少每90天更换一次密码</strong>。要创建复杂、可靠的密码，可以考虑使用密码生成器。</p>
-<p>关于密码的设置，之前小编也发过网友们的锦囊妙计：</p>
-<p><strong>一、密码设置</strong></p>
-<p><strong>古诗词版：</strong></p>
-<p>ppnn13%dkstFeb.1st，聘聘袅袅十三余，豆蔻梢头二月初</p>
-<p>RMdkwtg.TH19XCF，人面不知何处去，桃花依旧笑春风</p>
-<p>hold?fish:palm，鱼和熊掌不可兼得</p>
-<p><strong>绕口令：</strong></p>
-<p>cptbtptpbcptdtptp，吃葡萄不吐葡萄皮不吃葡萄倒吐葡萄皮 </p>
-<p><strong>国粹版：</strong></p>
-<p>东南西北发白板红中缩写，“！”意为胡了</p>
-<p>当然，还有<strong>脱氧核糖核苷酸化学式</strong>也是不错的选择。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/24/VIM%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -2708,6 +2670,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">标准内容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GQD</a>
               </li>
              
               <li class="article-tag-list-item">
