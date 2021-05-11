@@ -152,6 +152,227 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-机电项目合同" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/02/%E6%9C%BA%E7%94%B5%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C/">基建机电项目合同-报表</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/02/%E6%9C%BA%E7%94%B5%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C/" class="archive-article-date">
+  	<time datetime="2021-04-02T02:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>技术部-刘<a href="#%E6%98%93%E5%B9%B3">YP</a> 提出项目总结报表 “合同含税金额” 与 “含税结算额” 数字不同。</p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/04/02/z1y74OvMgYNHi5x.png" alt="image-20210402101252861"></p>
+<p><img src="https://i.loli.net/2021/04/02/8wxdUAvoN6BT4Wg.png" alt="image-20210402101346944"></p>
+<ul>
+<li>查询条件 <a href="#">项目申报组织</a> 选择 <code>虔东稀土集团股份有限公司</code></li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/02/AnKpFa6hmNHoljq.png" alt="image-20210402152852972"></p>
+<ul>
+<li>查询条件 (找出上图 <code>施工费</code>的合同)<ul>
+<li><a href="">项目组织</a> 选择 <code>虔东稀土集团股份有限公司</code></li>
+<li><a href="">合同编码</a> 填入 <code>FBHT202005220001</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>项目管理<ul>
+<li><p>项目看板</p>
+<ul>
+<li>基建机电项目总览</li>
+</ul>
+</li>
+<li><p>合同及费用</p>
+<ul>
+<li>清单发包合同</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><ul>
+<li><p>使用UC Client的 <code>F12</code>功能打开SQL追踪工具，在【清单发包合同】功能进行查询。</p>
+</li>
+<li><p>可以找到 表头的Table是<code>pm_contr</code>(<a href="#">清单发包合同</a>) ，表体的Table是<code>pm_contr_works</code>(<a href="#">清单发包合同</a>)</p>
+</li>
+</ul>
+<h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.pk_group,</span><br><span class="line">       b.name             duty_corp,</span><br><span class="line">       a.pk_duty_dept  pk_duty_dept,   </span><br><span class="line">       c.name             duty_dept,</span><br><span class="line">       d.name             duty_person,</span><br><span class="line">       a.pk_project,</span><br><span class="line">       project_code,</span><br><span class="line">       project_name,</span><br><span class="line">       a.hdef52           xmms,</span><br><span class="line">       a.plan_start_date,</span><br><span class="line">       a.plan_finish_date,</span><br><span class="line">       a.actu_start_date,</span><br><span class="line">       a.check_date,</span><br><span class="line">       e.budget_mny,</span><br><span class="line">       e.exe_mny,</span><br><span class="line">       e.bala_mny,</span><br><span class="line">       f.contr_code,</span><br><span class="line">       f.contr_name,</span><br><span class="line">       f.pk_supplier,</span><br><span class="line">       f.supplier,</span><br><span class="line">       contr_detail,</span><br><span class="line">       curr_taxmny,</span><br><span class="line">       taxrate,</span><br><span class="line">       tax,</span><br><span class="line">       invoice_mny,</span><br><span class="line">       curr_bal_taxmny</span><br><span class="line">  <span class="keyword">from</span> bd_project a</span><br><span class="line"> <span class="keyword">inner</span> <span class="keyword">join</span> org_itemorg b</span><br><span class="line">    <span class="keyword">on</span> a.pk_duty_org <span class="operator">=</span> b.pk_itemorg</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> org_dept c</span><br><span class="line">    <span class="keyword">on</span> a.pk_duty_dept <span class="operator">=</span> c.pk_dept</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> bd_psndoc d</span><br><span class="line">    <span class="keyword">on</span> a.pk_dutier <span class="operator">=</span> d.pk_psndoc</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> pk_project,</span><br><span class="line">                    <span class="built_in">sum</span>(n.budget_mny) budget_mny,</span><br><span class="line">                    <span class="built_in">sum</span>(n.exe_mny) exe_mny,</span><br><span class="line">                    <span class="built_in">sum</span>(bala_mny) bala_mny</span><br><span class="line">               <span class="keyword">from</span> pm_budget m</span><br><span class="line">              <span class="keyword">inner</span> <span class="keyword">join</span> pm_budgetfactor n</span><br><span class="line">                 <span class="keyword">on</span> m.pk_budget <span class="operator">=</span> n.pk_budget</span><br><span class="line">              <span class="keyword">where</span> m.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">                <span class="keyword">and</span> n.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> pk_project) e</span><br><span class="line">    <span class="keyword">on</span> a.pk_project <span class="operator">=</span> e.pk_project</span><br><span class="line">  <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> m.pk_project,</span><br><span class="line">                    m.bill_code contr_code,</span><br><span class="line">                    m.bill_name contr_name,</span><br><span class="line">		                m.pk_supplier pk_supplier,</span><br><span class="line">                    p.name supplier,</span><br><span class="line">                    o.name contr_detail,</span><br><span class="line">                    <span class="built_in">sum</span>(n.curr_taxmny) curr_taxmny, <span class="comment">--合同含税额</span></span><br><span class="line">                    <span class="built_in">max</span>(n.taxrate) taxrate,</span><br><span class="line">                    <span class="built_in">sum</span>(n.tax) tax,</span><br><span class="line">                    <span class="built_in">sum</span>(n.invoice_mny) invoice_mny,</span><br><span class="line">		                <span class="built_in">max</span>(m.curr_bal_taxmny) curr_bal_taxmny <span class="comment">--含税结算额</span></span><br><span class="line">               <span class="keyword">from</span> pm_contr m</span><br><span class="line">              <span class="keyword">inner</span> <span class="keyword">join</span> pm_contr_works n</span><br><span class="line">                 <span class="keyword">on</span> m.pk_contr <span class="operator">=</span> n.pk_contr</span><br><span class="line">              <span class="keyword">inner</span> <span class="keyword">join</span> bd_material o</span><br><span class="line">                 <span class="keyword">on</span> n.pk_material <span class="operator">=</span> o.pk_material</span><br><span class="line">              <span class="keyword">inner</span> <span class="keyword">join</span> bd_supplier p</span><br><span class="line">                 <span class="keyword">on</span> m.pk_supplier <span class="operator">=</span> p.pk_supplier</span><br><span class="line">              <span class="keyword">where</span> m.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">                <span class="keyword">and</span> n.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">AND</span> M.BILL_CODE<span class="operator">=</span><span class="string">&#x27;FBHT202005220001&#x27;</span></span><br><span class="line">              <span class="keyword">group</span> <span class="keyword">by</span> m.pk_project,</span><br><span class="line">                       m.bill_code,</span><br><span class="line">                       m.bill_name,</span><br><span class="line">		       m.pk_supplier,</span><br><span class="line">                       p.name,</span><br><span class="line">                       o.name) f</span><br><span class="line">    <span class="keyword">on</span> a.pk_project <span class="operator">=</span> f.pk_project</span><br><span class="line"> <span class="keyword">where</span> a.dr <span class="operator">=</span> <span class="number">0</span> </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>经研究上述SQL 发现.</p>
+</li>
+<li><p>用户疑问中的 <code>“合同含税金额”</code> 与 <code>“含税结算额” </code>数字 不同是由于合同做过补充协议，导致<code>pm_contr</code>(<a href="#">项目分包合同管理表</a>)有多张合同。需要取到最新版本的合同 pm_contr.last_v_flag = ‘Y’</p>
+</li>
+<li><p><img src="https://i.loli.net/2021/04/02/BVpg8FOeCaoHMDA.png" alt="image-20210402161108814"></p>
+</li>
+</ul>
+<h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><p>修改语义模型 <code>基建机电项目总览</code> 编辑SQL脚本 增加上述条件</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm_contr.last_v_flag <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/02/%E6%9C%BA%E7%94%B5%E9%A1%B9%E7%9B%AE%E5%90%88%E5%90%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-流程生成订单维护" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/01/%E6%B5%81%E7%A8%8B%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E7%BB%B4%E6%8A%A4/">生产订单维护保存前规则</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/01/%E6%B5%81%E7%A8%8B%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E7%BB%B4%E6%8A%A4/" class="archive-article-date">
+  	<time datetime="2021-04-01T07:57:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><blockquote>
+<p>科盈-销售部期望 没有添加附件的销售订单，不要生成生产订单。</p>
+<p>原因生成的生产订单看不了附件。销售订单的附件会随系统自动带入到生产订单（代码中有关联)</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/04/01/z4wWOPoKtsYiAlc.png" alt="image-20210401155704481"></p>
+<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p><code>销售订单维护</code></p>
+<blockquote>
+<p>查询</p>
+</blockquote>
+<ol>
+<li>销售组织：赣州科盈结构陶瓷有限公司</li>
+<li>物料分类：陶瓷结构件<img src="https://i.loli.net/2021/04/01/8vbVmJ4fyuCI6Fz.png" alt="image-20210401162255993" style="zoom:80%;" /></li>
+<li>全选、查询。</li>
+</ol>
+<p><code>实际独立需求处理</code></p>
+<blockquote>
+<p>查询</p>
+<p>点击生成生产订单</p>
+</blockquote>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/04/01/UTa45GRXJzK6Ori.png" alt="image-20210401162416206"></p>
+<p><img src="https://i.loli.net/2021/04/01/xXc7dStqnMCfbl8.png" alt="image-20210401162656352"></p>
+<p><img src="https://i.loli.net/2021/04/01/9R12ruK3apbX6mH.png" alt="image-20210401162736280"></p>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>流程生产订单维护的xml配置文件 <code>nc/ui/mmpac/pmo/pac0002/view/PMO_config.xml</code></li>
+</ul>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1><h6 id=""><a href="#" class="headerlink" title=""></a></h6>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/01/%E6%B5%81%E7%A8%8B%E7%94%9F%E6%88%90%E8%AE%A2%E5%8D%95%E7%BB%B4%E6%8A%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-高纯产品成本表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1756,251 +1977,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-三张需要修改的单据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/">三张需要修改的单据</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2021-03-18T06:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制"><a href="#【客户投诉单】，【改进措施指令单】，【8D报告】-三张单据需要控制" class="headerlink" title="【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制"></a>【客户投诉单】，【改进措施指令单】，【8D报告】 三张单据需要控制</h3><h5 id="编辑前事件-xxx-栏位-gt-gt-gt-不可编辑"><a href="#编辑前事件-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="编辑前事件 [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑."></a>编辑前事件 [ xxx ] 栏位 &gt;&gt;&gt; 不可编辑.</h5><h5 id="提交后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑"><a href="#提交后进入‘审批状态’-xxx-栏位-gt-gt-gt-不可编辑" class="headerlink" title="提交后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑"></a>提交后进入‘审批状态’ [xxx] 栏位 &gt;&gt;&gt; 不可编辑</h5><h4 id="1-客户投诉单"><a href="#1-客户投诉单" class="headerlink" title="1. 客户投诉单"></a>1. 客户投诉单</h4><p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
-<h4 id="2-改进措施指令单"><a href="#2-改进措施指令单" class="headerlink" title="2. 改进措施指令单"></a>2. 改进措施指令单</h4><p><img src="https://i.loli.net/2021/03/18/zlVab1t95KZfImQ.jpg" alt="img"></p>
-<p>【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、【措施计划完成日期】、【整改验证情况】</p>
-<p>新增时不可以编辑，审批后方可编辑。</p>
-<h4 id="3-8D报告"><a href="#3-8D报告" class="headerlink" title="3. 8D报告"></a>3. 8D报告</h4><p><img src="https://i.loli.net/2021/03/18/xCjW9YrmcVG6HMO.jpg" alt="img"></p>
-<hr>
-<h6 id="需求-《客户投诉单》"><a href="#需求-《客户投诉单》" class="headerlink" title="需求 《客户投诉单》"></a>需求 《客户投诉单》</h6><ul>
-<li>说明</li>
-</ul>
-<p>​        菜单 质量管理 –&gt; 客户投诉 –&gt; 客户投诉单</p>
-<ul>
-<li>截图</li>
-</ul>
-<p><img src="https://i.loli.net/2021/03/18/KDkcOB4vWU2Ms1X.jpg" alt="img"></p>
-<ul>
-<li><p>功能</p>
-<p>制单人 新建/修改 时<br>【改进意见及要求】、【投诉处理方案】、【跟踪及验证情况】三个栏位不可编辑</p>
-</li>
-</ul>
-<ul>
-<li>实现</li>
-</ul>
-<table><tr><td bgcolor=#D1EEEE>1.查找对应单据所在的模块,java file. 通过“功能注册”</td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/MxGskVgbd46W7wQ.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>2.在 参数注册 tab页，复制 参数值</td></tr></table>
-
-<p><code>nc/ui/qc/qc_custcomplaints/ace/view/Qc_custcomplaints_config.xml</code></p>
-<table><tr><td bgcolor=#D1EEEE> 然后在Eclipse里面 按下 ctrl + shift + t 打开类型. 把"/"全部更改为"." </td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/xEXs7T2BR9HpyCk.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>3.点击确定  找到" Qc_custcomplaints_config.xml" 所在的包 nc.ui.qc.qc_custcomplaints.ace.view .</td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/DhnKCQy28PH3Zm7.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>4.其中表头编辑前事件的java file
-    nc.ui.qc.qc_custcomplaints.ace.handler.AceHeadTailBeforeEditHandler.class</td></tr></table>
-
-<table><tr><td bgcolor=#D1EEEE>复制这个class 名字，在对应的qc/src 模块下面</td></tr></table>
-
-<p><img src="https://i.loli.net/2021/03/18/NosKq7HdOjZ1QPG.jpg" alt="img"></p>
-<table><tr><td bgcolor=#D1EEEE>5.在单据模块 qc/src/client中新建包"nc.ui.qc.qc_custcomplaints.ace.handler" 
-    然后再新建AceHeadTailBeforeEditHandler.java</td></tr></table>
-
-<table><tr><td bgcolor=#D1EEEE>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。</td></tr></table>
-
-<table ><tr width="100%"><td bgcolor=#D1EEEE >qc/src/private 是接口实现类 放本地实现公共接口的具体操作。</td></tr></table>
-
-<p>Q.如何查找单据上面对应的表字段?</p>
-<p>答：通过“单据模板初始化”</p>
-<p><img src="https://i.loli.net/2021/03/18/lO281tBeU5NP94h.jpg" alt="img"></p>
-<blockquote>
-<p>输入 pim</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/urpqZ4ICycFh965.jpg" alt="img"></p>
-<blockquote>
-<p>选择 模板类型 “Pim_trackform”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/DdKmsARwGl6tU5M.jpg" alt="img"></p>
-<blockquote>
-<p>点击 “修改”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/mDYOcrRZzVtPleW.jpg" alt="img"></p>
-<blockquote>
-<p>点击 “承担部门”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/tYW4fKB8LJjmgNu.jpg" alt="img"></p>
-<blockquote>
-<p>点击 tab “高级属性”</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/yPOmKf429GJkZ8Q.jpg" alt="img"></p>
-<blockquote>
-<p>点击 部门的 放大镜</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/jtGP7A6nH23iLCJ.jpg" alt="img"></p>
-<blockquote>
-<p>取消勾选  是否可以选择非叶子节点。 ==&gt; 表示 不可以选择 (非叶子节点) 根、子 节点，只能选择叶节点.</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/dOhIr923JNuK7Sm.jpg" alt="img"></p>
-<blockquote>
-<p>点击 保存模板</p>
-</blockquote>
-<p> <img src="https://i.loli.net/2021/03/18/njwbqaXPRdUYlD7.jpg" alt="img"></p>
-<blockquote>
-<p>改变“模板标题”为 [开发改进跟踪表]</p>
-</blockquote>
-<p><img src="https://i.loli.net/2021/03/18/7U6sCeE8Kur2VvH.jpg" alt="img"> </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/%E4%B8%89%E5%BC%A0%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8D%95%E6%8D%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-按钮事件对应的java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/">按钮点击事件对应的Java类</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/" class="archive-article-date">
-  	<time datetime="2021-03-18T03:17:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://i.loli.net/2021/03/18/SJ2EQWoYBXjdap5.jpg" alt="img"><img src="https://i.loli.net/2021/03/18/ywTSYskmRPirFN9.png" alt="img"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AceAddHandler</span> <span class="keyword">implements</span> <span class="title">IAppEventHandler</span>&lt;<span class="title">AddEvent</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleAppEvent</span><span class="params">(AddEvent e)</span> </span>&#123;</span><br><span class="line">		String pk_group = e.getContext().getPk_group();</span><br><span class="line">		String pk_org = e.getContext().getPk_org();</span><br><span class="line">		BillCardPanel panel = e.getBillForm().getBillCardPanel();</span><br><span class="line">		<span class="comment">// 设置主组织默认值</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_group&quot;</span>, pk_group);</span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_org&quot;</span>, pk_org);</span><br><span class="line">		<span class="comment">// 设置单据状态、单据业务日期默认值</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;approvestatus&quot;</span>, BillStatusEnum.FREE.value());</span><br><span class="line">		<span class="comment">// 设置组织版本</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_org_v&quot;</span>, SoUtil.getPk_vid(pk_org));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>CPGZEditAction.java用于处理修改保存后的事件。以下事件处理过程用于在保存后，审批流程过后 禁用单据上面的字段。 制单人提交后就无法再次修改原单据信息了。</p>
-<p><img src="https://i.loli.net/2021/03/18/SGY2dv4Mpy3gR5D.jpg" alt="img"></p>
-<blockquote>
-<p>pim/src/client/nc/ui/qc/pim_track/ace/action/CPGZEditAction.java</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">(ActionEvent e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    	<span class="keyword">super</span>.doAction(e);</span><br><span class="line">    	AbstractBill bill = (AbstractBill) <span class="keyword">this</span>.getModel().getSelectedData();</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">null</span> != bill &amp;&amp; bill <span class="keyword">instanceof</span> AggPim_trackform) &#123;</span><br><span class="line">		    BillCardPanel panel = editor.getBillCardPanel();</span><br><span class="line">		    BillItem[] headItems = panel.getHeadItems();</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    NCObject obj = NCObject.newInstance(getModel().getSelectedData());</span><br><span class="line">		    Integer fstatusflag = nc.bs.pubapp.pf.util.ApproveFlowUtil</span><br><span class="line">			    .getBillStatus(obj);</span><br><span class="line">		    <span class="keyword">if</span> (!BillStatusEnum.FREE.equalsValue(fstatusflag)) &#123;</span><br><span class="line">				<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">				    billItem.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">				&#125;			</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    IWorkflowService iW = NCLocator.getInstance().lookup(</span><br><span class="line">			    IWorkflowService.class);</span><br><span class="line">		    List list = iW.getEditablePreoperties(AppContext.getInstance()</span><br><span class="line">			    .getPkUser(), <span class="string">&quot;CPGZ-Cxx-001&quot;</span>, bill.getPrimaryKey(), <span class="number">2</span>); <span class="comment">//CPGZ-Cxx-001是交易类型</span></span><br><span class="line">		    <span class="keyword">if</span> (MMValueCheck.isNotEmpty(list)) &#123;</span><br><span class="line">			List&lt;String&gt; lHeadItems = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">			<span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">			    String item = object.toString();</span><br><span class="line">			 	lHeadItems.add(item);		 </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">			    <span class="keyword">if</span> (lHeadItems.contains(billItem.getKey())) &#123;</span><br><span class="line">				billItem.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">				billItem.getComponent().setBorder(</span><br><span class="line">					<span class="keyword">new</span> LineBorder(Color.red, <span class="number">2</span>));</span><br><span class="line">			    &#125;</span><br><span class="line">			&#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>同时在XML配置文件中要配置如下：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--======= 动作：[newActions] [修改] ===========--&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;editAction&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.action.CPGZEditAction&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;model&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">&quot;bmModel&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;exceptionHandler&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">&quot;exceptionHandler&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/">展开全文 >></a>
         </p>
       
 
