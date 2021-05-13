@@ -1004,7 +1004,9 @@
 <hr>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ( <span class="comment">--外面必须要包裹一层</span></span><br><span class="line">       <span class="keyword">select</span> STUNAME <span class="keyword">as</span> 姓名,COURSENAME,SCORE <span class="keyword">from</span> Student</span><br><span class="line">)</span><br><span class="line">pivot (</span><br><span class="line">      <span class="built_in">sum</span>(SCORE) <span class="keyword">for</span> COURSENAME <span class="keyword">in</span> (<span class="string">&#x27;语文&#x27;</span> <span class="keyword">as</span> 语文,<span class="string">&#x27;数学&#x27;</span> <span class="keyword">as</span> 数学,<span class="string">&#x27;英语&#x27;</span> <span class="keyword">as</span> 英语)</span><br><span class="line">)</span><br><span class="line">`<span class="operator">&lt;</span><span class="operator">!</span><span class="comment">--sum(汇总的列)--&gt;/  &lt;!--哪行要行转列--&gt;/  &lt;!--行的哪些数据要转成列--&gt;`</span></span><br></pre></td></tr></table></figure>
 
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5><p><img src="https://i.loli.net/2021/05/13/fIseiQJjnhOx5zA.png" alt="image-20210513152515002"></p>
+<p><img src="https://i.loli.net/2021/05/13/eo1EtcpWSC6QAlT.png" alt="image-20210513152556832"></p>
+
       
 
       
@@ -1367,11 +1369,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NC流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color5">NC流程</a>
               </li>
              
               <li class="article-tag-list-item">
