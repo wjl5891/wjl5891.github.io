@@ -152,6 +152,273 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-客户投诉单修改可编辑字段" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/22/%E5%AE%A2%E6%88%B7%E6%8A%95%E8%AF%89%E5%8D%95%E4%BF%AE%E6%94%B9%E5%8F%AF%E7%BC%96%E8%BE%91%E5%AD%97%E6%AE%B5/">客户投诉单修改可编辑字段</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/22/%E5%AE%A2%E6%88%B7%E6%8A%95%E8%AF%89%E5%8D%95%E4%BF%AE%E6%94%B9%E5%8F%AF%E7%BC%96%E8%BE%91%E5%AD%97%E6%AE%B5/" class="archive-article-date">
+  	<time datetime="2021-03-22T08:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><p>《客户投诉单》</p>
+<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>菜单 质量管理 –&gt; 客户投诉 –&gt; 客户投诉单</p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/03/22/qmJnKryGPeIaOQW.png" alt="image-20210322165716679"></p>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><p>制单人 新建/修改 时<br>【改进意见及要求】、【投诉处理方案】、【跟踪及验证情况】三个栏位不可编辑</p>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p>1.查找对应单据所在的模块,java file. 通过“功能注册”</p>
+<p><img src="https://i.loli.net/2021/03/22/i4Y6wIgW7A1MKbB.png" alt="image-20210322165756982"></p>
+<p>在 参数注册 tab页，复制 参数值 </p>
+<p><code>nc/ui/qc/qc_custcomplaints/ace/view/Qc_custcomplaints_config.xml</code></p>
+<p>然后在Eclipse里面 按下 ctrl + shift + t 打开类型. 把”/“全部更改为”.”</p>
+<p><img src="https://i.loli.net/2021/03/22/agA3KcylQHs89B4.png" alt="image-20210322165814894"></p>
+<p>点确定。 找到” Qc_custcomplaints_config.xml” 所在的包nc.ui.qc.qc_custcomplaints.ace.view </p>
+<p><img src="https://i.loli.net/2021/03/22/elyF231LfDEzMZg.png" alt="image-20210322165833511"></p>
+<p>其中表头编辑前事件的java file<br>nc.ui.qc.qc_custcomplaints.ace.handler.AceHeadTailBeforeEditHandler.class</p>
+<p>复制这个class 名字，在对应的qc/src 模块下面</p>
+<p><img src="https://i.loli.net/2021/03/22/coRBOPKiFyjNS6M.png" alt="image-20210322165850269"></p>
+<p>在单据模块 qc/src/client中新建包<br>“nc.ui.qc.qc_custcomplaints.ace.handler”<br>然后再新建AceHeadTailBeforeEditHandler.java</p>
+<p>PS:  qc/src/public 是公共接口 放一些 Interface提供其他模块远程调用。</p>
+<p>qc/src/private 是接口实现类 放本地实现公共接口的具体操作。</p>
+<h2 id="二、《改进措施指令单》"><a href="#二、《改进措施指令单》" class="headerlink" title="二、《改进措施指令单》"></a>二、《改进措施指令单》</h2><h3 id="1-说明-1"><a href="#1-说明-1" class="headerlink" title="1.说明"></a>1.说明</h3><ul>
+<li>菜单 质量管理 –&gt; 客户投诉 –&gt; 改进措施指令单</li>
+</ul>
+<h3 id="2-截图-1"><a href="#2-截图-1" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/03/22/djOLIHvT5fEhlgu.png" alt="image-20210322165942093"></p>
+<h3 id="3-功能-1"><a href="#3-功能-1" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li><p>制单人 新建/修改时<br>【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、</p>
+</li>
+<li><p>【措施计划完成日期】、【整改验证情况】6个栏位不可编辑</p>
+</li>
+</ul>
+<h3 id="4-实现-1"><a href="#4-实现-1" class="headerlink" title="4.实现"></a>4.实现</h3><p>1.查找对应单据所在的模块,java file. 通过“功能注册”</p>
+<p><img src="https://i.loli.net/2021/03/22/hRErav8N4ex5kdy.png" alt="image-20210322170015080"></p>
+<p>2.在 参数注册 tab页，复制 参数值 </p>
+<ul>
+<li><p><code>nc/ui/qc/qc_approveaction/ace/view/Qc_approveaction_config.xml</code></p>
+</li>
+<li><p>nc.ui.qc.qc_approveaction.ace.view.Qc_approveaction_config.xml</p>
+</li>
+<li><p>把全部’/‘更改为’.’ 在Eclipse输入</p>
+</li>
+<li><p>nc.ui.qc.qc_approveaction.ace.view 发现找不到!</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/22/cjdgM7RbHNUio2u.png" alt="image-20210322170043989"></p>
+<ul>
+<li>去掉.view</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/22/wUtCypdWl6F81q2.png" alt="image-20210322170051861"></p>
+<ul>
+<li>打开AceQc_approveactionMaintainProxy</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/22/4dVDHcvGYsXKlze.png" alt="image-20210322170103735"></p>
+<ul>
+<li><p>发现在下面就有<br>nc.ui.qc.qc_approveaction.ace.view.Qc_approveaction_config.xml</p>
+</li>
+<li><p>因为这是引用的第三方的Lib \class 所以在Eclispe中不能直接打开</p>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/22/1hTQnIusiFJqRv8.png" alt="image-20210322170113993"></p>
+<p>3.下一步 在qc/src/client Module下建立这个包 “nc.ui.qc.qc_approveaction.ace.view” , </p>
+<ul>
+<li><p>创建xml 命名为Qc_approveaction_config.xml</p>
+</li>
+<li><p>将第三方用友NC下面的nc/ui/qc/qc_approveaction/ace/view/Qc_approveaction_config.xml</p>
+</li>
+<li><p>XML内容全部复制到新Qc_approveaction_config.xml中.</p>
+</li>
+<li><p>定位到</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 事件监听newadd --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;bmModelEventMediator&quot;</span> </span></span><br><span class="line"><span class="tag"><span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.model.AppEventHandlerMediator&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将以下代码COPY到该<bean>节点下面</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 表头表尾字段编辑前事件 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.EventHandlerGroup&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;event&quot;</span> <span class="attr">value</span>=<span class="string">&quot;nc.ui.pubapp.uif2app.event.card.CardHeadTailBeforeEditEvent&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;handler&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.qc_approveaction.ace.handler.AceHeadTailBeforeEditHandler&quot;</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>4.创建Java文件<em><strong>AceHeadTailBeforeEditHandler.java</strong></em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> nc.ui.qc.qc_approveaction.ace.handler;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> nc.ui.pub.beans.UIRefPane;</span><br><span class="line"><span class="keyword">import</span> nc.ui.pub.bill.BillCardPanel;</span><br><span class="line"><span class="keyword">import</span> nc.ui.pubapp.uif2app.event.IAppEventHandler;</span><br><span class="line"><span class="keyword">import</span> nc.ui.pubapp.uif2app.event.card.CardHeadTailBeforeEditEvent;</span><br><span class="line"><span class="keyword">import</span> nc.vo.pubapp.AppContext;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 改进措施指令单--单据表头表尾字段编辑前事件处理类</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 6.0</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 2021-3-15 上午14:31:21</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> wjl</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AceHeadTailBeforeEditHandler</span> <span class="keyword">implements</span> <span class="title">IAppEventHandler</span>&lt;<span class="title">CardHeadTailBeforeEditEvent</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleAppEvent</span><span class="params">(CardHeadTailBeforeEditEvent e)</span> </span>&#123;</span><br><span class="line">    	BillCardPanel panel=e.getBillCardPanel();</span><br><span class="line">    	e.setReturnValue(<span class="keyword">true</span>);</span><br><span class="line">    	    	</span><br><span class="line">    	String billmaker = panel.getTailItem(<span class="string">&quot;billmaker&quot;</span>).getValue();</span><br><span class="line">    	String user = AppContext.getInstance().getPkUser();</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * 【原因分析】、【是否需采取纠正活动】、【纠正活动】、【拟采取的纠正措施】、【措施计划完成日期】、【整改验证情况】</span></span><br><span class="line"><span class="comment">		 * */</span></span><br><span class="line">    	<span class="keyword">if</span> (billmaker == <span class="keyword">null</span> || billmaker.equals(user)) &#123;</span><br><span class="line">    	    <span class="comment">// 原因分析</span></span><br><span class="line">    	    panel.getHeadItem(<span class="string">&quot;reasonanalysis&quot;</span>).setEdit(<span class="keyword">false</span>);</span><br><span class="line">    	    <span class="comment">// 纠正活动</span></span><br><span class="line">    	    panel.getHeadItem(<span class="string">&quot;correctiveaction&quot;</span>).setEdit(<span class="keyword">false</span>);</span><br><span class="line">    	    <span class="comment">// 是否需要采取纠正活动 check-box</span></span><br><span class="line">    	    panel.getHeadItem(<span class="string">&quot;iscorrectmeasures&quot;</span>).setEdit(<span class="keyword">false</span>);</span><br><span class="line">    	    <span class="comment">// 拟采取的纠正措施</span></span><br><span class="line">    	    panel.getHeadItem(<span class="string">&quot;planmeasures&quot;</span>).setEdit(<span class="keyword">false</span>); </span><br><span class="line">    	    <span class="comment">// 计划完成日期</span></span><br><span class="line">    	    panel.getHeadItem(<span class="string">&quot;deadline&quot;</span>).setEdit(<span class="keyword">false</span>); </span><br><span class="line">    	    <span class="comment">// 整改验证情况</span></span><br><span class="line">    	    panel.getHeadItem(<span class="string">&quot;verifymeasures&quot;</span>).setEdit(<span class="keyword">false</span>); </span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/22/%E5%AE%A2%E6%88%B7%E6%8A%95%E8%AF%89%E5%8D%95%E4%BF%AE%E6%94%B9%E5%8F%AF%E7%BC%96%E8%BE%91%E5%AD%97%E6%AE%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-如何设置单据转换规则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/">如何设置单据转换规则</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/" class="archive-article-date">
+  	<time datetime="2021-03-19T02:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NC-6-5中如何设置单据转换规则"><a href="#NC-6-5中如何设置单据转换规则" class="headerlink" title="NC 6.5中如何设置单据转换规则"></a>NC 6.5中如何设置单据转换规则</h1><blockquote>
+<p>用途：在需要通过Java后台保存上游单据后，自动生成下游单据时；需要配置单据转换规则。</p>
+</blockquote>
+<p>&#160;&#160;&#160;&#160;步骤：</p>
+<h5 id="1-打开功能“单据转换规则”"><a href="#1-打开功能“单据转换规则”" class="headerlink" title="1.打开功能“单据转换规则”"></a>1.打开功能“单据转换规则”</h5><p><img src="https://i.loli.net/2021/03/19/F9P2y5DCA4dfLpK.jpg" alt="img"></p>
+<h5 id="2-点击新增"><a href="#2-点击新增" class="headerlink" title="2.点击新增"></a>2.点击新增</h5><p><img src="https://i.loli.net/2021/03/19/fOkcat1Ezvr7s9H.jpg" alt="img"></p>
+<h5 id="3-在来源单据类型-点击"><a href="#3-在来源单据类型-点击" class="headerlink" title="3.在来源单据类型 点击"></a>3.在来源单据类型 点击</h5><p><img src="https://i.loli.net/2021/03/19/UR3HuZMz5tAJwcq.jpg" alt="img"></p>
+<h5 id="4-在文本框中输入-“产品开发”"><a href="#4-在文本框中输入-“产品开发”" class="headerlink" title="4.在文本框中输入 “产品开发”"></a>4.在文本框中输入 “产品开发”</h5><p><img src="https://i.loli.net/2021/03/19/nzAMsYSfkNmqoJT.jpg" alt="img"></p>
+<h5 id="5-然后-在-来源交易类型-点击"><a href="#5-然后-在-来源交易类型-点击" class="headerlink" title="5.然后 在 来源交易类型 点击"></a>5.然后 在 来源交易类型 点击<img src="https://i.loli.net/2021/03/19/9MApbFmDt6xCoUQ.jpg" alt="img"></h5><p><img src="https://i.loli.net/2021/03/19/WMKbJIzOVcZToym.jpg" alt="img"></p>
+<ul>
+<li>点击确定 , 然后点击 “目的单据类型” , 过滤 “4D11” 找出 项目登记</li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/19/F7i8hft9BoSy3bW.jpg" alt="img"></p>
+<p><img src="https://i.loli.net/2021/03/19/aN4R56AXEFU7ZeJ.jpg" alt="img"></p>
+<h5 id="6-目的交易类型-选择-‘4D11-Cxx-01’-设计与开发建议书"><a href="#6-目的交易类型-选择-‘4D11-Cxx-01’-设计与开发建议书" class="headerlink" title="6.目的交易类型 选择 ‘4D11-Cxx-01’ 设计与开发建议书"></a>6.目的交易类型 选择 ‘4D11-Cxx-01’ 设计与开发建议书</h5><p>​    新增完成后</p>
+<p><img src="https://i.loli.net/2021/03/19/NyCFhEZbOMIqPGQ.jpg" alt="img"></p>
+<h5 id="7-点击“设置规则”-–-gt-进行单据转换规则的设定"><a href="#7-点击“设置规则”-–-gt-进行单据转换规则的设定" class="headerlink" title="7.点击“设置规则” –&gt; 进行单据转换规则的设定"></a>7.点击“设置规则” –&gt; 进行单据转换规则的设定</h5><p><img src="https://i.loli.net/2021/03/19/3LV6a8OpnWRhY7M.jpg" alt="img"></p>
+<h5 id="8-找到-pk-projectclass-“项目类型主键”-字段-，我们需要根据“开发改进跟踪表”中的-“开发建议”-字段选择项目来决定填入的-项目值。"><a href="#8-找到-pk-projectclass-“项目类型主键”-字段-，我们需要根据“开发改进跟踪表”中的-“开发建议”-字段选择项目来决定填入的-项目值。" class="headerlink" title="8.找到 pk_projectclass “项目类型主键” 字段 ，我们需要根据“开发改进跟踪表”中的 “开发建议” 字段选择项目来决定填入的 项目值。"></a>8.找到 pk_projectclass “项目类型主键” 字段 ，我们需要根据“开发改进跟踪表”中的 “开发建议” 字段选择项目来决定填入的 项目值。</h5><blockquote>
+<p>例如：Pim_trackform.DEF1 = ‘1001ZZ1000000047NILX’</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/03/19/fZUJr5KRuMXLcYT.jpg" alt="img"></p>
+<h5 id="9-选中pk-projectclass-项目类型-规则类型选择“公式”"><a href="#9-选中pk-projectclass-项目类型-规则类型选择“公式”" class="headerlink" title="9.选中pk_projectclass - 项目类型 .  规则类型选择“公式”."></a>9.选中pk_projectclass - 项目类型 .  规则类型选择“公式”.</h5><p>​      然后在规则一栏 点击放大镜按钮，弹出公式编辑器 窗口</p>
+<p><img src="https://i.loli.net/2021/03/19/pT6rtqvSLjbw7aC.jpg" alt="img"></p>
+<p><img src="https://i.loli.net/2021/03/19/swjZbkV49HUldTF.jpg" alt="img"></p>
+<h5 id="10-在公式中填入"><a href="#10-在公式中填入" class="headerlink" title="10.在公式中填入"></a>10.在公式中填入</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iif( getcolvalue(bd_defdoc ,code ,pk_defdoc ,def1 )==&quot;1&quot; ,&quot;1001A3100000001DGG64&quot; , &quot;1001ZZ1000000047NIN8&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>含义：select code from <code>bd_defdoc</code> where <code>pk_defdoc</code> = 字段[<code>def1</code>]的值.<br>如果def1 开发建议选择的时第1项 项目立项，则填入值’1001A3100000001DGG64’</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.type_code,b.type_name,b.pk_projectclass <span class="keyword">from</span> bd_projectclass b <span class="keyword">where</span> b.type_name <span class="keyword">like</span> <span class="string">&#x27;%研发项目%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/03/19/mdVOFMZ4cukHxAK.jpg" alt="img"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.type_code,b.type_name,b.pk_projectclass <span class="keyword">from</span> bd_projectclass b <span class="keyword">where</span> b.type_name <span class="keyword">like</span> <span class="string">&#x27;%技术改良%&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2021/03/19/KBhlVZGzj3mnqyI.jpg" alt="img"></p>
+<p>否则 填入值 ‘1001ZZ1000000047NIN8’ (技术改良)</p>
+<h5 id="11-选中def-自定义项16-规则类型选择“映射”"><a href="#11-选中def-自定义项16-规则类型选择“映射”" class="headerlink" title="11.选中def - 自定义项16 .  规则类型选择“映射”."></a>11.选中def - 自定义项16 .  规则类型选择“映射”.</h5><p>&nbsp;&nbsp;&nbsp;然后在规则一栏 选择pk_trackform 产品改进跟踪表主键</p>
+<p><img src="https://i.loli.net/2021/03/19/da3cPxheHlDuBrk.jpg" alt="img"></p>
+<ul>
+<li>‘规则名称’会自动带入 产品改进跟踪表主键</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/03/19/e54qDtPXkoh7iKs.jpg" alt="img"></p>
+<ul>
+<li>最后点击【保存交换规则】</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/19/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E5%8D%95%E6%8D%AE%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-三张需要修改的单据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -311,19 +578,19 @@
 
 
   
-    <article id="post-按钮事件对应的java" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-产品开发改进申请单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/">按钮点击事件对应的Java类</a>
+      <a class="article-title" href="/2021/03/18/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%94%B9%E8%BF%9B%E7%94%B3%E8%AF%B7%E5%8D%95/">产品开发改进申请单</a>
     </h1>
   
 
         
-        <a href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/" class="archive-article-date">
+        <a href="/2021/03/18/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%94%B9%E8%BF%9B%E7%94%B3%E8%AF%B7%E5%8D%95/" class="archive-article-date">
   	<time datetime="2021-03-18T03:17:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
 </a>
         
@@ -331,7 +598,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://i.loli.net/2021/03/18/SJ2EQWoYBXjdap5.jpg" alt="img"><img src="https://i.loli.net/2021/03/18/ywTSYskmRPirFN9.png" alt="img"></p>
+        <h1 id="产品开发改进申请单"><a href="#产品开发改进申请单" class="headerlink" title="产品开发改进申请单"></a>产品开发改进申请单</h1><p>下面是产品开发改进需求申请表的相关处理类</p>
+<ul>
+<li>—— 新增按钮点击事件 <code>nc.ui.qc.pim_track.ace.handler.AceAddHandler.java</code></li>
+<li>—— 修改按钮点击事件 <code>nc.ui.qc.pim_track.ace.action.CPGZEditAction.java</code></li>
+<li></li>
+</ul>
+<p><img src="https://i.loli.net/2021/03/18/SJ2EQWoYBXjdap5.jpg" alt="img"><img src="https://i.loli.net/2021/03/18/ywTSYskmRPirFN9.png" alt="img"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AceAddHandler</span> <span class="keyword">implements</span> <span class="title">IAppEventHandler</span>&lt;<span class="title">AddEvent</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleAppEvent</span><span class="params">(AddEvent e)</span> </span>&#123;</span><br><span class="line">		String pk_group = e.getContext().getPk_group();</span><br><span class="line">		String pk_org = e.getContext().getPk_org();</span><br><span class="line">		BillCardPanel panel = e.getBillForm().getBillCardPanel();</span><br><span class="line">		<span class="comment">// 设置主组织默认值</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_group&quot;</span>, pk_group);</span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_org&quot;</span>, pk_org);</span><br><span class="line">		<span class="comment">// 设置单据状态、单据业务日期默认值</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;approvestatus&quot;</span>, BillStatusEnum.FREE.value());</span><br><span class="line">		<span class="comment">// 设置组织版本</span></span><br><span class="line">		panel.setHeadItem(<span class="string">&quot;pk_org_v&quot;</span>, SoUtil.getPk_vid(pk_org));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>CPGZEditAction.java用于处理修改保存后的事件。以下事件处理过程用于在保存后，审批流程过后 禁用单据上面的字段。 制单人提交后就无法再次修改原单据信息了。</p>
@@ -339,11 +612,32 @@
 <blockquote>
 <p>pim/src/client/nc/ui/qc/pim_track/ace/action/CPGZEditAction.java</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">(ActionEvent e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    	<span class="keyword">super</span>.doAction(e);</span><br><span class="line">    	AbstractBill bill = (AbstractBill) <span class="keyword">this</span>.getModel().getSelectedData();</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">null</span> != bill &amp;&amp; bill <span class="keyword">instanceof</span> AggPim_trackform) &#123;</span><br><span class="line">		    BillCardPanel panel = editor.getBillCardPanel();</span><br><span class="line">		    BillItem[] headItems = panel.getHeadItems();</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    NCObject obj = NCObject.newInstance(getModel().getSelectedData());</span><br><span class="line">		    Integer fstatusflag = nc.bs.pubapp.pf.util.ApproveFlowUtil</span><br><span class="line">			    .getBillStatus(obj);</span><br><span class="line">		    <span class="keyword">if</span> (!BillStatusEnum.FREE.equalsValue(fstatusflag)) &#123;</span><br><span class="line">				<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">				    billItem.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">				&#125;			</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    IWorkflowService iW = NCLocator.getInstance().lookup(</span><br><span class="line">			    IWorkflowService.class);</span><br><span class="line">		    List list = iW.getEditablePreoperties(AppContext.getInstance()</span><br><span class="line">			    .getPkUser(), <span class="string">&quot;CPGZ-Cxx-001&quot;</span>, bill.getPrimaryKey(), <span class="number">2</span>); <span class="comment">//CPGZ-Cxx-001是交易类型</span></span><br><span class="line">		    <span class="keyword">if</span> (MMValueCheck.isNotEmpty(list)) &#123;</span><br><span class="line">			List&lt;String&gt; lHeadItems = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">			<span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">			    String item = object.toString();</span><br><span class="line">			 	lHeadItems.add(item);		 </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">			    <span class="keyword">if</span> (lHeadItems.contains(billItem.getKey())) &#123;</span><br><span class="line">				billItem.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">				billItem.getComponent().setBorder(</span><br><span class="line">					<span class="keyword">new</span> LineBorder(Color.red, <span class="number">2</span>));</span><br><span class="line">			    &#125;</span><br><span class="line">			&#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAction</span><span class="params">(ActionEvent e)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    	<span class="keyword">super</span>.doAction(e);</span><br><span class="line">    	AbstractBill bill = (AbstractBill) <span class="keyword">this</span>.getModel().getSelectedData();</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">null</span> != bill &amp;&amp; bill <span class="keyword">instanceof</span> AggPim_trackform) &#123;</span><br><span class="line">		    BillCardPanel panel = editor.getBillCardPanel();</span><br><span class="line">		    BillItem[] headItems = panel.getHeadItems();</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    NCObject obj = NCObject.newInstance(getModel().getSelectedData());</span><br><span class="line">		    Integer fstatusflag = nc.bs.pubapp.pf.util.ApproveFlowUtil</span><br><span class="line">			    .getBillStatus(obj);</span><br><span class="line">		    <span class="keyword">if</span> (!BillStatusEnum.FREE.equalsValue(fstatusflag)) &#123;</span><br><span class="line">				<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">				    billItem.setEnabled(<span class="keyword">false</span>);</span><br><span class="line">				&#125;			</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="comment">// 不是自由态，先将所有字段设为不可编辑 add by lms 2021-3-2</span></span><br><span class="line">		    IWorkflowService iW = NCLocator.getInstance().lookup(</span><br><span class="line">			    IWorkflowService.class);</span><br><span class="line">		    List list = iW.getEditablePreoperties(AppContext.getInstance()</span><br><span class="line">			    .getPkUser(), <span class="string">&quot;CPGZ-Cxx-001&quot;</span>, bill.getPrimaryKey(), <span class="number">2</span>); <span class="comment">//CPGZ-Cxx-001是交易类型，在审批流定义-业务单元中可以查找到</span></span><br><span class="line">		    <span class="keyword">if</span> (MMValueCheck.isNotEmpty(list)) &#123;</span><br><span class="line">			List&lt;String&gt; lHeadItems = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">			<span class="keyword">for</span> (Object object : list) &#123;</span><br><span class="line">			    String item = object.toString();</span><br><span class="line">			 	lHeadItems.add(item);		 </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> (BillItem billItem : headItems) &#123;</span><br><span class="line">			    <span class="keyword">if</span> (lHeadItems.contains(billItem.getKey())) &#123;</span><br><span class="line">				billItem.setEnabled(<span class="keyword">true</span>);</span><br><span class="line">				billItem.getComponent().setBorder(</span><br><span class="line">					<span class="keyword">new</span> LineBorder(Color.red, <span class="number">2</span>));</span><br><span class="line">			    &#125;</span><br><span class="line">			&#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <p>同时在XML配置文件中要配置如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--======= 动作：[newActions] [修改] ===========--&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;editAction&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nc.ui.qc.pim_track.ace.action.CPGZEditAction&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;model&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">&quot;bmModel&quot;</span>/&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;exceptionHandler&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">&quot;exceptionHandler&quot;</span> /&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p><img src="https://i.loli.net/2021/05/14/XMz4p1AO527wVQg.png" alt="image-20210514112716911"></p>
+<h3 id="如何设置审批流"><a href="#如何设置审批流" class="headerlink" title="如何设置审批流"></a>如何设置审批流</h3><p>1.进入 审批流定义-集团</p>
+<p>2.左边查询框输入 ”产品开发”</p>
+<p><img src="https://i.loli.net/2021/05/20/451hegPXY9QpLIZ.png" alt="image-20210520114004369"></p>
+<p>3.点击【新增】</p>
+<p>4.创建如下图标</p>
+<p><img src="https://i.loli.net/2021/05/20/B41HSvxT6OpVmil.png" alt="image-20210520114620274"></p>
+<p><img src="https://i.loli.net/2021/05/20/BVbu2QEmF6GtLzM.png" alt="image-20210520114649842"></p>
+<ul>
+<li>参与者类型 选择 = “虚拟角色”</li>
+<li>人工活动配置 选择”制单人’’</li>
+</ul>
+<p><img src="https://i.loli.net/2021/05/20/e6EoGDQzjq2hNZJ.png" alt="image-20210520114706950"></p>
+<p><img src="https://i.loli.net/2021/05/20/jSxrJBlczDaVWGn.png" alt="image-20210520140916936"></p>
+<p><img src="https://i.loli.net/2021/05/20/MhpGzCX8wHs91y3.png" alt="image-20210520140948957"></p>
+<p><img src="https://i.loli.net/2021/05/22/5DIZlNiROYz2SU1.png" alt="image-20210522091159360"></p>
+<p>测试新增一笔产品开发改进需求申请单:</p>
+<p><img src="https://i.loli.net/2021/05/21/oaKuDxlBjT7hNUg.png" alt="image-20210521164015100"></p>
+<p>产品名称：钇锆造纳米粉</p>
+<p>承担部门：高纯一车间</p>
+<p>客户名称：苏州市正德稀土材料有限公司</p>
 
       
 
@@ -367,7 +661,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/18/%E6%8C%89%E9%92%AE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E5%BA%94%E7%9A%84java/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/03/18/%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E6%94%B9%E8%BF%9B%E7%94%B3%E8%AF%B7%E5%8D%95/">展开全文 >></a>
         </p>
       
 
@@ -1182,99 +1476,9 @@
 
 
   
-    <article id="post-images/hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/11/images/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/11/images/hello-world/" class="archive-article-date">
-  	<time datetime="2021-03-11T02:19:48.701Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.sioe.cn/yingyong/yanse-rgb-16/">rgb颜色对照表</a></p>
-<p>——————–2021-04-07——————<br>1.GAGG生产订单流程 操作手册撰写. 已完成md,doc. 已发布<br>2.nginx 在centos上配置启动成功<br>    nginx-1.19.9<br>    VMware-player-16.1.1-17801498.exe  215MB<br>    CentOS-8.3.2011-x86_64-dvd1.iso 8.62GB<br>3.参考教程 <a target="_blank" rel="noopener" href="https://www.runoob.com/linux/nginx-install-setup.html">https://www.runoob.com/linux/nginx-install-setup.html</a>    </p>
-<p>4.Nginx中文文档 <a target="_blank" rel="noopener" href="https://www.nginx.cn/doc/index.html">https://www.nginx.cn/doc/index.html</a></p>
-<p>5.Nginx 实现负载均衡 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33454884/article/details/89212702">https://blog.csdn.net/qq_33454884/article/details/89212702</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Demo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/11/images/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1369,11 +1573,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color5">NC流程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">NC流程</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
