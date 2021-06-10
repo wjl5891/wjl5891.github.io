@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: GQD | Hexo</title>
+  <title>订单交付需求未交付数量问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/GQD/index.html">
+  <meta name="description" content="一、需求用友蔡老师提到”产供销平衡”模块中的《订单交付需求》单据 ，当【合同类型】&#x3D;“内部来料加工合同”时，未交付数量 要修改取数逻辑。 1.说明原未交付数量 &#x3D; 销售合同数量 — 销售出库数量 ​        ct_sale_b.nastnum  — ic_saleout_b.nassistnum 改为 未交付数量 &#x3D; 采购入库单de 数量 &#x2F; 内部来料加工合同de 料比 — 销售出库数量 ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="订单交付需求未交付数量问题">
+<meta property="og:url" content="http://example.com/2021/06/04/%E4%BA%A7%E4%BE%9B%E9%94%80%E5%B9%B3%E8%A1%A1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、需求用友蔡老师提到”产供销平衡”模块中的《订单交付需求》单据 ，当【合同类型】&#x3D;“内部来料加工合同”时，未交付数量 要修改取数逻辑。 1.说明原未交付数量 &#x3D; 销售合同数量 — 销售出库数量 ​        ct_sale_b.nastnum  — ic_saleout_b.nassistnum 改为 未交付数量 &#x3D; 采购入库单de 数量 &#x2F; 内部来料加工合同de 料比 — 销售出库数量 ​">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/06/04/nxvzLXdykscVKtl.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/04/MoLEC6meipjQRwP.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/04/4ZgwiMsUFD5N7jm.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/08/VHKFA17TBN8rbsz.png">
+<meta property="og:image" content="https://i.loli.net/2021/06/05/7buCSp1tNfilk4R.png">
+<meta property="article:published_time" content="2021-06-04T08:24:00.000Z">
+<meta property="article:modified_time" content="2021-06-10T08:53:33.514Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="产供销平衡计算">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/06/04/nxvzLXdykscVKtl.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,60 +161,273 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-产供销平衡" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/30/%E5%91%98%E5%B7%A5%E8%80%83%E6%A0%B8%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2021-04-30T03:12:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/30/%E5%91%98%E5%B7%A5%E8%80%83%E6%A0%B8%E7%B3%BB%E7%BB%9F/">虔东考核</a>
+    <h1 class="article-title" itemprop="name">
+      订单交付需求未交付数量问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/06/04/%E4%BA%A7%E4%BE%9B%E9%94%80%E5%B9%B3%E8%A1%A1/" class="archive-article-date">
+  	<time datetime="2021-06-04T08:24:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h1><p>用友蔡老师提到”产供销平衡”模块中的《订单交付需求》单据 ，当【合同类型】=“内部来料加工合同”时，未交付数量</p>
+<p>要修改取数逻辑。</p>
+<h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>原未交付数量 = 销售合同数量 — 销售出库数量</p>
+<p>​        ct_sale_b.nastnum  — ic_saleout_b.nassistnum</p>
+<p>改为</p>
+<p>未交付数量 = 采购入库单<code>de 数量</code> / 内部来料加工合同<code>de 料比</code> — 销售出库数量</p>
+<p>​        ic_purchasein.xxx </p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/06/04/nxvzLXdykscVKtl.png" alt="image-20210604163157417.png"></p>
+<p><img src="https://i.loli.net/2021/06/04/MoLEC6meipjQRwP.png" alt="image-20210604162939455.png"></p>
+<ul>
+<li><p>打开 “内部来料加工合同”节点</p>
+</li>
+<li><p>查询条件</p>
+<blockquote>
+<p>销售组织:全选</p>
+<p>制单日期：去年 ~ 今天</p>
+<p>合同编码：NNJGLSK2101003</p>
+<p>合同类型：内部来料加工合同</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://i.loli.net/2021/06/04/4ZgwiMsUFD5N7jm.png" alt="image-20210604163543404.png"></p>
+<p>来料加工合同 –&gt; 来料加工产品销售订单 –&gt; 来料加工原料订单 –&gt; 来料加工原料—到货单  ………….   –&gt; 销售出库</p>
+<p>合同(交易规则) &gt;&gt;&gt;  销售(要卖多少)  &gt;&gt;&gt;  原料采购(买原料)  &gt;&gt;&gt; 原料到货(到了多少原料)  …………….   –&gt; 交货了多少</p>
+<p><img src="https://i.loli.net/2021/06/08/VHKFA17TBN8rbsz.png" alt="image-20210608144859109"></p>
+<p>下面描述的是单据转换的规则。从上图中红色框由右向左进行说明：</p>
+<p>联查中单据名称                NC单据名称                该单据的来源单据号                                                                                                    来源单据描述</p>
+<hr>
+<p>采购入库单                        ——库存采购库单     ic_purchasein_b.csourcebillbid = ‘……’ (po_arriveorder_b).pk_arriveorder_b    到货单字表.表体PK</p>
+<p>来料加工原料                    ——到货单                 po_arriveorder_b. cfirstbid = ‘xxxxx’   (po_order_b).pk_order_b                     采购订单子表. 表体 PK</p>
+<p>来料加工原料订单            ——采购订单维护      po_order_b.cfirstbid = ‘yyyyyy’          (so_saleorder_b).CSaleOrderBID          销售订单子表.表体 PK</p>
+<p>来料加工产品销售订单    ——销售订单维护      so_saleorder_b.cfirstbid = ‘zzzzzzz’   (ct_sale_b).pk_ct_sale_b                         销售合同子表.表体PK</p>
+<p>内部来料加工合同            ——销售合同             ct_sale_b</p>
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>产供销平衡<ul>
+<li>产供销平衡处理<ul>
+<li>订单交付需求</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><p>产供销平衡的主视图</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cgx_ddjh_view <span class="comment">----里面包含 销售合同未交付需求、-----外部来料加工订单、---出口合同未交付需求、---寄售调拨订单（麦格昆磁）</span></span><br></pre></td></tr></table></figure>
+
+<p>以下分析本次修改最主要部分：订单未交付需求 —-未交付数量</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.pk_ct_sale_b,a.pk_group,b.shortname zz,e.billtypename, a.ctrantypeid,a.pk_org ,a.hth,a.htrq,a.pk_customer,a.ywy,a.pk_material,a.castunitid,a.cunitid,a.vchangerate,a.zlbz,a.wjfzsl,a.wjffsl,a.khrq,a.psrq,a.bz,a.jsxz,a.htsl,a.ddsl,a.ckzsl,a.ckfsl,a.yslx</span><br><span class="line">   <span class="keyword">from</span></span><br><span class="line">       (</span><br><span class="line">           <span class="keyword">select</span> a.pk_ct_sale_b,a.pk_group,b.ctrantypeid,b.pk_org ,b.vbillcode hth,b.pk_customer,b.personnelid  ywy,a.pk_material,a.castunitid,a.cunitid,a.vchangerate,a.vbdef19 zlbz,a.nnum<span class="operator">-</span>nvl(c.ckzsl,<span class="number">0</span>) wjfzsl,a.nastnum<span class="operator">-</span>nvl(c.ckfsl,<span class="number">0</span>) wjffsl,a.delivdate khrq,a.vqddef31 psrq,substr(b.subscribedate,<span class="number">1</span>,<span class="number">10</span>) htrq,<span class="string">&#x27;【内包装】&#x27;</span><span class="operator">||</span>a.vbdef7<span class="operator">||</span><span class="string">&#x27;【外包装】&#x27;</span><span class="operator">||</span>a.vbdef8<span class="operator">||</span><span class="string">&#x27;【托盘】&#x27;</span><span class="operator">||</span>a.vbdef9 bz,a.vqddef38 jsxz,a.nastnum htsl,<span class="number">0</span> ddsl,nvl(c.ckzsl,<span class="number">0</span>) ckzsl,nvl(c.ckfsl,<span class="number">0</span>) ckfsl,a.vbdef12 yslx</span><br><span class="line">           <span class="keyword">from</span> ct_sale_b a</span><br><span class="line">                    <span class="keyword">left</span> <span class="keyword">join</span> ct_sale b <span class="keyword">on</span> a.pk_ct_sale <span class="operator">=</span>b.pk_ct_sale</span><br><span class="line">                    <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">                (</span><br><span class="line">                    <span class="keyword">select</span> c.cctmanagebid,<span class="built_in">sum</span>(a.nnum) ckzsl,<span class="built_in">sum</span>(a.nassistnum ) ckfsl</span><br><span class="line">                    <span class="keyword">from</span> ic_saleout_b a</span><br><span class="line">                             <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">                         (<span class="keyword">select</span> c.csaleorderbid,<span class="keyword">case</span> <span class="keyword">when</span> c.cctmanagebid<span class="operator">=</span><span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> s.pk_ct_sale_b <span class="keyword">else</span> c.cctmanagebid <span class="keyword">end</span> cctmanagebid  ,d.ctrantypeid</span><br><span class="line">                          <span class="keyword">from</span>   so_saleorder_b c</span><br><span class="line">                                     <span class="keyword">left</span> <span class="keyword">join</span> so_saleorder d <span class="keyword">on</span> c.csaleorderid <span class="operator">=</span>d.csaleorderid</span><br><span class="line">                                     <span class="keyword">left</span> <span class="keyword">join</span> org_salesorg m <span class="keyword">on</span> c.pk_org<span class="operator">=</span>m.pk_salesorg</span><br><span class="line">                                     <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> pk_material ,code <span class="keyword">from</span> bd_material ) n <span class="keyword">on</span> c.cmaterialvid <span class="operator">=</span>n.pk_material</span><br><span class="line">                                     <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">                                 (</span><br><span class="line">                                     <span class="keyword">select</span> b.vbillcode<span class="operator">||</span>a.pk_material hb,pk_ct_sale_b</span><br><span class="line">                                     <span class="keyword">from</span> ct_sale_b a</span><br><span class="line">                                              <span class="keyword">left</span> <span class="keyword">join</span> ct_sale b <span class="keyword">on</span> a.pk_ct_sale <span class="operator">=</span>b.pk_ct_sale</span><br><span class="line">                                     <span class="keyword">where</span> a.dr<span class="operator">=</span><span class="number">0</span>  <span class="keyword">and</span> b.fstatusflag <span class="operator">=</span><span class="string">&#x27;1&#x27;</span> <span class="keyword">and</span> a.vbdef1<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span>   <span class="keyword">and</span> b.blatest<span class="operator">=</span><span class="string">&#x27;Y&#x27;</span></span><br><span class="line">                                     <span class="comment">----销售合同与销售订单同时变更，销售订单的来源未记录合同pk，则通过合同号+物料 匹配 合同表体pk</span></span><br><span class="line">                                 ) s <span class="keyword">on</span> d.vdef20<span class="operator">||</span>c.cmaterialvid <span class="operator">=</span>s.hb</span><br><span class="line">                          <span class="keyword">where</span> c.dr<span class="operator">=</span><span class="number">0</span>  <span class="keyword">and</span> m.pk_fatherorg<span class="operator">=</span><span class="string">&#x27;0001A310000000008767&#x27;</span> <span class="keyword">and</span> substr(n.code,<span class="number">0</span>,<span class="number">2</span>) <span class="keyword">in</span>(<span class="string">&#x27;03&#x27;</span>,<span class="string">&#x27;04&#x27;</span>,<span class="string">&#x27;05&#x27;</span>,<span class="string">&#x27;06&#x27;</span>,<span class="string">&#x27;13&#x27;</span>)</span><br><span class="line">                          <span class="keyword">group</span> <span class="keyword">by</span> c.csaleorderbid,(<span class="keyword">case</span> <span class="keyword">when</span> c.cctmanagebid<span class="operator">=</span><span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> s.pk_ct_sale_b <span class="keyword">else</span> c.cctmanagebid <span class="keyword">end</span>),d.ctrantypeid</span><br><span class="line">                         ) c</span><br><span class="line">                         <span class="keyword">on</span> a.cfirstbillbid <span class="operator">=</span>c.csaleorderbid</span><br><span class="line">                             <span class="keyword">left</span> <span class="keyword">join</span> org_salesorg m <span class="keyword">on</span> a.pk_org<span class="operator">=</span>m.pk_salesorg</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">where</span> a.dr<span class="operator">=</span><span class="number">0</span>  <span class="keyword">and</span> m.pk_fatherorg<span class="operator">=</span><span class="string">&#x27;0001A310000000008767&#x27;</span>  <span class="keyword">and</span>   c.ctrantypeid<span class="operator">&lt;&gt;</span><span class="string">&#x27;0001A310000000002OXE&#x27;</span></span><br><span class="line">                    <span class="keyword">group</span> <span class="keyword">by</span> c.cctmanagebid</span><br><span class="line">                )  c <span class="keyword">on</span> a.pk_ct_sale_b <span class="operator">=</span>c.cctmanagebid</span><br><span class="line"></span><br><span class="line">           <span class="keyword">where</span> a.dr<span class="operator">=</span><span class="number">0</span>  <span class="keyword">and</span>  a.pk_org<span class="operator">=</span><span class="string">&#x27;0001A3100000000037UG&#x27;</span>  <span class="keyword">and</span> b.fstatusflag <span class="operator">=</span><span class="string">&#x27;1&#x27;</span> <span class="keyword">and</span> a.vbdef1<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span>   <span class="keyword">and</span> b.blatest<span class="operator">=</span><span class="string">&#x27;Y&#x27;</span>   <span class="keyword">and</span> b.vdef14<span class="operator">&lt;&gt;</span><span class="string">&#x27;Y&#x27;</span>  <span class="keyword">and</span> (<span class="keyword">case</span> <span class="keyword">when</span> (b.pk_customer <span class="operator">=</span><span class="string">&#x27;1001A310000000005P5Q&#x27;</span> <span class="keyword">and</span> b.ctrantypeid <span class="operator">=</span><span class="string">&#x27;1001A3100000000150CR&#x27;</span>) <span class="keyword">then</span> <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>)<span class="operator">=</span><span class="number">0</span></span><br><span class="line">           <span class="comment">---销售合同状态fstatusflag(3:审批通过  1：生效) ；订单表体a.vbdef1&lt;&gt;Y :剔除来料加工原料 ;</span></span><br><span class="line">           <span class="comment">---麦格昆磁的销售合同需求及MQ库存不纳入平衡</span></span><br><span class="line">           <span class="comment">---来料加工销售订单 剔除（来料方 虔东；客户方 科力  例如 镝铁合金）</span></span><br><span class="line">           <span class="comment">---- a.vbdef19  zlbz 为 质量标准     ；销售订单交易类型 0001A310000000002OXE=退换货</span></span><br><span class="line">           <span class="comment">---b.vdef14&lt;&gt;&#x27;Y&#x27;</span></span><br><span class="line">       ) a</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">           <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">       (                       <span class="comment">---自定义档案:交易类型是否参与产供销</span></span><br><span class="line">           <span class="keyword">select</span> b.pk_billtypeid,b.billtypename,a.def1 sfcgx</span><br><span class="line">           <span class="keyword">from</span> bd_defdoc a</span><br><span class="line">                    <span class="keyword">left</span> <span class="keyword">join</span> bd_billtype b <span class="keyword">on</span> a.code<span class="operator">=</span>b.pk_billtypecode</span><br><span class="line">           <span class="keyword">where</span> a.dr<span class="operator">=</span><span class="number">0</span> <span class="keyword">and</span>  a.pk_defdoclist<span class="operator">=</span><span class="string">&#x27;1001A3100000001F5HJP&#x27;</span> <span class="keyword">and</span> a.def1<span class="operator">=</span><span class="string">&#x27;Y&#x27;</span></span><br><span class="line">           <span class="comment">---1001A3100000001F5HJP 自定义档案:交易类型是否参与产供销  ；  a.def1=&#x27;Y&#x27; 参与产供销平衡    ;退换货 交易类型 不参与产供销</span></span><br><span class="line">       )</span><br><span class="line">           e <span class="keyword">on</span> a.ctrantypeid<span class="operator">=</span>e.pk_billtypeid</span><br><span class="line">           <span class="keyword">left</span> <span class="keyword">join</span> org_salesorg b <span class="keyword">on</span> a.pk_org<span class="operator">=</span>b.pk_salesorg</span><br><span class="line"></span><br><span class="line">   <span class="keyword">where</span>  a.wjfzsl<span class="operator">&gt;</span><span class="number">0</span>     <span class="keyword">and</span> e.sfcgx<span class="operator">=</span><span class="string">&#x27;Y&#x27;</span>   <span class="keyword">and</span> a.pk_customer<span class="operator">&lt;&gt;</span><span class="string">&#x27;1001A31000000006BQE9&#x27;</span></span><br><span class="line">   <span class="keyword">and</span> a.hth <span class="operator">=</span> <span class="string">&#x27;NNJGLSK2101003&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二、概要设计"><a href="#二、概要设计" class="headerlink" title="二、概要设计"></a>二、概要设计</h1><p><strong>“内部来料加工合同”节点</strong>——查询语句</p>
+<p>第一段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> ct_sale.pk_ct_sale, ct_sale.vbillcode <span class="keyword">from</span> ct_sale ct_sale <span class="keyword">where</span> ( ct_sale.ctrantypeid <span class="operator">=</span> <span class="string">&#x27;1001A3100000000150DN&#x27;</span> <span class="keyword">AND</span> ct_sale.pk_org <span class="keyword">in</span> ( <span class="string">&#x27;0001A3100000000038HJ&#x27;</span>, <span class="string">&#x27;0001A310000000008767&#x27;</span>, <span class="string">&#x27;0001A3100000000037Q5&#x27;</span>, <span class="string">&#x27;0001A3100000000037UG&#x27;</span>, <span class="string">&#x27;0001A310000000003810&#x27;</span>, <span class="string">&#x27;0001A3100000000038EI&#x27;</span>, <span class="string">&#x27;0001A3100000000BP9HQ&#x27;</span>, <span class="string">&#x27;0001A31000000000390Q&#x27;</span>, <span class="string">&#x27;0001A3100000000037XW&#x27;</span>, <span class="string">&#x27;0001A31000000000386X&#x27;</span>, <span class="string">&#x27;0001A310000000003871&#x27;</span>, <span class="string">&#x27;0001A310000000003879&#x27;</span>, <span class="string">&#x27;0001A3100000000038AJ&#x27;</span>, <span class="string">&#x27;0001A3100000000038BE&#x27;</span>, <span class="string">&#x27;0001A3100000000038LU&#x27;</span>, <span class="string">&#x27;0001A3100000000038NL&#x27;</span>, <span class="string">&#x27;0001A3100000000038RL&#x27;</span>, <span class="string">&#x27;0001A3100000000038UJ&#x27;</span>, <span class="string">&#x27;0001A3100000000038XL&#x27;</span>, <span class="string">&#x27;0001A3100000000038XO&#x27;</span>, <span class="string">&#x27;0001A3100000000038XX&#x27;</span>, <span class="string">&#x27;0001A31000000002CJIR&#x27;</span>, <span class="string">&#x27;0001A31000000008ASED&#x27;</span>, <span class="string">&#x27;0001A31000000000876A&#x27;</span> ) <span class="keyword">AND</span> ( ct_sale.dmakedate <span class="operator">&gt;=</span> <span class="string">&#x27;2020-01-01 00:00:00&#x27;</span> <span class="keyword">and</span> ct_sale.dmakedate <span class="operator">&lt;=</span> <span class="string">&#x27;2021-06-05 23:59:59&#x27;</span> ) <span class="keyword">AND</span> ct_sale.vbillcode <span class="keyword">like</span> <span class="string">&#x27;%NNJGLSK2101003%&#x27;</span> ) <span class="keyword">and</span> ct_sale.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> ct_sale.bshowlatest <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span> <span class="keyword">and</span> ct_sale.pk_org <span class="keyword">in</span> ( <span class="string">&#x27;0001A3100000000038XO&#x27;</span>, <span class="string">&#x27;0001A3100000000038LU&#x27;</span>, <span class="string">&#x27;0001A3100000000038BE&#x27;</span>, <span class="string">&#x27;0001A3100000000038RL&#x27;</span>, <span class="string">&#x27;0001A3100000000038EI&#x27;</span>, <span class="string">&#x27;0001A310000000003810&#x27;</span>, <span class="string">&#x27;0001A3100000000038XL&#x27;</span>, <span class="string">&#x27;0001A3100000000037Q5&#x27;</span>, <span class="string">&#x27;0001A31000000000390Q&#x27;</span>, <span class="string">&#x27;0001A3100000000037UG&#x27;</span>, <span class="string">&#x27;0001A3100000000038NL&#x27;</span>, <span class="string">&#x27;0001A3100000000BP9HQ&#x27;</span>, <span class="string">&#x27;0001A31000000008ASED&#x27;</span>, <span class="string">&#x27;0001A310000000003871&#x27;</span>, <span class="string">&#x27;0001A3100000000038HJ&#x27;</span>, <span class="string">&#x27;0001A310000000008767&#x27;</span>, <span class="string">&#x27;0001A31000000000386X&#x27;</span>, <span class="string">&#x27;0001A31000000000876A&#x27;</span>, <span class="string">&#x27;0001A310000000003879&#x27;</span>, <span class="string">&#x27;0001A3100000000038XX&#x27;</span>, <span class="string">&#x27;0001A3100000000038AJ&#x27;</span>, <span class="string">&#x27;0001A31000000002CJIR&#x27;</span>, <span class="string">&#x27;0001A3100000000038UJ&#x27;</span>, <span class="string">&#x27;0001A3100000000037XW&#x27;</span> ) <span class="keyword">and</span> ct_sale.pk_group <span class="operator">=</span> <span class="string">&#x27;0001A310000000000EXB&#x27;</span> <span class="keyword">order</span> <span class="keyword">by</span> ct_sale.vbillcode</span><br></pre></td></tr></table></figure>
+
+<p>第二段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> actualinvalidate, actualvalidate, approver, billmaker, blatest, bshowlatest, bsrcecmct, cbilltypecode, ccurrencyid, corigcurrencyid, cprojectid, creationtime, creator, ctname, ctname2, ctname3, ctname4, ctname5, ctname6, ctrantypeid, custunit, dbilldate, deliaddr, depid, depid_v, dmakedate, fstatusflag, invallidate, iprintcount, modifiedtime, modifier, modifystatus, nexchangerate, nglobalexchgrate, ngroupexchgrate, norigpshamount, ntotalastnum, ntotalgpamount, ntotalorigmny, personnelid, pk_ct_sale, pk_customer, pk_group, pk_org, pk_org_v, pk_origct, pk_payterm, subscribedate, taudittime, ct_sale.ts, valdate, vbillcode, vdef1, vdef10, vdef11, vdef12, vdef13, vdef14, vdef15, vdef16, vdef17, vdef18, vdef19, vdef2, vdef20, vdef21, vdef22, vdef23, vdef24, vdef25, vdef26, vdef27, vdef28, vdef29, vdef3, vdef30, vdef31, vdef32, vdef33, vdef34, vdef35, vdef36, vdef37, vdef38, vdef39, vdef4, vdef40, vdef5, vdef6, vdef7, vdef8, vdef9, version, vtrantypecode <span class="keyword">from</span> ct_sale <span class="keyword">where</span> ct_sale.pk_ct_sale <span class="operator">=</span> <span class="string">&#x27;1001A3100000003VHZV7&#x27;</span> <span class="keyword">and</span> ct_sale.dr <span class="operator">=</span> <span class="number">0</span>	<span class="comment">--VBDEF4 料比</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="采购入库单-查询语句"><a href="#采购入库单-查询语句" class="headerlink" title="采购入库单 查询语句"></a>采购入库单 查询语句</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ia_i2bill <span class="keyword">where</span> vbillcode <span class="operator">=</span> <span class="string">&#x27;I22021041500002164&#x27;</span>  <span class="comment">--采购入库单</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> ia_i2bill_b <span class="keyword">where</span> cbillid <span class="operator">=</span> <span class="string">&#x27;1001A3100000004GJPOY&#x27;</span> <span class="comment">--采购入库单表体  NNUM主数量</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="https://i.loli.net/2021/06/05/7buCSp1tNfilk4R.png" alt="image-20210605151440924.png"></p>
+<h1 id="三、详细设计"><a href="#三、详细设计" class="headerlink" title="三、详细设计"></a>三、详细设计</h1><p>RecordSet : A0  <strong>拿到所有的销售合同编号 + 物料编码 的组合</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> b.vbillcode <span class="operator">||</span> a.pk_material hb, pk_ct_sale_b</span><br><span class="line">   <span class="keyword">from</span> ct_sale_b a</span><br><span class="line">   <span class="keyword">left</span> <span class="keyword">join</span> ct_sale b <span class="keyword">on</span> a.pk_ct_sale <span class="operator">=</span> b.pk_ct_sale</span><br><span class="line">   <span class="keyword">where</span> a.dr <span class="operator">=</span> <span class="number">0</span> <span class="keyword">and</span> b.fstatusflag <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">   <span class="keyword">and</span> a.vbdef1 <span class="operator">&lt;&gt;</span> <span class="string">&#x27;Y&#x27;</span> <span class="keyword">and</span> b.blatest <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line"><span class="comment">----销售合同与销售订单同时变更，销售订单的来源未记录合同pk，则通过合同号+物料 匹配 合同表体pk</span></span><br></pre></td></tr></table></figure>
+
+<p>RecordSet : A1 拿 <font color="blue" size="6"><strong>销售订单号</strong></font> + 上面的 <font color="blue" size="6"><strong>销售合同编号+物料编码</strong></font> or <font color="blue" size="6"><strong>销售合同PK</strong></font></p>
+<p>按 <mark>销售订单</mark> 和 <mark>订单类型 </mark>分组</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> c.csaleorderbid,</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">when</span> c.cctmanagebid <span class="operator">=</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> s.pk_ct_sale_b <span class="keyword">else</span> c.cctmanagebid <span class="keyword">end</span> cctmanagebid, d.ctrantypeid</span><br><span class="line">         <span class="keyword">from</span> so_saleorder_b c</span><br><span class="line">             <span class="keyword">left</span> <span class="keyword">join</span> so_saleorder d <span class="keyword">on</span> c.csaleorderid <span class="operator">=</span> d.csaleorderid</span><br><span class="line">             <span class="keyword">left</span> <span class="keyword">join</span> org_salesorg m <span class="keyword">on</span> c.pk_org <span class="operator">=</span> m.pk_salesorg</span><br><span class="line">             <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> pk_material, code <span class="keyword">from</span> bd_material) n <span class="comment">--物料编码 48592条</span></span><br><span class="line">                                           <span class="keyword">on</span> c.cmaterialvid <span class="operator">=</span> n.pk_material</span><br><span class="line">             <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">                           (</span><br><span class="line">                                 <span class="operator">&lt;&lt;</span> RecordSet : A0 <span class="operator">&gt;&gt;</span></span><br><span class="line">                           ) s <span class="keyword">on</span> d.vdef20 <span class="operator">||</span> c.cmaterialvid <span class="operator">=</span> s.hb</span><br><span class="line">             <span class="keyword">where</span> c.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">                   <span class="keyword">and</span> m.pk_fatherorg <span class="operator">=</span> <span class="string">&#x27;0001A310000000008767&#x27;</span></span><br><span class="line">                   <span class="keyword">and</span> substr(n.code, <span class="number">0</span>, <span class="number">2</span>) <span class="keyword">in</span> (<span class="string">&#x27;03&#x27;</span>, <span class="string">&#x27;04&#x27;</span>, <span class="string">&#x27;05&#x27;</span>, <span class="string">&#x27;06&#x27;</span>, <span class="string">&#x27;13&#x27;</span>)</span><br><span class="line">                   <span class="keyword">group</span> <span class="keyword">by</span> c.csaleorderbid,</span><br><span class="line">                                 (<span class="keyword">case</span> <span class="keyword">when</span> c.cctmanagebid <span class="operator">=</span> <span class="string">&#x27;~&#x27;</span> <span class="keyword">then</span> s.pk_ct_sale_b <span class="keyword">else</span> c.cctmanagebid <span class="keyword">end</span>),</span><br><span class="line">                                 d.ctrantypeid</span><br></pre></td></tr></table></figure>
+
+
+
+<p>RecordSet : A2 按销售合同 分组 ，汇总 实发主数量 、 实发数量</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> c.cctmanagebid, <span class="built_in">sum</span>(a.nnum) ckzsl, <span class="built_in">sum</span>(a.nassistnum) ckfsl</span><br><span class="line">                  <span class="keyword">from</span> ic_saleout_b a</span><br><span class="line">                           <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">                       (</span><br><span class="line">                           <span class="operator">&lt;&lt;</span> RecordSet : A1 <span class="operator">&gt;&gt;</span></span><br><span class="line">                       ) c</span><br><span class="line">                       <span class="keyword">on</span> a.cfirstbillbid <span class="operator">=</span> c.csaleorderbid</span><br><span class="line">                           <span class="keyword">left</span> <span class="keyword">join</span> org_salesorg m <span class="keyword">on</span> a.pk_org <span class="operator">=</span> m.pk_salesorg</span><br><span class="line">                  <span class="keyword">where</span> a.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">                    <span class="keyword">and</span> m.pk_fatherorg <span class="operator">=</span> <span class="string">&#x27;0001A310000000008767&#x27;</span></span><br><span class="line">                    <span class="keyword">and</span> c.ctrantypeid <span class="operator">&lt;&gt;</span> <span class="string">&#x27;0001A310000000002OXE&#x27;</span>  <span class="comment">--退换货</span></span><br><span class="line">                  <span class="keyword">group</span> <span class="keyword">by</span> c.cctmanagebid</span><br></pre></td></tr></table></figure>
+
+<p>RecordSet : A 取 销售合同的信息. 并得出 未交付主数量<code>a.nnum - nvl(c.ckzsl, 0)</code> 、 未交付数量<code>a.nastnum - nvl(c.ckfsl, 0)</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.pk_ct_sale_b,a.pk_group,b.ctrantypeid,b.pk_org,b.vbillcode  hth,b.pk_customer,b.personnelid ywy,</span><br><span class="line">                a.pk_material,a.castunitid,a.cunitid, a.vchangerate, a.vbdef19 zlbz,</span><br><span class="line">                a.nnum <span class="operator">-</span> nvl(c.ckzsl, <span class="number">0</span>)                                         wjfzsl,</span><br><span class="line">                a.nastnum <span class="operator">-</span> nvl(c.ckfsl, <span class="number">0</span>)                                      wjffsl,</span><br><span class="line">                a.delivdate                                                      khrq,</span><br><span class="line">                a.vqddef31                                                       psrq,</span><br><span class="line">                substr(b.subscribedate, <span class="number">1</span>, <span class="number">10</span>)                                   htrq,</span><br><span class="line">                <span class="string">&#x27;【内包装】&#x27;</span> <span class="operator">||</span> a.vbdef7 <span class="operator">||</span> <span class="string">&#x27;【外包装】&#x27;</span> <span class="operator">||</span> a.vbdef8 <span class="operator">||</span> <span class="string">&#x27;【托盘】&#x27;</span> <span class="operator">||</span> a.vbdef9 bz,</span><br><span class="line">                a.vqddef38                                                       jsxz,</span><br><span class="line">                a.nastnum                                                        htsl,</span><br><span class="line">                <span class="number">0</span>                                                                ddsl,</span><br><span class="line">                nvl(c.ckzsl, <span class="number">0</span>)                                                  ckzsl,</span><br><span class="line">                nvl(c.ckfsl, <span class="number">0</span>)                                                  ckfsl,</span><br><span class="line">                a.vbdef12                                                        yslx</span><br><span class="line">         <span class="keyword">from</span> ct_sale_b a</span><br><span class="line">                  <span class="keyword">left</span> <span class="keyword">join</span> ct_sale b <span class="keyword">on</span> a.pk_ct_sale <span class="operator">=</span> b.pk_ct_sale</span><br><span class="line">                  <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">              (</span><br><span class="line">                  <span class="operator">&lt;&lt;</span> RecordSet : A2 <span class="operator">&gt;&gt;</span></span><br><span class="line">              ) c <span class="keyword">on</span> a.pk_ct_sale_b <span class="operator">=</span> c.cctmanagebid  <span class="comment">--把每张销售合同 表体的已出库数量汇总出来。目的是上面的合同数量-已出库数量</span></span><br><span class="line">         <span class="keyword">where</span> a.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">           <span class="keyword">and</span> a.pk_org <span class="operator">=</span> <span class="string">&#x27;0001A3100000000037UG&#x27;</span></span><br><span class="line">           <span class="keyword">and</span> b.fstatusflag <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line">           <span class="keyword">and</span> a.vbdef1 <span class="operator">&lt;&gt;</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line">           <span class="keyword">and</span> b.blatest <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line">           <span class="keyword">and</span> b.vdef14 <span class="operator">&lt;&gt;</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line">           <span class="keyword">and</span> (<span class="keyword">case</span></span><br><span class="line">                    <span class="keyword">when</span> (b.pk_customer <span class="operator">=</span> <span class="string">&#x27;1001A310000000005P5Q&#x27;</span> <span class="keyword">and</span> b.ctrantypeid <span class="operator">=</span> <span class="string">&#x27;1001A3100000000150CR&#x27;</span>) <span class="keyword">then</span> <span class="number">1</span></span><br><span class="line">                    <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">         <span class="comment">---销售合同状态fstatusflag(3:审批通过  1：生效) ；订单表体a.vbdef1&lt;&gt;Y :剔除来料加工原料 ;</span></span><br><span class="line">         <span class="comment">---麦格昆磁的销售合同需求及MQ库存不纳入平衡</span></span><br><span class="line">         <span class="comment">---来料加工销售订单 剔除（来料方 虔东；客户方 科力  例如 镝铁合金）</span></span><br><span class="line">         <span class="comment">---- a.vbdef19  zlbz 为 质量标准     ；销售订单交易类型 0001A310000000002OXE=退换货</span></span><br><span class="line">         <span class="comment">---b.vdef14&lt;&gt;&#x27;Y&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>RecrodSet : Aa 过滤掉不参与 “产供销”的 销售合同 单据。 剔除 某些客户、未交付数量=0 等等。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">----销售合同未交付需求</span></span><br><span class="line"><span class="keyword">select</span> a.pk_ct_sale_b,a.pk_group,b.shortname zz,e.billtypename,a.ctrantypeid,a.pk_org,a.hth,a.htrq,a.pk_customer,</span><br><span class="line">       a.ywy,a.pk_material,a.castunitid,a.cunitid,a.vchangerate, a.zlbz,a.wjfzsl,a.wjffsl,a.khrq,a.psrq,a.bz,</span><br><span class="line">       a.jsxz,a.htsl,a.ddsl,a.ckzsl,a.ckfsl,a.yslx</span><br><span class="line"><span class="keyword">from</span> (</span><br><span class="line">         <span class="operator">&lt;&lt;</span> RecordSet : A <span class="operator">&gt;&gt;</span></span><br><span class="line">     ) a</span><br><span class="line"></span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span></span><br><span class="line">     ( <span class="comment">---自定义档案:交易类型是否参与产供销</span></span><br><span class="line">         <span class="keyword">select</span> b.pk_billtypeid, b.billtypename, a.def1 sfcgx</span><br><span class="line">         <span class="keyword">from</span> bd_defdoc a</span><br><span class="line">                  <span class="keyword">left</span> <span class="keyword">join</span> bd_billtype b <span class="keyword">on</span> a.code <span class="operator">=</span> b.pk_billtypecode</span><br><span class="line">         <span class="keyword">where</span> a.dr <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">           <span class="keyword">and</span> a.pk_defdoclist <span class="operator">=</span> <span class="string">&#x27;1001A3100000001F5HJP&#x27;</span></span><br><span class="line">           <span class="keyword">and</span> a.def1 <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span></span><br><span class="line">         <span class="comment">---1001A3100000001F5HJP 自定义档案:交易类型是否参与产供销  ;  a.def1=&#x27;Y&#x27; 参与产供销平衡    ;退换货 交易类型 不参与产供销</span></span><br><span class="line">     ) e <span class="keyword">on</span> a.ctrantypeid <span class="operator">=</span> e.pk_billtypeid</span><br><span class="line">     <span class="keyword">left</span> <span class="keyword">join</span> org_salesorg b <span class="keyword">on</span> a.pk_org <span class="operator">=</span> b.pk_salesorg</span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> a.wjfzsl <span class="operator">&gt;</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">and</span> e.sfcgx <span class="operator">=</span> <span class="string">&#x27;Y&#x27;</span>  <span class="keyword">and</span> a.pk_customer <span class="operator">&lt;&gt;</span> <span class="string">&#x27;1001A31000000006BQE9&#x27;</span></span><br><span class="line"><span class="comment">----a.wjfzsl&gt;0 剔除未交付数量 0和负数  ;取冶金物料+冶金组织   ;e.sfcgx=&#x27;Y&#x27; 需求交易类型参与产供销；</span></span><br><span class="line"><span class="comment">---- 合同类型：内部交易，科力销售给安远科力，属于加工转买卖，属于内部需求，不纳入产供销平衡</span></span><br><span class="line"><span class="comment">----问题：备货订单一致没有关闭，（1）若生成了生产订单（2）交付计划如何处理</span></span><br><span class="line"></span><br><span class="line"><span class="comment">----销售合同未交付需求</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="产供销平衡视图分析"><a href="#产供销平衡视图分析" class="headerlink" title="产供销平衡视图分析:"></a>产供销平衡视图分析:</h1><p>1.取 a 表 , cgx 表 , q 表 , e 表 , jsxz 表 , bz 表 , gw 表 , ys 表 , jy 表 共 8 张表的数据</p>
+<p>​    a 表 : 销售合同未交付 + 外部来料加工订单 + 出口合同未交付 + 寄售调拨订单  </p>
+<p>​    cgx 表： cgx_orderdelivery 表</p>
+<p>​    q 表 ：bd_material 表</p>
+<p>​    e 表 ：chkvalue 表</p>
+<p>​    jsxz 表 ：bd_defdoc 表 <code>金属形状</code></p>
+<p>​    bz 表 ：bd_defdoc 表  <code>包装能力</code></p>
+<p>​    gw 表 ：bd_defdoc 表 <code>关务报检周期</code></p>
+<p>​    ys 表 ：dm_route 表 <code>运输周期</code></p>
+<p>​    jy 表  ：bd_defdoc 表 <code>检验周期</code></p>
+<blockquote>
+<p>a 表 要左连接  |  q 表 |  e 表 | cgx 表 |  jsxz 表  | bz 表 |  jy 表 |  gw 表 | ys  表|</p>
+</blockquote>
+<p>大表数据全部来自于 a 表. 里面有 ic_saleout_b 97万数据，so_saleorder_b 78万数据， so_saleorder 26万数据，  ic_saleout_h 17万数据.</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Dreamer-1/p/6076440.html">看懂Oracle执行计划</a>    </p>
+<h1 id="四、编码"><a href="#四、编码" class="headerlink" title="四、编码"></a>四、编码</h1><p>ct_sale_b <code>销售合同表体</code></p>
+<p>ct_sale <code>销售合同</code></p>
+<p>ic_saleout_b <code>销售出库单表体</code></p>
+<p>ic_saleout <code>销售出库单</code></p>
+<p>so_saleorder_b <code>销售订单表体</code></p>
+<p>so_saleorder <code>销售订单</code></p>
+<p>ia_i2bill <code>采购入库单</code></p>
+<p>ia_i2bill_b <code>采购入库单表体</code></p>
+<h1 id="五、测试"><a href="#五、测试" class="headerlink" title="五、测试"></a>五、测试</h1>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GQD</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">产供销平衡计算</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/04/%E4%BA%A7%E4%BE%9B%E9%94%80%E5%B9%B3%E8%A1%A1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/05/26/%E4%BB%B7%E6%A0%BC%E5%AE%A1%E6%89%B9%E5%8D%95%E8%81%94%E6%9F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">价格审批单联查历史询价</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +450,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -152,6 +152,159 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-外部复检结果" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/16/%E5%A4%96%E9%83%A8%E5%A4%8D%E6%A3%80%E7%BB%93%E6%9E%9C/">外部复检结果分单录入</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/16/%E5%A4%96%E9%83%A8%E5%A4%8D%E6%A3%80%E7%BB%93%E6%9E%9C/" class="archive-article-date">
+  	<time datetime="2021-04-16T01:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、需求"><a href="#一、需求" class="headerlink" title="一、需求"></a>一、需求</h2><h3 id="增加打印功能"><a href="#增加打印功能" class="headerlink" title="增加打印功能"></a>增加打印功能</h3><h3 id="1-说明"><a href="#1-说明" class="headerlink" title="1.说明"></a>1.说明</h3><p>​      需要修改的单据名：《外部复检结果分单录入》 —— 增加一个按钮</p>
+<p>​      <mark>参考的原始单据名：《艾科锐外部委托单》 —— 原样打印</mark></p>
+<h3 id="2-截图"><a href="#2-截图" class="headerlink" title="2.截图"></a>2.截图</h3><p><img src="https://i.loli.net/2021/04/16/DCSbnpe4kFVmoxq.png" alt="image-20210416095741407"></p>
+<ul>
+<li>原样打印画面样式</li>
+<li>该模板的设置界面在<code>输出模板初始化</code>功能.</li>
+<li>找到 供应链 —— 销售管理 —— 销售订单 ——艾科锐内部委托单<ul>
+<li>委托单原样分样 <!--prinEntry.setTemplateCode("400603014020"); //设置打印输出模板的编号--></li>
+</ul>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/04/16/jUFczuIALJVsX4G.png" alt="image-20210416112505704" style="zoom:80%;" />
+
+<p>下图是 点击【修改】后显示 ”模板编辑器“:</p>
+<img src="https://i.loli.net/2021/04/16/BsVJqOK2yI6Dj5d.png" alt="image-20210416112537337" style="zoom:80%;" />
+
+<h3 id="3-功能"><a href="#3-功能" class="headerlink" title="3.功能"></a>3.功能</h3><ul>
+<li>行1：条形码<code>分析编号+样袋号</code></li>
+<li>行2：WS210101-02001  (0)  <code>样品编号+样袋序号</code> </li>
+<li>行3：2021/01/02  16:35 <code>上单时间</code></li>
+<li>行4：稀土精矿 <code>样品名称</code> <code>样品规格</code></li>
+<li>行5：HY-20201221-01  <code>送样编号</code></li>
+<li>行6：REO,配分(0)      <code>表体的物料名称</code></li>
+<li>行7：备注：除钍后总量 <code>样品状态</code></li>
+</ul>
+<p>​     </p>
+<h3 id="4-实现"><a href="#4-实现" class="headerlink" title="4.实现"></a>4.实现</h3><blockquote>
+<p>先分析原功能实现打印的大概逻辑：</p>
+<img src="https://i.loli.net/2021/04/16/swBoOayNWi8r5c2.png" alt="image-20210416113302487" style="zoom:50%;" />
+
+<p>参考的单据是上游单据“艾科锐外部委托单”。下游“检验结果分单录入” 只是把上游的检验结果拿一部分过来，再加上自己的检验结果。</p>
+<p>并附加上自身单据的分析编号，复检结果！</p>
+</blockquote>
+<p><mark>模板设置—业务单元</mark></p>
+<p>所属组织：赣州艾科锐检测技术有限公司</p>
+<p>子节点：</p>
+<ul>
+<li>艾科锐分析系统<ul>
+<li>外部检测分析<ul>
+<li>艾科锐外部委托单</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单据模板：<ul>
+<li>组织模板 &gt; 销售订单 - 艾科锐外部委托单新</li>
+</ul>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/04/16/AVMG5Cy3aUY2utn.png" alt="image-20210416111658411" style="zoom:80%;" />
+
+<ul>
+<li>点击【修改】</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/16/wyPMAESYotVzalb.png" alt="image-20210416112953734"></p>
+<p>在<mark>模板设置-集团</mark></p>
+<p>找到 </p>
+<ul>
+<li>艾科锐分析系统<ul>
+<li>外部检测分析<ul>
+<li>选择 <strong>外部复检结果分单录入</strong> <ul>
+<li>点击– <strong>复检结果录入</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="https://i.loli.net/2021/04/16/aGLhRoC6xsWznwK.png" alt="image-20210416114921246" style="zoom:80%;" />
+
+<p>点击修改 会进入 <img src="https://i.loli.net/2021/04/16/X47hmpxnwBPMFqr.png" alt="image-20210416115205335" style="zoom: 80%;" />的设置界面，可以查看用到的表名，字段名。</p>
+<img src="https://i.loli.net/2021/04/16/O52ojLAP8GhaWzZ.png" alt="image-20210416115357916" style="zoom:150%;" />
+
+<p><img src="https://i.loli.net/2021/04/16/M98aCxLSTF1IYd3.png" alt="image-20210416115421641"></p>
+<p><img src="https://i.loli.net/2021/04/16/JRBD8umQFV7piKn.png" alt="image-20210416150141570"></p>
+<p>外部复检结果录入</p>
+<p>表体Table : TestResultsentryson_v</p>
+<h2 id="二、测试"><a href="#二、测试" class="headerlink" title="二、测试"></a>二、测试</h2><p>SaleOrderPrintSample.java <code>原样打印事件的类继承关系图</code></p>
+<p><img src="https://i.loli.net/2021/04/26/2lkijvNhgHJ1VE6.png" alt="image-20210426140710046"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/16/%E5%A4%96%E9%83%A8%E5%A4%8D%E6%A3%80%E7%BB%93%E6%9E%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-地磅采集系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -2510,104 +2663,6 @@
 
 
   
-    <article id="post-VIM简单使用说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/24/VIM%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">vim基础教程</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/24/VIM%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" class="archive-article-date">
-  	<time datetime="2021-03-24T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>找一下FN的ASMS需求文件，DBA，开发文档. 放在哪了？</p>
-<p>答：已找到在 <strong>\我的移动硬盘\GZFN\thewholecarees\SoftWareDevelop\WebWar\ASMS(Doc&amp;Conf).zip</strong></p>
-</blockquote>
-<p>在一台安装了MS SQL Server 2008 、MS SQL Server 2012的笔记本电脑上面。 建立2个SQL Server实例，不指定1433端口 居然连接成功！</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;connection.url&quot;</span>&gt;</span>jdbc:sqlserver://192.168.80.110;instanceName=SQLSERVER2012;DatabaseName=GZFNASMS;integratedSecurity=false<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="NordPass的密码建议"><a href="#NordPass的密码建议" class="headerlink" title="NordPass的密码建议"></a>NordPass的密码建议</h3><hr>
-<p><strong>1、创建密码时要避免使用字典单词、数字组合或相邻键盘组合的字符串。</strong>例如，password、qwerty或123456都是很糟糕的密码，因为它们太容易被破解。</p>
-<p><strong>2、不要使用重复的字符</strong>，比如aaaa或123abc，并且<strong>最好不要选择那些并非机密的个人信息作为密码</strong>，比如你的电话号码、出生日期或姓名。</p>
-<p><strong>3、切勿在多个帐户之间重复使用密码，为每个帐户创建一个独特的、尽量长（不要少于12个字符）的密码，最好使用大小写字母、数字和符号的混合</strong>，可以显著降低密码被破解的风险。</p>
-<p><strong>4、确保至少每90天更换一次密码</strong>。要创建复杂、可靠的密码，可以考虑使用密码生成器。</p>
-<p>关于密码的设置，之前小编也发过网友们的锦囊妙计：</p>
-<p><strong>一、密码设置</strong></p>
-<p><strong>古诗词版：</strong></p>
-<p>ppnn13%dkstFeb.1st，聘聘袅袅十三余，豆蔻梢头二月初</p>
-<p>RMdkwtg.TH19XCF，人面不知何处去，桃花依旧笑春风</p>
-<p>hold?fish:palm，鱼和熊掌不可兼得</p>
-<p><strong>绕口令：</strong></p>
-<p>cptbtptpbcptdtptp，吃葡萄不吐葡萄皮不吃葡萄倒吐葡萄皮 </p>
-<p><strong>国粹版：</strong></p>
-<p>东南西北发白板红中缩写，“！”意为胡了</p>
-<p>当然，还有<strong>脱氧核糖核苷酸化学式</strong>也是不错的选择。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">标准内容</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/24/VIM%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
@@ -2714,6 +2769,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">标准内容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">产供销平衡计算</a>
               </li>
              
               <li class="article-tag-list-item">

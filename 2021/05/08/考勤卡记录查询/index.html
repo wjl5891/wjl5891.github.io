@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/06/03/T3LcuQ2S4advJbN.png">
 <meta property="og:image" content="https://i.loli.net/2021/06/02/2I7BwajSynTeDLk.png">
 <meta property="article:published_time" content="2021-05-08T08:20:00.000Z">
-<meta property="article:modified_time" content="2021-06-03T09:04:41.223Z">
+<meta property="article:modified_time" content="2021-06-07T02:33:26.005Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Demo">
 <meta name="twitter:card" content="summary">
@@ -208,6 +208,7 @@
 
 <p>分页查询</p>
 <p>传参：offset     类型: Number     描述：从0 开始第几笔   </p>
+<p><a target="_blank" rel="noopener" href="https://developers.dingtalk.com/document/app/intelligent-personnel-query-the-list-of-on-the-job-employees-of-the">开发文档地址</a></p>
 <h3 id="4-获取员工花名册自定义字段业务code"><a href="#4-获取员工花名册自定义字段业务code" class="headerlink" title="4.获取员工花名册自定义字段业务code"></a>4.获取员工花名册自定义字段业务code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;oapi.dingtalk.com&#x2F;topapi&#x2F;smartwork&#x2F;hrm&#x2F;employee&#x2F;list</span><br></pre></td></tr></table></figure>
 
 <p>传参： userid_list   类型：String   </p>
@@ -299,6 +300,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--钉钉取考勤异常</span><br><span class="line">严重: 2021-06-03 16:16:14.782^_^_dingtalk_^_^dingtalk.oapi.smartwork.hrm.employee.list^_^192.168.71.1^_^Windows 8^_^430^_^</span><br><span class="line">https://oapi.dingtalk.com/topapi/smartwork/hrm/employee/list^_^userid_list=100621031%2C180803011%2C110521011%2C061020021%2C120611011%2C070712010%2C040907011%2C901001050%2C040329011%2C010603011%2C190516011%2C070322020%2C170511021%2C040401051%2C950730011%2C020614010%2C970101020%2C190917011%2C110228010%2C080520011%2C100416011%2C941201011%2C070927031%2C120824041%2C100607011%2C110609021%2C140220041%2C191018011%2C090902011%2C080409151%2C040626031%2C010905011%2C960312011%2C131125021%2C130613011%2C070606091%2C960101011%2C190823011%2C141122011%2C080222151%2C060501011%2C880601021%2C040520011%2C000801111%2C070614050%2C180328011%2C080409131%2C120222021%2C131113011%2C061104021&amp;field_filter_list=sys00-jobNumber&amp;access_token=4c6d0edff0e93c2db2bfb63ecde263cb&amp;agentid=1^_^</span><br><span class="line">&#123;<span class="string">&quot;errcode&quot;</span>:88,<span class="string">&quot;sub_msg&quot;</span>:<span class="string">&quot;钉钉鉴权服务异常01&quot;</span>,<span class="string">&quot;errmsg&quot;</span>:<span class="string">&quot;ding talk error[submsg=钉钉鉴权服务异常01]&quot;</span>,<span class="string">&quot;request_id&quot;</span>:<span class="string">&quot;nh5y3i94hzb2&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://oapi.dingtalk.com/topapi/smartwork/hrm/employee/list">https://oapi.dingtalk.com/topapi/smartwork/hrm/employee/list</a> <strong>获取员工花名册自定义字段业务code</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">严重: 2021-05-31 14:30:48.301^_^_dingtalk_^_^dingtalk.oapi.smartwork.hrm.employee.list^_^192.168.71.1^_^Windows 8^_^15002^_^https://oapi.dingtalk.com/topapi/smartwork/hrm/employee/list^_^userid_list=07536459631040357%2C245137424837815606%2C0634364160677492%2C01244861492335463299%2C3261162901882730%2C326119245437609644%2C3261111526707370%2C160803010%2C190801010%2C120201171%2C070203010%2C185726644330609914%2C3242382429684955%2C3261295663684885%2C180423011%2C190808040%2C170206010%2C100902040%2C171127060%2C200918010%2C171127011%2C180316010%2C120201150%2C190523010%2C190216011%2C190216030%2C170524010%2C326117295520903760%2C181543320335607719%2C190313030%2C190228030%2C080603040%2C120614010%2C190904011%2C130614010%2C171129020%2C950201010%2C041213020%2C120201160%2C090910010%2C150623020%2C110902020%2C181205010%2C070906010%2C190903021%2C180904011%2C190218060%2C190216020%2C190808060%2C180115010&amp;field_filter_list=sys00-jobNumber&amp;access_token=73296d4b8bb730dc9c51ae843782b3c3&amp;agentid=1^_^java.net.SocketTimeoutException: connect timed out</span><br></pre></td></tr></table></figure>
+
+<p><code>网络连接出现异常，读取员工列表失败!</code></p>
+<p>Q:查询某个员工的工号,姓名,组织</p>
+<p>A:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> bd_psndoc p <span class="keyword">where</span>  p.name <span class="operator">=</span> <span class="string">&#x27;许厚望&#x27;</span>  <span class="comment">--人员档案查出 工号 , 组织 PK_ORG</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tbm_psndoc <span class="keyword">where</span> timecardid<span class="operator">=</span><span class="string">&#x27;170306011&#x27;</span><span class="comment">--人事考勤档案  查出 某段日期间所属组织</span></span><br><span class="line"><span class="keyword">select</span> NAME <span class="keyword">from</span> org_orgs <span class="keyword">where</span> pk_org <span class="operator">=</span> <span class="string">&#x27;0001A310000000003810&#x27;</span> <span class="comment">--找出组织名称</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -549,6 +557,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">标准内容</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">产供销平衡计算</a>
               </li>
              
               <li class="article-tag-list-item">
